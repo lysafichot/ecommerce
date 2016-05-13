@@ -1,0 +1,15 @@
+ecommerce_account_connexion:
+    path:     /connexion
+    defaults: { _controller: AccountBundle:Auth:connexion }
+
+ecommerce_account_registration:
+    path:     /registration
+    defaults: { _controller: AccountBundle:Auth:registration }
+
+ecommerce_account_deconnexion:
+    path:     /deconnexion
+    defaults: { _controller: AccountBundle:Auth:deconnexion }
+
+ecommerce_account_account:
+    path:     /account
+    defaults: { _controller: AccountBundle:User:account }

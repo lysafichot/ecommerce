@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {% block head %}
+
+    <meta charset="UTF-8" />
+    <title>{% block title %}Acceuil - {% endblock %} - THT</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}"/>
+
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+
+    {% block menu_auth %}
+    <div id='auth'>
+        <ul>
+            <li><a href="{{ path('ecommerce_account_connexion') }}">Connexion</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+
+    {% endblock %}
+
+
+    {% block footer %}{% endblock %}
+
+
+    {% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/slide.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/presentation_slide.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

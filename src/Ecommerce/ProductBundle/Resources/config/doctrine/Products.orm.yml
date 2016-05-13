@@ -1,0 +1,22 @@
+Ecommerce\ProductBundle\Entity\Products:
+    type: entity
+    table: null
+    repositoryClass: Ecommerce\ProductBundle\Repository\ProductsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        summary:
+            type: string
+            length: 255
+        status:
+            type: integer
+    lifecycleCallbacks: {  }
