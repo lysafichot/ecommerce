@@ -1,6 +1,6 @@
-ecommerce_account_connexion:
-    path:     /connexion
-    defaults: { _controller: AccountBundle:Auth:connexion }
+login:
+    path:     /login
+    defaults: { _controller: AccountBundle:Security:login }
 
 ecommerce_account_registration:
     path:     /registration

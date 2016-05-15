@@ -1,3 +1,7 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ecommerce_account:
     resource: "@AccountBundle/Resources/config/routing.yml"
     prefix:   /

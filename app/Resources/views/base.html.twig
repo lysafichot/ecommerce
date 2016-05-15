@@ -16,11 +16,9 @@
     {% block body %}
 
     {% block menu_auth %}
-    <div id='auth'>
-        <ul>
-            <li><a href="{{ path('ecommerce_account_connexion') }}">Connexion</a></li>
-        </ul>
-    </div>
+
+    {{ include('layout/menu.html.twig')}}
+
     {% endblock %}
 
     {% endblock %}
