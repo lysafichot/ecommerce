@@ -26,14 +26,18 @@ security:
             security: false
 
         login:
-            pattern: ^/login$
+            pattern: ^/login
             security: false
+
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
 
         main:
             pattern: ^/
             form_login:
                 login_path: login
-                check_path: login_check
+                check_path: login
             anonymous: true
 
             logout:
@@ -47,7 +51,7 @@ security:
                 lifetime: 2232000
 
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }

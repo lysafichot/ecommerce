@@ -1,7 +1,12 @@
 <div id='auth'>
 	<ul>
+		{% if(session)  %}
+		<li><a href="{{ path('logout') }}">Deconnexion</a></li>
+		{% else %}
 		<li><a href="{{ path('login') }}">Connexion</a></li>
 		<li><a href="{{ path('ecommerce_account_registration') }}">Inscription</a></li>
+		{% endif %}
+
 
 	</ul>
 </div>

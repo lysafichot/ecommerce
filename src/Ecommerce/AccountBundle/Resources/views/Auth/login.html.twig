@@ -1,0 +1,12 @@
+<form class="" method='post' action='{{path("login")}}'>
+    {% if error %}
+    <div class='red'>lol error</div><br>
+    {% endif %}
+    <label for="" class="">Username</label>
+    <input type="text" id="" name='username' class="" placeholder="Username" required autofocus>
+    <label for="" class="">Password</label>
+    <input type="password" id="" name="password" class="" placeholder="Password" required>
+    <div class="checkbox">
+    </div>
+    <button class="" type="submit">Connexion</button>
+</form>

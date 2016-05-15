@@ -14,9 +14,10 @@
 </head>
 <body>
     {% block body %}
-
     {% block menu_auth %}
-
+{% if(session) %}
+    <h1>Bienvenu {{ session }} </h1>
+{% endif %}
     {{ include('layout/menu.html.twig')}}
 
     {% endblock %}
@@ -28,6 +29,7 @@
 
 
     {% block javascripts %}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/slide.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/presentation_slide.js') }}"></script>

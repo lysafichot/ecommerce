@@ -1,6 +1,10 @@
 login:
     path:     /login
-    defaults: { _controller: AccountBundle:Security:login }
+    defaults: { _controller: AccountBundle:Auth:login }
+
+logout:
+    path:     /logout
+    defaults: { _controller: AccountBundle:Auth:logout }
 
 ecommerce_account_registration:
     path:     /registration

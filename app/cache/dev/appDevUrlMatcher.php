@@ -110,9 +110,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Ecommerce\\AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'admin_homepage',);
         }
 
-        // login
-        if ($pathinfo === '/login') {
-            return array (  '_controller' => 'AccountBundle:Security:login',  '_route' => 'login',);
+        if (0 === strpos($pathinfo, '/log')) {
+            // login
+            if ($pathinfo === '/login') {
+                return array (  '_controller' => 'Ecommerce\\AccountBundle\\Controller\\AuthController::loginAction',  '_route' => 'login',);
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array (  '_controller' => 'Ecommerce\\AccountBundle\\Controller\\AuthController::logoutAction',  '_route' => 'logout',);
+            }
+
         }
 
         // ecommerce_account_registration
