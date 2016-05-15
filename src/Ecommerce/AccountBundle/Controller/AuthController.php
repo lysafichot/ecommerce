@@ -25,9 +25,10 @@ class AuthController extends Controller
 			$repository = $this->getDoctrine()->getRepository('AccountBundle:User');
 			$user = $repository->findOneByUsername($username);
 
-			$encoder = $this->container->get('security.password_encoder');
-			$encoded = $encoder->encodePassword($user, $password);
-
+			if($user) {
+				$encoder = $this->container->get('security.password_encoder');
+				$encoded = $encoder->encodePassword($user, $password);
+			}
 			if($user && $encoded == $user->getPassword()) {
 				$session->set('user', $username);
 				return $this->redirectToRoute('ecommerce_homepage');
@@ -74,10 +75,10 @@ class AuthController extends Controller
 
 	public function logoutAction(Request $request)
 	{
-	$session = $request->getSession();
-	$session->remove('user');
+		$session = $request->getSession();
+		$session->remove('user');
 
-			return $this->redirectToRoute('ecommerce_homepage');
+		return $this->redirectToRoute('ecommerce_homepage');
 	}
 
 

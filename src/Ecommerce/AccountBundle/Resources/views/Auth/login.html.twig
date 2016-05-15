@@ -1,6 +1,6 @@
 <form class="" method='post' action='{{path("login")}}'>
     {% if error %}
-    <div class='red'>lol error</div><br>
+    <div class='red'>{{ error }}</div><br>
     {% endif %}
     <label for="" class="">Username</label>
     <input type="text" id="" name='username' class="" placeholder="Username" required autofocus>
