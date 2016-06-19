@@ -1,47 +1,158 @@
 html { height: 100%;}
-body { height: 100%; margin: 0px;}
+body {display: flex; flex-direction: column; align-items: center; min-height: 100%; height: 100%; margin: 0px; /*background-image: url('../images/black_pattern.png');*/}
+header { display:flex; justify-content: space-between; min-height:20%;height: 15%; background:#EFEFF1; width: 100%;
+	border-bottom:1vh solid #CCB387; }
+	header img {width: 20%;}
+	header h1 {width: 40%; float: left;}
+	#auth {
+		float: right;
+	}
+	#panier {display: flex; flex-direction: column;}
+	#username_home{height: 20%; width: 100%;}
+	#panier a {text-align: center; width: 100%;}
+	#panier #count {display:flex; justify-content:center;}
 
-#bg_canvas { display: block; position: fixed; z-index: -1; width: 100%; height: 100%; background-color: #111}
+	#panier #count span{display:flex; justify-content:center;border-radius: 50%; background-color: #CCB387; width: 10%; color: #EFEFF1 ;}
 
-header { height: 85px; background: #e0e0e0 url(../images/header.png); margin-bottom: 3%; }
-	header img { height: 100%; }
-		#auth {
-			float: right;
+#search_login { display: flex;height: 10%; min-height:10%; background-image: url('../images/black_pattern.png'); color: #EFEFF1; width:70%; margin-top: 10px;
+	justify-content: space-between; }
+
+#login {
+	display: none;
+}
+#login form {
+	display: flex; flex-direction: column;
+}
+#login #inscription {
+	margin-top: 1vh;
+}
+.item {
+	display: flex; flex-direction: column; align-items: center; margin-top: 1.2vh;
+}
+.item_menu img {
+
+}
+.item_menu {
+	display: flex; flex-direction: column; position: absolute; width: 10%;
+
+}
+#connexion:hover #login{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	top: 10px;
+	color: black;
+	border-top:1vh solid #CCB387;
+	background-color: #EFEFF1;
+	height: 40%;
+	z-index: 100;
+	padding:2vh;
+
+}
+#menu { display: flex; height: 100%; flex: 1; align-items: center}
+
+#main_div {display: flex; flex-direction: column; width: 70%; height: 100%; min-height: 100%;}
+#contents { display: flex; flex-direction:column; height: 100%; min-height: 100%;background-color: #EFEFF1;}
+
+
+#menu_category_slide {
+	display: flex;
+	padding-top: 2%;
+	justify-content: space-around;
+	height: 50%;
+	min-height: 50%;
+	width: 100%;
+}
+#menu_category {
+	display: flex;  background-image: url('../images/black_pattern.png'); width: 20%;border-radius: 8px;
+}
+#slider {display: flex; width: 65%; border-radius: 8px; overflow: hidden; position: relative;}
+
+
+#slider .slide {
+	display: flex; border-radius: 8px;position: absolute;
+}
+#button_div {display: flex; flex-direction: column; margin-top: 3%; min-height: 50%; height: 50%}
+#categories {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	height: 50%;
+
+}
+.category_preview {
+	display: flex;
+	flex: 1;
+	position: relative;
+	overflow:hidden;
+
+}
+.cat_title_preview{
+	display: flex;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+}
+.title_prev {font-size: 5vh; font-variant: small-caps; color: #fff;padding:2vh;}
+.cat_preview{
+	position: absolute;
+	min-width: 100%;
+}
+.arbre {background-color:#EFEFF1;}
+#big_container {display: flex; height: 100%; min-height: 100%; width: 100%; justify-content: space-between;}
+
+#container_products {
+	display: flex; width: 70%; flex-direction:column; height: 100%; min-height: 100%;
+}
+#container_products #contents {
+	background-color: #fff;
+}
+#category_theme {display: flex; flex-direction: column;width: 95%; min-height: 80%; height: 80%;align-self: center;}
+	#content-cat {display: flex; width: 100%; height: 100%; justify-content: space-between;}
+		#sidebar {display: flex; height: 100%; min-height: 100%;width: 20%; background-image: url('../images/black_pattern.png'); }
+		#products {
+		display: flex; justify-content: space-between; height: 100%; width: 100%;
 		}
+		.cart_product { margin-top:1vh; display:flex; flex-direction:column; min-height: 40%; height: 40%; width: 30%; }
+			.image_product {display: flex; height: 80%; width: 100%;
+			overflow:hidden; position: relative;}
+			.image_product img{position: absolute;}
+			.infos_product{display: flex; flex-direction: column; background-color:#F6F6F6;color:#302D2D;}
+			.designation {}
 
-#main_div { max-width: 960px; margin: auto; display: block; }
 
-#button_div { height: 70px; background-color: #e0e0e0; margin-top: 3%; }
-	#button_div .categories {}
-	#button_div .promo {}
-	#button_div .other {}
+#list_panier {
+	display: none; flex-direction: column; width: 14%;min-height:20%;background-color: red; position: absolute; top:130px; overflow-y: scroll;
+}
 
-footer { height: 150px; background-color: #e0e0e0; margin-top: 3%; }
+#panier:hover #list_panier {display: flex;}
+footer { height: 150px; background-color:#EFEFF1; margin-top: 3%; }
 
 /* ---- slider ---- */
 
-#slider { display: block; position: relative; margin: auto; overflow: hidden; cursor: pointer;}
-	#slides { display: block; width: 960px; height: 300px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
-	#slides:img { display: block; position: absolute; z-index: -1; width: 960px; height: 300px; transition: all 0.5s;}
+/*#slider { display:flex; position: relative;  overflow: hidden; cursor: pointer;}
+	#slides { display: block; width: 402px; height: 300px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
+	#slides:img { display: block; position: absolute; z-index: -1; width: 402px; height: 300px; transition: all 0.5s;}
 		.arrow { display: block; position: absolute; z-index: 999; width: 25px; height: 25px; padding: 5px; background: #000; opacity: 0.7; cursor: pointer; transition: all 0.2s;}
 			#leftArrow { top: 43%; left: 0px;}
 			#leftArrow:hover { top: 44%; width: 27px; height: 27px;}
 			#rightArrow { top: 43%; right: 0px;}
 			#rightArrow:hover { top: 44%; width: 27px; height: 27px;}
-	#bullets { display: block; position: absolute; z-index: 999; top: 560px; width: 960px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
+	#bullets { display: block; position: absolute; z-index: 999; top: 560px; width: 402px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
 	.bullet { display: inline-block; vertical-align: top; width: 20px; height: 20px; border-radius: 50%; margin: 11px 5px; background: #eee; cursor: pointer;}
 		.activeBullet { background: #f33;}
+		*/
+		/* ---- slider de presentation ---- */
 
-/* ---- slider de presentation ---- */
-
-#pst_slide { display: block; position: relative; margin: auto; height: 150px; overflow: hidden; cursor: pointer;}
-	#pst_slides { display: block; width: 960px;  margin-top: 3%; height: 150px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
-	#pst_slides:img { display: block; position: absolute; z-index: -1; width: 960px; height: 150x; transition: all 0.5s;}
+/*#pst_slide { display: block; position: relative; margin: auto; height: 150px; overflow: hidden; cursor: pointer;}
+	#pst_slides { display: block; width: 402px;  margin-top: 3%; height: 150px; border: 2px solid #333; border-bottom: 1px solid #333; overflow: hidden;}
+	#pst_slides:img { display: block; position: absolute; z-index: -1; width: 402px; height: 150x; transition: all 0.5s;}
 		.fleches { display: block; position: absolute; z-index: 999; width: 25px; height: 25px; padding: 5px; background: #000; opacity: 0.7; cursor: pointer; transition: all 0.2s;}
 			#gaucheArrow { top: 43%; left: 0px;}
 			#gaucheArrow:hover { top: 44%; width: 27px; height: 27px;}
 			#droiteArrow { top: 43%; right: 0px;}
 			#droiteArrow:hover { top: 44%; width: 27px; height: 27px;}
-	#points { display: block; position: absolute; z-index: 999; top: 560px; width: 960px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
+	#points { display: block; position: absolute; z-index: 999; top: 560px; width: 402px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
 	.point { display: inline-block; vertical-align: top; width: 20px; height: 20px; border-radius: 50%; margin: 11px 5px; background: #eee; cursor: pointer;}
-		.BulletActivated { background: #f33;}
+		.BulletActivated { background: #f33;}*/

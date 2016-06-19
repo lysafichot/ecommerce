@@ -5,7 +5,7 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -15,13 +15,16 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="ProductBundle">Ecommerce\ProductBundle\ProductBundle</parameter>
       <parameter key="AccountBundle">Ecommerce\AccountBundle\AccountBundle</parameter>
       <parameter key="AdminBundle">Ecommerce\AdminBundle\AdminBundle</parameter>
+      <parameter key="BraincraftedBootstrapBundle">Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
@@ -36,6 +39,7 @@
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="locale">en</parameter>
+    <parameter key="dir_media">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../web/uploads</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -104,7 +108,7 @@
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="security.secure_random.class">Symfony\Component\Security\Core\Util\SecureRandom</parameter>
     <parameter key="form.resolved_type_factory.class">Symfony\Component\Form\ResolvedFormTypeFactory</parameter>
@@ -161,7 +165,7 @@
     <parameter key="data_collector.form.extractor.class">Symfony\Component\Form\Extension\DataCollector\FormDataExtractor</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/profiler</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -185,7 +189,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/assetic/routing.yml</parameter>
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -196,7 +200,7 @@
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher</parameter>
-    <parameter key="debug.container.dump">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
     <parameter key="security.context.class">Symfony\Component\Security\Core\SecurityContext</parameter>
     <parameter key="security.user_checker.class">Symfony\Component\Security\Core\User\UserChecker</parameter>
@@ -299,6 +303,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>BraincraftedBootstrapBundle:Form:bootstrap.html.twig</parameter>
     </parameter>
     <parameter key="monolog.logger.class">Symfony\Bridge\Monolog\Logger</parameter>
     <parameter key="monolog.gelf.publisher.class">Gelf\MessagePublisher</parameter>
@@ -383,7 +388,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -501,7 +506,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -513,6 +518,93 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="assetic.asset_factory.class">Symfony\Bundle\AsseticBundle\Factory\AssetFactory</parameter>
+    <parameter key="assetic.asset_manager.class">Assetic\Factory\LazyAssetManager</parameter>
+    <parameter key="assetic.asset_manager_cache_warmer.class">Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer</parameter>
+    <parameter key="assetic.cached_formula_loader.class">Assetic\Factory\Loader\CachedFormulaLoader</parameter>
+    <parameter key="assetic.config_cache.class">Assetic\Cache\ConfigCache</parameter>
+    <parameter key="assetic.config_loader.class">Symfony\Bundle\AsseticBundle\Factory\Loader\ConfigurationLoader</parameter>
+    <parameter key="assetic.config_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\ConfigurationResource</parameter>
+    <parameter key="assetic.coalescing_directory_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource</parameter>
+    <parameter key="assetic.directory_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource</parameter>
+    <parameter key="assetic.filter_manager.class">Symfony\Bundle\AsseticBundle\FilterManager</parameter>
+    <parameter key="assetic.worker.ensure_filter.class">Assetic\Factory\Worker\EnsureFilterWorker</parameter>
+    <parameter key="assetic.worker.cache_busting.class">Assetic\Factory\Worker\CacheBustingWorker</parameter>
+    <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
+    <parameter key="assetic.node.paths" type="collection"/>
+    <parameter key="assetic.cache_dir">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/assetic</parameter>
+    <parameter key="assetic.bundles" type="collection">
+      <parameter>FrameworkBundle</parameter>
+      <parameter>SecurityBundle</parameter>
+      <parameter>TwigBundle</parameter>
+      <parameter>MonologBundle</parameter>
+      <parameter>SwiftmailerBundle</parameter>
+      <parameter>DoctrineBundle</parameter>
+      <parameter>SensioFrameworkExtraBundle</parameter>
+      <parameter>AsseticBundle</parameter>
+      <parameter>ProductBundle</parameter>
+      <parameter>AccountBundle</parameter>
+      <parameter>AdminBundle</parameter>
+      <parameter>BraincraftedBootstrapBundle</parameter>
+      <parameter>DebugBundle</parameter>
+      <parameter>WebProfilerBundle</parameter>
+      <parameter>SensioDistributionBundle</parameter>
+      <parameter>SensioGeneratorBundle</parameter>
+      <parameter>DoctrineFixturesBundle</parameter>
+    </parameter>
+    <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
+    <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
+    <parameter key="assetic.helper.dynamic.class">Symfony\Bundle\AsseticBundle\Templating\DynamicAsseticHelper</parameter>
+    <parameter key="assetic.helper.static.class">Symfony\Bundle\AsseticBundle\Templating\StaticAsseticHelper</parameter>
+    <parameter key="assetic.php_formula_loader.class">Symfony\Bundle\AsseticBundle\Factory\Loader\AsseticHelperFormulaLoader</parameter>
+    <parameter key="assetic.debug">true</parameter>
+    <parameter key="assetic.use_controller">true</parameter>
+    <parameter key="assetic.enable_profiler">false</parameter>
+    <parameter key="assetic.read_from">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../web</parameter>
+    <parameter key="assetic.write_to">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../web</parameter>
+    <parameter key="assetic.variables" type="collection"/>
+    <parameter key="assetic.java.bin">C:\ProgramData\Oracle\Java\javapath\java.EXE</parameter>
+    <parameter key="assetic.node.bin">C:\Program Files\nodejs\\node.EXE</parameter>
+    <parameter key="assetic.ruby.bin">C:\Ruby22-x64\bin\ruby.EXE</parameter>
+    <parameter key="assetic.sass.bin">C:\Ruby22-x64\bin\sass.BAT</parameter>
+    <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
+    <parameter key="assetic.filter.lessphp.class">Assetic\Filter\LessphpFilter</parameter>
+    <parameter key="assetic.filter.lessphp.presets" type="collection"/>
+    <parameter key="assetic.filter.lessphp.paths" type="collection"/>
+    <parameter key="assetic.filter.lessphp.formatter">null</parameter>
+    <parameter key="assetic.filter.lessphp.preserve_comments">null</parameter>
+    <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
+    <parameter key="assetic.twig_extension.functions" type="collection"/>
+    <parameter key="assetic.controller.class">Symfony\Bundle\AsseticBundle\Controller\AsseticController</parameter>
+    <parameter key="assetic.routing_loader.class">Symfony\Bundle\AsseticBundle\Routing\AsseticLoader</parameter>
+    <parameter key="assetic.cache.class">Assetic\Cache\FilesystemCache</parameter>
+    <parameter key="assetic.use_controller_worker.class">Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker</parameter>
+    <parameter key="assetic.request_listener.class">Symfony\Bundle\AsseticBundle\EventListener\RequestListener</parameter>
+    <parameter key="braincrafted_bootstrap.form.type.collection.class">Braincrafted\Bundle\BootstrapBundle\Form\Type\BootstrapCollectionType</parameter>
+    <parameter key="braincrafted_bootstrap.form.type.money.class">Braincrafted\Bundle\BootstrapBundle\Form\Type\MoneyType</parameter>
+    <parameter key="braincrafted_bootstrap.form.type.form_actions.class">Braincrafted\Bundle\BootstrapBundle\Form\Type\FormActionsType</parameter>
+    <parameter key="braincrafted_bootstrap.form.type.form_static_control.class">Braincrafted\Bundle\BootstrapBundle\Form\Type\FormStaticControlType</parameter>
+    <parameter key="braincrafted_bootstrap.form.extension.typesetter_extension.class">Braincrafted\Bundle\BootstrapBundle\Form\Extension\TypeSetterExtension</parameter>
+    <parameter key="braincrafted_bootstrap.form.extension.button_extension.class">Braincrafted\Bundle\BootstrapBundle\Form\Extension\ButtonTypeExtension</parameter>
+    <parameter key="braincrafted_bootstrap.form.extension.static_control.class">Braincrafted\Bundle\BootstrapBundle\Form\Extension\StaticControlExtension</parameter>
+    <parameter key="braincrafted_bootstrap.form.extension.input_group_button.class">Braincrafted\Bundle\BootstrapBundle\Form\Extension\InputGroupButtonExtension</parameter>
+    <parameter key="braincrafted_bootstrap.twig.icon_extension.class">Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapIconExtension</parameter>
+    <parameter key="braincrafted_bootstrap.twig.button_extension.class">Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapButtonExtension</parameter>
+    <parameter key="braincrafted_bootstrap.twig.label_extension.class">Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapLabelExtension</parameter>
+    <parameter key="braincrafted_bootstrap.twig.badge_extension.class">Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapBadgeExtension</parameter>
+    <parameter key="braincrafted_bootstrap.twig.form_extension.class">Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapFormExtension</parameter>
+    <parameter key="braincrafted_bootstrap.icon_prefix">glyphicon</parameter>
+    <parameter key="braincrafted_bootstrap.flash.class">Braincrafted\Bundle\BootstrapBundle\Session\FlashMessage</parameter>
+    <parameter key="braincrafted_bootstrap.customize" type="collection">
+      <parameter key="bootstrap_output">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/less/bootstrap.less</parameter>
+      <parameter key="bootstrap_template">BraincraftedBootstrapBundle:Bootstrap:bootstrap.less.twig</parameter>
+    </parameter>
+    <parameter key="braincrafted_bootstrap.assets_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap</parameter>
+    <parameter key="braincrafted_bootstrap.fontawesome_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/fortawesome/font-awesome</parameter>
+    <parameter key="braincrafted_bootstrap.fonts_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../web/fonts</parameter>
+    <parameter key="braincrafted_bootstrap.output_dir"></parameter>
+    <parameter key="braincrafted_bootstrap.css_preprocessor">lessphp</parameter>
+    <parameter key="braincrafted_bootstrap.icon_tag">span</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -588,6 +680,9 @@
     </parameter>
   </parameters>
   <services>
+    <service id="ecommerce.categories" class="Ecommerce\AdminBundle\Services\Categories">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="account.token_authenticator" class="Ecommerce\AccountBundle\Security\TokenAuthenticator">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
@@ -634,6 +729,12 @@
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer" public="false">
+            <tag name="kernel.cache_warmer" priority="10"/>
+            <argument type="service" id="service_container"/>
           </service>
         </argument>
         <argument type="service" id="kernel.class_cache.cache_warmer"/>
@@ -821,7 +922,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="collection"/>
@@ -1081,7 +1182,7 @@
               <argument key="Symfony\Component\Form\Extension\Core\Type\LanguageType">form.type.language</argument>
               <argument key="locale">form.type.locale</argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\LocaleType">form.type.locale</argument>
-              <argument key="money">form.type.money</argument>
+              <argument key="money">braincrafted_bootstrap.form.type.money</argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\MoneyType">form.type.money</argument>
               <argument key="number">form.type.number</argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\NumberType">form.type.number</argument>
@@ -1117,6 +1218,13 @@
               <argument key="Symfony\Component\Form\Extension\Core\Type\CurrencyType">form.type.currency</argument>
               <argument key="entity">form.type.entity</argument>
               <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType">form.type.entity</argument>
+              <argument key="bootstrap_collection">braincrafted_bootstrap.form.type.collection</argument>
+              <argument key="Braincrafted\Bundle\BootstrapBundle\Form\Type\BootstrapCollectionType">braincrafted_bootstrap.form.type.collection</argument>
+              <argument key="Braincrafted\Bundle\BootstrapBundle\Form\Type\MoneyType">braincrafted_bootstrap.form.type.money</argument>
+              <argument key="form_actions">braincrafted_bootstrap.form.type.form_actions</argument>
+              <argument key="Braincrafted\Bundle\BootstrapBundle\Form\Type\FormActionsType">braincrafted_bootstrap.form.type.form_actions</argument>
+              <argument key="bs_static">braincrafted_bootstrap.form.type.form_control_static</argument>
+              <argument key="Braincrafted\Bundle\BootstrapBundle\Form\Type\FormStaticControlType">braincrafted_bootstrap.form.type.form_control_static</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1124,12 +1232,20 @@
                 <argument>form.type_extension.form.validator</argument>
                 <argument>form.type_extension.csrf</argument>
                 <argument>form.type_extension.form.data_collector</argument>
+                <argument>braincrafted_bootstrap.form.extension.typesetter_extension</argument>
+                <argument>braincrafted_bootstrap.form.extension.static_control</argument>
               </argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\RepeatedType" type="collection">
                 <argument>form.type_extension.repeated.validator</argument>
               </argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\SubmitType" type="collection">
                 <argument>form.type_extension.submit.validator</argument>
+              </argument>
+              <argument key="Symfony\Component\Form\Extension\Core\Type\ButtonType" type="collection">
+                <argument>braincrafted_bootstrap.form.extension.form_action_button</argument>
+              </argument>
+              <argument key="Symfony\Component\Form\Extension\Core\Type\TextType" type="collection">
+                <argument>braincrafted_bootstrap.form.extension.input_group_button</argument>
               </argument>
             </argument>
             <argument type="collection">
@@ -1320,7 +1436,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev</argument>
+      <argument>C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev</argument>
     </service>
     <service id="templating.helper.assets" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\AssetsHelper">
       <tag name="templating.helper" alias="assets"/>
@@ -1392,7 +1508,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/profiler</argument>
+          <argument>file:C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/profiler</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
@@ -1612,6 +1728,15 @@
               </service>
             </argument>
           </call>
+          <call method="addLoader">
+            <argument type="service">
+              <service class="Symfony\Bundle\AsseticBundle\Routing\AsseticLoader" public="false">
+                <tag name="routing.loader"/>
+                <argument type="service" id="assetic.asset_manager"/>
+                <argument type="collection"/>
+              </service>
+            </argument>
+          </call>
         </service>
       </argument>
     </service>
@@ -1656,6 +1781,14 @@
         <argument type="collection">
           <argument>data_collector.router</argument>
           <argument>onKernelController</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument>assetic.request_listener</argument>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -1778,39 +1911,31 @@
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="collection">
         <argument type="service">
-          <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57389585448e10.60855862</argument>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider" public="false">
-            <argument type="collection">
-              <argument type="service" id="account.token_authenticator"/>
-            </argument>
-            <argument type="service" id="security.user.provider.concrete.in_memory"/>
-            <argument>main</argument>
-            <argument type="service" id="security.user_checker.secured_area"/>
-          </service>
-        </argument>
-        <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
-            <argument type="service" id="security.user.provider.concrete.in_memory"/>
-            <argument type="service" id="security.user_checker.secured_area"/>
+            <argument type="service" id="security.user.provider.concrete.your_db_provider"/>
+            <argument type="service" id="security.user_checker.main"/>
             <argument>main</argument>
             <argument type="service" id="security.encoder_factory"/>
             <argument>true</argument>
           </service>
         </argument>
         <argument type="service">
-          <service class="Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider" public="false">
-            <argument type="service" id="security.user_checker.secured_area"/>
-            <argument>ThisTokenIsNotSoSecretChangeIt</argument>
-            <argument>main</argument>
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+            <argument>576139b1c50ef6.14691544</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
+            <argument type="service" id="security.user.provider.concrete.your_db_provider"/>
+            <argument type="service" id="security.user_checker.main"/>
+            <argument>default</argument>
+            <argument type="service" id="security.encoder_factory"/>
+            <argument>true</argument>
           </service>
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57389585448e10.60855862</argument>
+            <argument>576139b1c50ef6.14691544</argument>
           </service>
         </argument>
       </argument>
@@ -1876,21 +2001,12 @@
                 <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
               </service>
             </argument>
-            <argument key="security.firewall.map.context.login" type="service">
-              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/login</argument>
-              </service>
-            </argument>
-            <argument key="security.firewall.map.context.secured_area" type="service">
-              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/</argument>
-              </service>
-            </argument>
             <argument key="security.firewall.map.context.main" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
                 <argument>^/</argument>
               </service>
             </argument>
+            <argument key="security.firewall.map.context.default">null</argument>
           </argument>
         </service>
       </argument>
@@ -1932,6 +2048,17 @@
       <call method="add">
         <argument type="service">
           <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/admin</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
             <argument>^/</argument>
           </service>
         </argument>
@@ -1962,17 +2089,6 @@
         </argument>
         <argument>null</argument>
       </call>
-      <call method="add">
-        <argument type="service">
-          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-            <argument>^/admin</argument>
-          </service>
-        </argument>
-        <argument type="collection">
-          <argument>ROLE_ADMIN</argument>
-        </argument>
-        <argument>null</argument>
-      </call>
     </service>
     <service id="security.access_listener" class="Symfony\Component\Security\Http\Firewall\AccessListener" public="false">
       <tag name="monolog.logger" channel="security"/>
@@ -1996,75 +2112,15 @@
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
     </service>
-    <service id="security.user.provider.concrete.in_memory" class="Symfony\Component\Security\Core\User\InMemoryUserProvider" public="false">
-      <call method="createUser">
-        <argument type="service">
-          <service class="Symfony\Component\Security\Core\User\User" public="false">
-            <argument>user</argument>
-            <argument>pass</argument>
-            <argument type="collection">
-              <argument>ROLE_USER</argument>
-            </argument>
-          </service>
-        </argument>
-      </call>
-      <call method="createUser">
-        <argument type="service">
-          <service class="Symfony\Component\Security\Core\User\User" public="false">
-            <argument>admin</argument>
-            <argument>$2y$12$c0hUWQSH7DfckotMPyFk9euTMxabGlXHm.hOQss5Id0U5qxrdn0w</argument>
-            <argument type="collection">
-              <argument>ROLE_ADMIN</argument>
-            </argument>
-          </service>
-        </argument>
-      </call>
+    <service id="security.user.provider.concrete.your_db_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider" public="false">
+      <argument type="service" id="doctrine"/>
+      <argument>AccountBundle:Accounts</argument>
+      <argument>username</argument>
+      <argument>null</argument>
     </service>
     <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection"/>
       <argument>null</argument>
-    </service>
-    <service id="security.firewall.map.context.login" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
-      <argument type="collection"/>
-      <argument>null</argument>
-    </service>
-    <service id="security.firewall.map.context.secured_area" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
-      <argument type="collection">
-        <argument type="service" id="security.channel_listener"/>
-        <argument type="service">
-          <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
-            <argument type="service" id="security.token_storage"/>
-            <argument type="collection">
-              <argument type="service" id="security.user.provider.concrete.in_memory"/>
-            </argument>
-            <argument>secured_area</argument>
-            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-            <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
-            <argument type="service" id="security.token_storage"/>
-            <argument>57389585448e10.60855862</argument>
-            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-            <argument type="service" id="security.authentication.manager"/>
-          </service>
-        </argument>
-        <argument type="service" id="security.access_listener"/>
-      </argument>
-      <argument type="service">
-        <service class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
-          <argument type="service" id="security.token_storage"/>
-          <argument type="service" id="security.authentication.trust_resolver"/>
-          <argument type="service" id="security.http_utils"/>
-          <argument>secured_area</argument>
-          <argument>null</argument>
-          <argument>null</argument>
-          <argument>null</argument>
-          <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-          <argument>false</argument>
-        </service>
-      </argument>
     </service>
     <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection">
@@ -2073,7 +2129,7 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.token_storage"/>
             <argument type="collection">
-              <argument type="service" id="security.user.provider.concrete.in_memory"/>
+              <argument type="service" id="security.user.provider.concrete.your_db_provider"/>
             </argument>
             <argument>main</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -2100,69 +2156,11 @@
                 <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
               </argument>
             </call>
-            <call method="addHandler">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
-                  <argument type="collection">
-                    <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                    <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                  </argument>
-                  <argument>ThisTokenIsNotSoSecretChangeIt</argument>
-                  <argument>main</argument>
-                  <argument type="collection">
-                    <argument key="lifetime">2232000</argument>
-                    <argument key="name">REMEMBERME</argument>
-                    <argument key="path">/</argument>
-                    <argument key="domain">null</argument>
-                    <argument key="secure">false</argument>
-                    <argument key="httponly">true</argument>
-                    <argument key="always_remember_me">false</argument>
-                    <argument key="remember_me_parameter">_remember_me</argument>
-                  </argument>
-                  <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-                </service>
-              </argument>
-            </call>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
-            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.in_memory"/>
-            <argument type="service" id="security.authentication.guard_handler"/>
-            <argument type="service" id="security.authentication.manager"/>
-            <argument>main</argument>
-            <argument type="collection">
-              <argument type="service" id="account.token_authenticator"/>
-            </argument>
-            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-            <call method="setRememberMeServices">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
-                  <argument type="collection">
-                    <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                    <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                  </argument>
-                  <argument>ThisTokenIsNotSoSecretChangeIt</argument>
-                  <argument>main</argument>
-                  <argument type="collection">
-                    <argument key="lifetime">2232000</argument>
-                    <argument key="name">REMEMBERME</argument>
-                    <argument key="path">/</argument>
-                    <argument key="domain">null</argument>
-                    <argument key="secure">false</argument>
-                    <argument key="httponly">true</argument>
-                    <argument key="always_remember_me">false</argument>
-                    <argument key="remember_me_parameter">_remember_me</argument>
-                  </argument>
-                  <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-                </service>
-              </argument>
-            </call>
           </service>
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
-            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.in_memory"/>
+            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.your_db_provider"/>
             <argument type="service" id="security.token_storage"/>
             <argument type="service" id="security.authentication.manager"/>
             <argument type="service">
@@ -2178,7 +2176,7 @@
                 <argument type="collection"/>
                 <call method="setOptions">
                   <argument type="collection">
-                    <argument key="login_path">login</argument>
+                    <argument key="login_path">/login</argument>
                     <argument key="always_use_default_target_path">false</argument>
                     <argument key="default_target_path">/</argument>
                     <argument key="target_path_parameter">_target_path</argument>
@@ -2198,7 +2196,7 @@
                 <argument type="service" id="monolog.logger.security" on-invalid="null"/>
                 <call method="setOptions">
                   <argument type="collection">
-                    <argument key="login_path">login</argument>
+                    <argument key="login_path">/login</argument>
                     <argument key="failure_path">null</argument>
                     <argument key="failure_forward">false</argument>
                     <argument key="failure_path_parameter">_failure_path</argument>
@@ -2207,7 +2205,7 @@
               </service>
             </argument>
             <argument type="collection">
-              <argument key="check_path">login</argument>
+              <argument key="check_path">/login</argument>
               <argument key="use_forward">false</argument>
               <argument key="require_previous_session">true</argument>
               <argument key="username_parameter">_username</argument>
@@ -2219,70 +2217,12 @@
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
             <argument>null</argument>
-            <call method="setRememberMeServices">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
-                  <argument type="collection">
-                    <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                    <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                  </argument>
-                  <argument>ThisTokenIsNotSoSecretChangeIt</argument>
-                  <argument>main</argument>
-                  <argument type="collection">
-                    <argument key="lifetime">2232000</argument>
-                    <argument key="name">REMEMBERME</argument>
-                    <argument key="path">/</argument>
-                    <argument key="domain">null</argument>
-                    <argument key="secure">false</argument>
-                    <argument key="httponly">true</argument>
-                    <argument key="always_remember_me">false</argument>
-                    <argument key="remember_me_parameter">_remember_me</argument>
-                  </argument>
-                  <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-                </service>
-              </argument>
-            </call>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Symfony\Component\Security\Http\Firewall\RememberMeListener" public="false">
-            <argument type="service" id="security.token_storage"/>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\RememberMe\TokenBasedRememberMeServices" public="false">
-                <argument type="collection">
-                  <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                  <argument type="service" id="security.user.provider.concrete.in_memory"/>
-                </argument>
-                <argument>ThisTokenIsNotSoSecretChangeIt</argument>
-                <argument>main</argument>
-                <argument type="collection">
-                  <argument key="lifetime">2232000</argument>
-                  <argument key="name">REMEMBERME</argument>
-                  <argument key="path">/</argument>
-                  <argument key="domain">null</argument>
-                  <argument key="secure">false</argument>
-                  <argument key="httponly">true</argument>
-                  <argument key="always_remember_me">false</argument>
-                  <argument key="remember_me_parameter">_remember_me</argument>
-                </argument>
-                <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-              </service>
-            </argument>
-            <argument type="service" id="security.authentication.manager"/>
-            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-            <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
-            <argument>true</argument>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy" public="false">
-                <argument>migrate</argument>
-              </service>
-            </argument>
           </service>
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57389585448e10.60855862</argument>
+            <argument>576139b1c50ef6.14691544</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2299,8 +2239,63 @@
             <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
               <argument type="service" id="http_kernel"/>
               <argument type="service" id="security.http_utils"/>
-              <argument>login</argument>
+              <argument>/login</argument>
               <argument>false</argument>
+            </service>
+          </argument>
+          <argument>null</argument>
+          <argument>null</argument>
+          <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+          <argument>false</argument>
+        </service>
+      </argument>
+    </service>
+    <service id="security.firewall.map.context.default" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
+      <argument type="collection">
+        <argument type="service" id="security.channel_listener"/>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="collection">
+              <argument type="service" id="security.user.provider.concrete.your_db_provider"/>
+            </argument>
+            <argument>default</argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\BasicAuthenticationListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument>default</argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\EntryPoint\BasicAuthenticationEntryPoint" public="false">
+                <argument>Secured Area</argument>
+              </service>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument>576139b1c50ef6.14691544</argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument type="service" id="security.authentication.manager"/>
+          </service>
+        </argument>
+        <argument type="service" id="security.access_listener"/>
+      </argument>
+      <argument type="service">
+        <service class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
+          <argument type="service" id="security.token_storage"/>
+          <argument type="service" id="security.authentication.trust_resolver"/>
+          <argument type="service" id="security.http_utils"/>
+          <argument>default</argument>
+          <argument type="service">
+            <service class="Symfony\Component\Security\Http\EntryPoint\BasicAuthenticationEntryPoint" public="false">
+              <argument>Secured Area</argument>
             </service>
           </argument>
           <argument>null</argument>
@@ -2313,14 +2308,15 @@
     <service id="twig" class="Twig_Environment">
       <argument type="service" id="twig.loader"/>
       <argument type="collection">
+        <argument key="form_themes" type="collection">
+          <argument>form_div_layout.html.twig</argument>
+          <argument>BraincraftedBootstrapBundle:Form:bootstrap.html.twig</argument>
+        </argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="exception_controller">twig.controller.exception:showAction</argument>
-        <argument key="form_themes" type="collection">
-          <argument>form_div_layout.html.twig</argument>
-        </argument>
         <argument key="autoescape">filename</argument>
-        <argument key="cache">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/twig</argument>
+        <argument key="cache">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -2458,6 +2454,7 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
+                      <argument>BraincraftedBootstrapBundle:Form:bootstrap.html.twig</argument>
                     </argument>
                   </service>
                 </argument>
@@ -2480,6 +2477,57 @@
             <tag name="twig.extension"/>
           </service>
         </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Twig\AsseticExtension" public="false">
+            <tag name="twig.extension"/>
+            <tag name="assetic.templating.twig"/>
+            <argument type="service" id="assetic.asset_factory"/>
+            <argument type="service" id="templating.name_parser"/>
+            <argument>true</argument>
+            <argument type="collection"/>
+            <argument type="collection">
+              <argument>FrameworkBundle</argument>
+              <argument>SecurityBundle</argument>
+              <argument>TwigBundle</argument>
+              <argument>MonologBundle</argument>
+              <argument>SwiftmailerBundle</argument>
+              <argument>DoctrineBundle</argument>
+              <argument>SensioFrameworkExtraBundle</argument>
+              <argument>AsseticBundle</argument>
+              <argument>ProductBundle</argument>
+              <argument>AccountBundle</argument>
+              <argument>AdminBundle</argument>
+              <argument>BraincraftedBootstrapBundle</argument>
+              <argument>DebugBundle</argument>
+              <argument>WebProfilerBundle</argument>
+              <argument>SensioDistributionBundle</argument>
+              <argument>SensioGeneratorBundle</argument>
+              <argument>DoctrineFixturesBundle</argument>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Bundle\AsseticBundle\DefaultValueSupplier" public="false">
+                <argument type="service" id="service_container"/>
+              </service>
+            </argument>
+          </service>
+        </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="braincrafted_bootstrap.twig.icon_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="braincrafted_bootstrap.twig.button_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="braincrafted_bootstrap.twig.label_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="braincrafted_bootstrap.twig.badge_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="braincrafted_bootstrap.twig.form_extension"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -2689,14 +2737,11 @@
               <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
                 <call method="addDriver">
                   <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument key="C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\ProductBundle\Resources\config\doctrine">Ecommerce\ProductBundle\Entity</argument>
-                        <argument key="C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\AccountBundle\Resources\config\doctrine">Ecommerce\AccountBundle\Entity</argument>
+                        <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\ProductBundle\Entity</argument>
                       </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
                     </service>
                   </argument>
                   <argument>Ecommerce\ProductBundle\Entity</argument>
@@ -2705,7 +2750,6 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
-                        <argument key="C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\ProductBundle\Resources\config\doctrine">Ecommerce\ProductBundle\Entity</argument>
                         <argument key="C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\AccountBundle\Resources\config\doctrine">Ecommerce\AccountBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
@@ -2719,7 +2763,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/doctrine/orm/Proxies</argument>
+            <argument>C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2750,6 +2794,15 @@
       </argument>
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
       <configurator service="doctrine.orm.default_manager_configurator" method="configure"/>
+    </service>
+    <service id="doctrine.orm.default_entity_manager.property_info_extractor" class="Symfony\Bridge\Doctrine\PropertyInfo\DoctrineExtractor">
+      <tag name="property_info.list_extractor" priority="-1001"/>
+      <tag name="property_info.type_extractor" priority="-999"/>
+      <argument type="service">
+        <service class="Doctrine\Common\Persistence\Mapping\ClassMetadataFactory" public="false">
+          <factory service="doctrine.orm.default_entity_manager" method="getMetadataFactory"/>
+        </service>
+      </argument>
     </service>
     <service id="sensio_framework_extra.view.guesser" class="Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser">
       <argument type="service" id="kernel"/>
@@ -2799,6 +2852,671 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
+    </service>
+    <service id="assetic.filter_manager" class="Symfony\Bundle\AsseticBundle\FilterManager">
+      <argument type="service" id="service_container"/>
+      <argument type="collection">
+        <argument key="lessphp">assetic.filter.lessphp</argument>
+        <argument key="cssrewrite">assetic.filter.cssrewrite</argument>
+      </argument>
+    </service>
+    <service id="assetic.asset_manager" class="Assetic\Factory\LazyAssetManager">
+      <argument type="service" id="assetic.asset_factory"/>
+      <argument type="collection">
+        <argument key="config" type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Loader\ConfigurationLoader" public="false">
+            <tag name="assetic.formula_loader" alias="config"/>
+          </service>
+        </argument>
+        <argument key="twig" type="service">
+          <service class="Assetic\Factory\Loader\CachedFormulaLoader" public="false">
+            <tag name="assetic.formula_loader" alias="twig"/>
+            <tag name="assetic.templating.twig"/>
+            <argument type="service">
+              <service class="Assetic\Extension\Twig\TwigFormulaLoader" public="false">
+                <tag name="assetic.templating.twig"/>
+                <tag name="monolog.logger" channel="assetic"/>
+                <argument type="service" id="twig"/>
+                <argument type="service" id="monolog.logger.assetic" on-invalid="ignore"/>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Assetic\Cache\ConfigCache" public="false">
+                <argument>C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/assetic/config</argument>
+              </service>
+            </argument>
+            <argument>true</argument>
+          </service>
+        </argument>
+      </argument>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\ConfigurationResource" public="false">
+            <tag name="assetic.formula_resource" loader="config"/>
+            <argument type="collection">
+              <argument key="bootstrap_css" type="collection">
+                <argument type="collection">
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/less/bootstrap.less</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\braincrafted\bootstrap-bundle\Braincrafted\Bundle\BootstrapBundle\DependencyInjection/../Resources/less/form.less</argument>
+                </argument>
+                <argument type="collection">
+                  <argument>lessphp</argument>
+                </argument>
+                <argument type="collection">
+                  <argument key="output">css/bootstrap.css</argument>
+                </argument>
+              </argument>
+              <argument key="bootstrap_js" type="collection">
+                <argument type="collection">
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/transition.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/alert.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/button.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/carousel.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/collapse.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/dropdown.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/modal.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/tooltip.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/popover.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/scrollspy.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/tab.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/twbs/bootstrap/js/affix.js</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\braincrafted\bootstrap-bundle\Braincrafted\Bundle\BootstrapBundle\DependencyInjection/../Resources/js/bc-bootstrap-collection.js</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection">
+                  <argument key="output">js/bootstrap.js</argument>
+                </argument>
+              </argument>
+              <argument key="jquery" type="collection">
+                <argument type="collection">
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/jquery/jquery/jquery-1.11.1.js</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection">
+                  <argument key="output">js/jquery.js</argument>
+                </argument>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>config</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>FrameworkBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/FrameworkBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>FrameworkBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SecurityBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/SecurityBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SecurityBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>TwigBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/TwigBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>TwigBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>MonologBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/MonologBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>MonologBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\monolog-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SwiftmailerBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/SwiftmailerBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SwiftmailerBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DoctrineBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/DoctrineBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DoctrineBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SensioFrameworkExtraBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/SensioFrameworkExtraBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SensioFrameworkExtraBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\sensio\framework-extra-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>AsseticBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/AsseticBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>AsseticBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\assetic-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>ProductBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/ProductBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>ProductBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\ProductBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>AccountBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/AccountBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>AccountBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\AccountBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>AdminBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/AdminBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>AdminBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\AdminBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>BraincraftedBootstrapBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/BraincraftedBootstrapBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>BraincraftedBootstrapBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\braincrafted\bootstrap-bundle\Braincrafted\Bundle\BootstrapBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DebugBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/DebugBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DebugBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>WebProfilerBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/WebProfilerBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>WebProfilerBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SensioDistributionBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/SensioDistributionBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SensioDistributionBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\sensio\distribution-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SensioGeneratorBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/SensioGeneratorBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SensioGeneratorBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\sensio\generator-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DoctrineFixturesBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/DoctrineFixturesBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DoctrineFixturesBundle</argument>
+                  <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\doctrine\doctrine-fixtures-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="service" id="templating.loader"/>
+            <argument></argument>
+            <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/Resources/views</argument>
+            <argument>/\.[^.]+\.twig$/</argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+    </service>
+    <service id="assetic.asset_factory" class="Symfony\Bundle\AsseticBundle\Factory\AssetFactory" public="false">
+      <argument type="service" id="kernel"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service">
+        <service class="Symfony\Component\DependencyInjection\ParameterBag\ParameterBag" public="false">
+          <factory service="service_container" method="getParameterBag"/>
+        </service>
+      </argument>
+      <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../web</argument>
+      <argument>true</argument>
+      <call method="addWorker">
+        <argument type="service">
+          <service class="Assetic\Factory\Worker\EnsureFilterWorker" public="false">
+            <tag name="assetic.factory_worker"/>
+            <argument>/\.less$/</argument>
+            <argument type="service" id="assetic.filter.lessphp"/>
+          </service>
+        </argument>
+      </call>
+      <call method="addWorker">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker" public="false">
+            <tag name="assetic.factory_worker"/>
+          </service>
+        </argument>
+      </call>
+    </service>
+    <service id="assetic.filter.lessphp" class="Assetic\Filter\LessphpFilter">
+      <tag name="assetic.filter" alias="lessphp"/>
+      <file>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/../vendor/leafo/lessphp/lessc.inc.php</file>
+      <call method="setPresets">
+        <argument type="collection"/>
+      </call>
+      <call method="setLoadPaths">
+        <argument type="collection"/>
+      </call>
+      <call method="setFormatter">
+        <argument>null</argument>
+      </call>
+      <call method="setPreserveComments">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="assetic.filter.cssrewrite" class="Assetic\Filter\CssRewriteFilter">
+      <tag name="assetic.filter" alias="cssrewrite"/>
+    </service>
+    <service id="assetic.controller" class="Symfony\Bundle\AsseticBundle\Controller\AsseticController">
+      <argument type="service" id="assetic.asset_manager"/>
+      <argument type="service">
+        <service class="Assetic\Cache\FilesystemCache" public="false">
+          <argument>C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/assetic/assets</argument>
+        </service>
+      </argument>
+      <argument>false</argument>
+      <argument type="service" id="profiler" on-invalid="null"/>
+    </service>
+    <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.type.collection" class="Braincrafted\Bundle\BootstrapBundle\Form\Type\BootstrapCollectionType">
+      <tag name="form.type" alias="bootstrap_collection"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.type.money" class="Braincrafted\Bundle\BootstrapBundle\Form\Type\MoneyType">
+      <tag name="form.type" alias="money"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.type.form_actions" class="Braincrafted\Bundle\BootstrapBundle\Form\Type\FormActionsType">
+      <tag name="form.type" alias="form_actions"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.type.form_control_static" class="Braincrafted\Bundle\BootstrapBundle\Form\Type\FormStaticControlType">
+      <tag name="form.type" alias="bs_static"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.extension.typesetter_extension" class="Braincrafted\Bundle\BootstrapBundle\Form\Extension\TypeSetterExtension">
+      <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" alias="form"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.extension.form_action_button" class="Braincrafted\Bundle\BootstrapBundle\Form\Extension\ButtonTypeExtension">
+      <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\ButtonType" alias="button"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.extension.static_control" class="Braincrafted\Bundle\BootstrapBundle\Form\Extension\StaticControlExtension">
+      <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" alias="form"/>
+    </service>
+    <service id="braincrafted_bootstrap.form.extension.input_group_button" class="Braincrafted\Bundle\BootstrapBundle\Form\Extension\InputGroupButtonExtension">
+      <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\TextType" alias="text"/>
+    </service>
+    <service id="braincrafted_bootstrap.twig.icon_extension" class="Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapIconExtension">
+      <tag name="twig.extension"/>
+      <argument>glyphicon</argument>
+      <argument>span</argument>
+    </service>
+    <service id="braincrafted_bootstrap.twig.button_extension" class="Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapButtonExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="braincrafted_bootstrap.twig.icon_extension"/>
+    </service>
+    <service id="braincrafted_bootstrap.twig.label_extension" class="Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapLabelExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="braincrafted_bootstrap.twig.badge_extension" class="Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapBadgeExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="braincrafted_bootstrap.twig.form_extension" class="Braincrafted\Bundle\BootstrapBundle\Twig\BootstrapFormExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="braincrafted_bootstrap.flash" class="Braincrafted\Bundle\BootstrapBundle\Session\FlashMessage">
+      <argument type="service" id="session"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3016,12 +3734,24 @@
         <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
+    <service id="monolog.logger.assetic" class="Symfony\Bridge\Monolog\Logger">
+      <argument>assetic</argument>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.console"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.debug"/>
+      </call>
+    </service>
     <service id="monolog.handler.debug" class="Symfony\Bridge\Monolog\Handler\DebugHandler">
       <argument>100</argument>
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/sessions</argument>
+      <argument>C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
@@ -3036,9 +3766,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app/config/routing_dev.yml</argument>
+      <argument>C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/assetic/routing.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev</argument>
+        <argument key="cache_dir">C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -3049,6 +3779,7 @@
         <argument key="matcher_dumper_class">Symfony\Component\Routing\Matcher\Dumper\PhpMatcherDumper</argument>
         <argument key="matcher_cache_class">appDevUrlMatcher</argument>
         <argument key="strict_requirements">true</argument>
+        <argument key="resource_type">yaml</argument>
       </argument>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.router" on-invalid="ignore"/>
@@ -3062,22 +3793,14 @@
       </argument>
       <argument type="service">
         <service class="Doctrine\Common\Cache\FilesystemCache" public="false">
-          <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\app\cache\dev/annotations</argument>
+          <argument>C:/wamp/www/Projet_WEB_Avance_E-commerce/app/cache/dev/annotations</argument>
         </service>
       </argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
       <argument type="collection">
-        <argument key="Ecommerce\AccountBundle\Entity\User" type="collection">
-          <argument key="class">%security.encoder.digest.class%</argument>
-          <argument key="arguments" type="collection">
-            <argument>sha512</argument>
-            <argument>true</argument>
-            <argument>9616</argument>
-          </argument>
-        </argument>
-        <argument key="Symfony\Component\Security\Core\User\User" type="collection">
+        <argument key="Ecommerce\AccountBundle\Entity\Accounts" type="collection">
           <argument key="class">%security.encoder.bcrypt.class%</argument>
           <argument key="arguments" type="collection">
             <argument>12</argument>
@@ -3088,7 +3811,7 @@
     <service id="security.password_encoder" class="Symfony\Component\Security\Core\Encoder\UserPasswordEncoder">
       <argument type="service" id="security.encoder_factory"/>
     </service>
-    <service id="security.user_checker.secured_area" class="Symfony\Component\Security\Core\User\UserChecker"/>
+    <service id="security.user_checker.main" class="Symfony\Component\Security\Core\User\UserChecker"/>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="service" id="templating.locator"/>
@@ -3124,6 +3847,10 @@
       <call method="addPath">
         <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\src\Ecommerce\AdminBundle/Resources/views</argument>
         <argument>Admin</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\braincrafted\bootstrap-bundle\Braincrafted\Bundle\BootstrapBundle/Resources/views</argument>
+        <argument>BraincraftedBootstrap</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\Projet_WEB_Avance_E-commerce\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -3217,7 +3944,7 @@
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
-    <service id="security.user_checker.main" alias="security.user_checker.secured_area"/>
+    <service id="security.user_checker.default" alias="security.user_checker.main"/>
     <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>
     <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.real"/>
     <service id="swiftmailer.plugin.messagelogger" alias="swiftmailer.mailer.default.plugin.messagelogger"/>

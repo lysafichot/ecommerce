@@ -1,0 +1,19 @@
+{% extends "AdminBundle:Default:index.html.twig" %}
+
+{% block board %}
+
+{% for product in products%}
+<div class='product_item'>
+    <div class='product'>
+        <span>Nom du produit :</span><span> {{ product.name}}</span>
+        <div class='categories_product'>
+            <span>Category :</span>
+            {% for category in product.categories %}
+            <span>{{ category.name}}</span>
+            {% endfor %}
+        </div>
+        </div>
+        {% endfor %}
+
+
+        {% endblock %}

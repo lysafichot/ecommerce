@@ -1,0 +1,250 @@
+<?php
+
+namespace Ecommerce\ProductBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity(repositoryClass="Ecommerce\ProductBundle\Repository\FeatureNameRepository")
+ * @ORM\Table(name="features_names")
+ * @UniqueEntity(fields="name", message="Name is already in use")
+ */
+class FeatureName
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Ecommerce\ProductBundle\Entity\FeatureValue", mappedBy="featureName")
+    * @ORM\JoinTable(name="feature_values")
+    * @ORM\JoinColumn(name="featureName_id", referencedColumnName="id", onDelete="cascade")
+
+    */
+    private $featureValues;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Ecommerce\ProductBundle\Entity\Category", inversedBy="featureNames", cascade={"persist"})
+    * @ORM\JoinTable(name="feature_names")
+    * @ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="cascade")
+    */
+    private $category;
+
+   /**
+     * @ORM\Column(name="search", type="integer", nullable=true)
+     */
+    private $search;
+
+public function __construct() {
+        $this->featureValues = new \Doctrine\Common\Collections\ArrayCollection();
+
+}
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return FeatureName
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Add featureValues
+     *
+     * @param \Ecommerce\ProductBundle\Entity\FeatureValue $featureValues
+     * @return FeatureName
+     */
+    public function addFeatureValue(\Ecommerce\ProductBundle\Entity\FeatureValue $featureValues)
+    {
+        $this->featureValues[] = $featureValues;
+
+        return $this;
+    }
+
+    /**
+     * Remove featureValues
+     *
+     * @param \Ecommerce\ProductBundle\Entity\FeatureValue $featureValues
+     */
+    public function removeFeatureValue(\Ecommerce\ProductBundle\Entity\FeatureValue $featureValues)
+    {
+        $this->featureValues->removeElement($featureValues);
+    }
+
+    /**
+     * Get featureValues
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFeatureValues()
+    {
+        return $this->featureValues;
+    }
+
+    /**
+     * Set productDerived
+     *
+     * @param \Ecommerce\ProductBundle\Entity\ProductDerived $productDerived
+     * @return FeatureName
+     */
+    public function setProductDerived(\Ecommerce\ProductBundle\Entity\ProductDerived $productDerived = null)
+    {
+        $this->productDerived = $productDerived;
+
+        return $this;
+    }
+
+    /**
+     * Get productDerived
+     *
+     * @return \Ecommerce\ProductBundle\Entity\ProductDerived
+     */
+    public function getProductDerived()
+    {
+        return $this->productDerived;
+    }
+    /**
+     * @var integer
+     */
+    private $idParent;
+
+
+    /**
+     * Set idParent
+     *
+     * @param integer $idParent
+     * @return FeatureName
+     */
+    public function setIdParent($idParent)
+    {
+        $this->idParent = $idParent;
+
+        return $this;
+    }
+
+    /**
+     * Get idParent
+     *
+     * @return integer
+     */
+    public function getIdParent()
+    {
+        return $this->idParent;
+    }
+
+    /**
+     * Add categories
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Category $categories
+     * @return FeatureName
+     */
+    public function addCategory(\Ecommerce\ProductBundle\Entity\Category $categories)
+    {
+        $this->categories[] = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Remove categories
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Category $categories
+     */
+    public function removeCategory(\Ecommerce\ProductBundle\Entity\Category $categories)
+    {
+        $this->categories->removeElement($categories);
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * Set search
+     *
+     * @param integer $search
+     * @return FeatureName
+     */
+    public function setSearch($search)
+    {
+        $this->search = $search;
+
+        return $this;
+    }
+
+    /**
+     * Get search
+     *
+     * @return integer
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Category $category
+     * @return FeatureName
+     */
+    public function setCategory(\Ecommerce\ProductBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Ecommerce\ProductBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+}

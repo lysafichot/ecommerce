@@ -1,0 +1,20 @@
+Ecommerce\ProductBundle\Entity\FeatureDerivedValue:
+    type: entity
+    table: feature_derived_values
+    repositoryClass: Ecommerce\ProductBundle\Repository\FeatureDerivedValueRepository
+    manyToOne:
+        productDerived:
+            targetEntity: ProductDerived
+            inversedBy: featureDerivedValues
+            cascade: ["persist", 'remove']
+        featureValue:
+            targetEntity: FeatureValue
+            mappedBy: featureDerivedValues
+            cascade: ["persist", 'remove']
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

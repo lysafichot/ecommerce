@@ -1,0 +1,58 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+{% block header %} {{ parent() }} {% endblock %}
+<div id='big_container'>
+	<div id='sidebar'></div>
+	<div id='container_products'>
+		<div id='search_login'>
+			{% block menu_auth %} {{ parent() }} {% endblock %}
+		</div>
+		<div id="main_div">
+			<div id='contents'>
+
+				<div  class='arbre'>
+					<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
+					{% for category in app.session.get('path') %}
+					<a class='' href="{{ path('products_category',  { 'id': category.id}) }}"><span class=''>{{ category.name}}</span></a>
+					{%endfor%}
+					{% set catego =app.session.get('path')|last%}
+
+					<a href=""></a>
+				</div>
+				<div id=category_theme>
+					<div id='content-cat'>
+
+						<div id='products'>
+
+							{% for product in products %}
+							<div class='cart_product'>
+
+								<div class='image_product'>
+									<img src={{ asset('uploads/') }}{{product.productsDerived[0].medias[0].path}}/>
+								</div>
+								<div class='infos_product'>
+									<div class='designation'>
+										{{ product.name}}
+									</div>
+									<span>{{product.productsDerived[0].price}} $</span>
+									<a href="{{ path('view_product',{ 'id':catego.id,'productId': product.id}) }}">+</a>
+									<button><a href="{{ path('add_panier',  { 'id':catego.id,'productId': product.productsDerived[0].id}) }}">Ajouter au panier</a></button>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,19 @@
+{% extends "AdminBundle:Default:index.html.twig" %}
+
+{% block board %}
+{{ form_start(form, {'attr': {'class': 'form-add-product'}}) }}
+{{ form_row(form.name, {'label' : "Nom du produit", 'attr': {'class': 'field'}}) }}
+{{ form_row(form.description, {'label' : "Description", 'attr': {'class': 'field'}}) }}
+{{ form_row(form.summary, {'label' : "Resume", 'attr': {'class': 'field'}}) }}
+{{ form_row(form.categories, {'label' : "Categories", 'attr': {'class': 'field'}}) }}
+
+{{ form_row(form.productsDerived.vars.prototype.name_derived, {'label' : "Nom du produit derives", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.productsDerived.vars.prototype.price, {'label' : "Prix du produit", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.productsDerived.vars.prototype.weight, {'label' : "Weight", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.productsDerived.vars.prototype.status, {'label' : "Status", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.productsDerived.vars.prototype.medias.vars.prototype.files) }}
+{{ form_widget(form.productsDerived) }}
+
+
+<button type="submit">Ajouter</button>
+{{ form_end(form) }}    {% endblock %}

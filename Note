@@ -1,0 +1,4 @@
+http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html
+composer require --dev doctrine/doctrine-fixtures-bundle
+APPKERNEL -> ajout  $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); }
+php app/console doctrine:fixture:load ->db purger avec donnee de test (--append si on ne veux pas effacer les donnes)

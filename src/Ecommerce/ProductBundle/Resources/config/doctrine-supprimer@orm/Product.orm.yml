@@ -1,0 +1,46 @@
+Ecommerce\ProductBundle\Entity\Product:
+    type: entity
+    table: products
+    repositoryClass: Ecommerce\ProductBundle\Repository\ProductRepository
+    manyToMany:
+        categories:
+            targetEntity: Category
+            inversedBy: products
+    oneToMany:
+        productsDerived:
+            targetEntity: ProductDerived
+            mappedBy: product
+            cascade: ["persist", 'remove']
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+        description:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+        summary:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+        status:
+            type: integer
+            nullable: false
+            unsigned: false
+        createdAt:
+            type: datetime
+            nullable: false
+            column: created_at
+    lifecycleCallbacks: {  }

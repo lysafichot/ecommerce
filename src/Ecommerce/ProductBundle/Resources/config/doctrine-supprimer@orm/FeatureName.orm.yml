@@ -1,0 +1,29 @@
+Ecommerce\ProductBundle\Entity\FeatureName:
+    type: entity
+    table: feature_names
+    repositoryClass: Ecommerce\ProductBundle\Repository\FeatureNameRepository
+    manyToMany:
+        categories:
+            targetEntity: Category
+            inversedBy: featureNames
+    oneToMany:
+        featureValues:
+            targetEntity: FeatureValue
+            mappedBy: featureName
+            cascade: ["persist", 'remove']
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        idParent:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: id_parent
+    lifecycleCallbacks: {  }

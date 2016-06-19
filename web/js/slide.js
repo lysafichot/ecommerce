@@ -4,7 +4,7 @@ function initImg(mode)
 	{
 		$("#slides img").each(function(index)
 		{
-			 $(this).css({left:index * 960});
+			 $(this).css({left:index * 402});
 			 $(this).css({top:0});
 			 activeSlide = 0;
 		});
@@ -76,7 +76,7 @@ function slide(pos)
 		$("#slides img").each(function(index)
 		{
 			var slide = $("#slides img")[index];
-			slide.style.left = ((index - activeSlide) * 960) + "px";
+			slide.style.left = ((index - activeSlide) * 402) + "px";
 		});
 	}
 	else if (sliderMode == 1)
@@ -84,7 +84,7 @@ function slide(pos)
 		$("#slides img").each(function(index)
 		{
 			var slide = $("#slides img")[index];
-			slide.style.top = ((index - activeSlide) * 960) + "px";
+			slide.style.top = ((index - activeSlide) * 402) + "px";
 		});
 	}
 	else if (sliderMode == 2)

@@ -1,0 +1,10 @@
+{% extends "AdminBundle:Default:index.html.twig" %}
+
+{% block board %}
+
+<div id='admin_view_product'>
+   {% include("ProductBundle:Product:products.html.twig" ) %}
+   {{product.productsDerived[0].nameDerived}}
+</div>
+
+{% endblock %}

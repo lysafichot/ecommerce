@@ -1,1 +1,44 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+<head>
+
+  {% block head %}
+
+  <meta charset="UTF-8" />
+  <title>{% block title %}Acceuil - {% endblock %} - THT</title>
+
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}"/>
+
+  {% endblock %}
+</head>
+<body>
+  {% block body %}
+  <div id='container'>
+    <div id='menu'>
+     {% block menu_admin %}
+      <h3>Panel Administrateur</h3>
+      <a href="{{ path('admin') }}">Dashboard</a>
+      <a href="{{ path('admin_categories') }}">Gerer les categories</a>
+      <a href="{{ path('admin_add_product') }}">Ajouter un produit</a>
+      <a href="{{ path('admin_all_products') }}">Voir les produits</a>
+  </div>
+
+  {% endblock %}
+  {% endblock %}
+  <div id='board'>
+   {% block board %}
+
+   {% endblock %}
+
+ </div>
+ {% block footer %}{% endblock %}
+
+
+ {% block javascripts %}
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+ <script type="text/javascript" src="{{ asset('js/admin.js') }}"></script>
+
+ {% endblock %}
+</body>
+</html>

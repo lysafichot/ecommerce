@@ -1,0 +1,43 @@
+Ecommerce\ProductBundle\Entity\Category:
+    type: entity
+    table: categories
+    repositoryClass: Ecommerce\ProductBundle\Repository\CategoryRepository
+    manyToMany:
+        products:
+            targetEntity: Product
+            mappedBy: categories
+        featureNames:
+            targetEntity: FeatureName
+            mappedBy: categories
+    oneToMany:
+        medias:
+            targetEntity: Media
+            mappedBy: category
+            cascade: ["persist", 'remove']
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        idParent:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: id_parent
+        name:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+        createdAt:
+            type: datetime
+            nullable: false
+            column: created_at
+    lifecycleCallbacks: {  }

@@ -1,19 +1,14 @@
 login:
     path:     /login
-    defaults: { _controller: AccountBundle:Auth:login }
+    defaults: { _controller: AccountBundle:Security:login }
+
+login_check:
+    path:     /login
+    defaults: { _controller: AccountBundle:Security:login }
+
+registration:
+    path:     /registration
+    defaults: { _controller: AccountBundle:Security:registration }
 
 logout:
     path:     /logout
-    defaults: { _controller: AccountBundle:Auth:logout }
-
-ecommerce_account_registration:
-    path:     /registration
-    defaults: { _controller: AccountBundle:Auth:registration }
-
-ecommerce_account_deconnexion:
-    path:     /deconnexion
-    defaults: { _controller: AccountBundle:Auth:deconnexion }
-
-ecommerce_account_account:
-    path:     /account
-    defaults: { _controller: AccountBundle:User:account }

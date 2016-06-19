@@ -1,0 +1,23 @@
+{% extends "AdminBundle:Default:index.html.twig" %}
+     {% block board %}
+
+<div class='contents'>
+
+{{ form_start(form, {'attr': {'class': 'form-add-category'}}) }}
+
+  {{ form_row(form.name, {'label' : "Nom de la categorie", 'attr': {'class': 'field_category'}}) }}
+  {{ form_row(form.medias.vars.prototype.files, {'label' : "Media", 'attr': {'class': 'field_category'}}) }}
+  {{ form_widget(form.preview, {'attr': {'class': 'field_category'}})}}
+
+  {{ form_widget(form.medias) }}
+    <button type="submit">Ajouter</button>
+    {{ form_end(form) }}
+
+    <div class='categories'>
+  {% for category in categories %}
+   {% include("AdminBundle:Category:category.html.twig" ) %}
+  {% endfor %}
+
+</div>
+</div>
+{% endblock %}

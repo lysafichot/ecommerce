@@ -1,3 +1,9 @@
-ecommerce_homepage:
-    path:     /
-    defaults: { _controller: ProductBundle:Index:index }
+products_category:
+    path:     /category/{id}
+    defaults: { _controller: ProductBundle:Categories:allproducts }
+add_panier:
+    path:     /category/{id}/{productId}
+    defaults: { _controller: ProductBundle:Products:addPanier }
+view_product:
+    path:     /category/{id}/product/{productId}
+    defaults: { _controller: ProductBundle:Products:view }

@@ -4,12 +4,13 @@ imports:
     - { resource: services.yml }
     - { resource: "@ProductBundle/Resources/config/services.yml" }
     - { resource: "@AccountBundle/Resources/config/services.yml" }
-    - { resource: "@AdminBundle/Resources/config/services.yml" }
+    - { resource: "@AdminBundle/Resources/config/services.yml"}
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    dir_media: '%kernel.root_dir%/../web/uploads'
 
 framework:
     #esi:             ~
@@ -67,3 +68,15 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Assetic Configuration
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+       lessphp:
+             file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+             apply_to: "\.less$"
+       cssrewrite: ~
+braincrafted_bootstrap:
+    css_preprocessor: lessphp

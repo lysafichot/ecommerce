@@ -1,0 +1,41 @@
+Ecommerce\AccountBundle\Entity\Accounts:
+    type: entity
+    table: accounts
+    repositoryClass: Ecommerce\AccountBundle\Repository\AccountsRepository
+    uniqueConstraints:
+        UNIQ_CAC89EACF85E0677:
+            columns:
+                - username
+        UNIQ_CAC89EACE7927C74:
+            columns:
+                - email
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+        email:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+        roles:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+    lifecycleCallbacks: {  }

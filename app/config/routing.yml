@@ -1,12 +1,15 @@
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 ecommerce_account:
     resource: "@AccountBundle/Resources/config/routing.yml"
     prefix:   /
 
-
 ecommerce:
     resource: "@ProductBundle/Resources/config/routing.yml"
     prefix:   /
+
+ecommerce_homepage:
+    path:     /
+    defaults: { _controller: ProductBundle:Index:index }

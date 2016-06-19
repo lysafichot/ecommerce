@@ -1,0 +1,135 @@
+/*h3 {
+	font-family: "blokletters_potloodpotlood";
+	font-size: 30px;
+	margin: 0px;
+	line-height: 55px;
+}
+body {
+	margin: auto;
+}
+#menu {
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	background-size: 400%;
+	background-image: linear-gradient(to right bottom, red, black);
+	-webkit-animation: HeaderAnim 5s ease infinite;
+	-moz-animation: HeaderAnim 5s ease infinite;
+	-o-animation: HeaderAnim 5s ease infinite;
+	animation: HeaderAnim 5s ease infinite;
+}
+@keyframes HeaderAnim {
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+#menu > ul {
+	list-style: none;
+}
+#menu > a {
+	font-size: 25px;
+	padding: 10px 15px;
+	letter-spacing: 1.5px;
+	background-color: grey;
+	color: white;
+	border-radius: 3px;
+	display: block;
+	position: relative;
+	margin: 0px 10px;
+	text-transform: none;
+	text-decoration: none;
+}*/
+
+/*           -----------OLD CSS------------       */
+
+html, body {display: flex; flex-direction: column;}
+body { min-height: 100%; margin: 0px;}
+#nav {width: 100%; height:10%; display:flex; background-color: #17181C;}
+#container {    display: flex;
+    width: 100%;
+    min-height: 100%;
+    max-height: none;
+    background-color: #F1F0F3;
+    position: absolute;}
+#menu {display: flex; flex-direction: column; width: 10%; background-color:#63AE6A;}
+#board {display: flex; flex-direction: column;width: 90%; position: relative;}
+.contents { display: flex; flex-direction: column; align-self:  center; width: 80%;}
+/*.form-add-category {display: flex;margin-top: 5vh; justify-content: space-between;}
+
+
+.category_items {display: flex; flex-direction: column; min-height: 10vh; background-color: #FFFFFF; border:0.1vh solid #212020; margin-bottom: 1vh;
+}
+.category_items .childrens_category, .childrens_category .category_items {display: flex; border: none;}
+.childrens_category .category_items {
+display: flex; width: 100%; justify-content: space-between;
+}
+.category_item {display: flex; justify-content: space-between;}
+.medias_category {
+		display: flex;
+
+}
+
+.product_item img {
+display: flex; width:10%;
+}*/
+
+/*          ----------PANEL ADMINISTRATEUR DU HAUT----------           */
+
+@font-face {
+	font-family: 'blokletters_potloodpotlood'; src: url("../font/Blokletters-Potlood.ttf") format("truetype");
+}
+.category_item {
+	width: 50%;
+}
+.category_item > h4 {
+	text-align: center;
+}
+.medias_category {
+	display: flex;
+	justify-content: left;
+}
+.medias_category span {
+	display: inline-flex;
+	margin: auto;
+	text-align: center;
+	justify-content: center;
+}
+.form_delete {
+	margin: auto;
+	text-align: center;
+	display: block;
+}
+.form_delete h4 {
+	margin: auto;
+	text-align: center;
+	justify-content: center;
+	display: inline-block;
+}
+.form_delete input[type=image] {
+	width: 20px;
+	justify-content: center;
+	margin: auto;
+	display: inline-block;
+	padding-bottom: 5px;
+}
+
+
+
+
+/*ADD  PRODUCT*/
+
+.form-add-product { display: flex; flex-direction: column; width: 80%; align-self: center; margin-top: 40px; }
+.form-add-product .form-group { display: flex; margin-top: 5px; min-height: 40px;}
+.form-add-product .control-label {display: flex; width:30%;}
+.form-add-product .field_product {display: flex; width: 70% }
+
+
+
+.form-add-category { display:flex; width: 80%;}
+.form-add-category .form-group{display: flex; flex-direction: column; height:40px; flex:1;}
+.form-add-category .field_category {display: flex; width: 80%;}
+.form-add-category #category_preview {display: flex; width: 30%; height: 40px;}
+
+.form-add-category .control-label {display: flex;}
+
+

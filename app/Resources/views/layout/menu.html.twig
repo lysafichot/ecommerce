@@ -1,13 +1,39 @@
-<div id='auth'>
-	<ul>
-		{% if(session)  %}
-		<li><a href="{{ path('logout') }}">Deconnexion</a></li>
+<div id='menu'>
+
+	<div class='item_menu' id='connexion'>
+
+		{% if is_granted('ROLE_USER') %}
+<div class='item'>
+		<a href="{{ path('logout') }}">Deconnexion</a>
+		</div>
 		{% else %}
-		<li><a href="{{ path('login') }}">Connexion</a></li>
-		<li><a href="{{ path('ecommerce_account_registration') }}">Inscription</a></li>
-		{% endif %}
+		<div class='item'>
+			<a href="{{ path('login') }}"><img src="{{ asset('images/log.png') }}"></a>
+			<span>Mon compte</span>
+		</div>
 
 
-	</ul>
+		<div id=login>
+			{% if error %}
+			<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
+			<form action="{{ path('login') }}" method="post">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="_password" />
+
+
+				<button type="submit">Se connecter</button>
+			</form>
+			<a id='inscription' href="{{ path('registration') }}">S'inscrire</a>
+		</div>
+
+
+
+	{% endif %}
+	</div>
 </div>
 

@@ -1,0 +1,38 @@
+{% extends "AdminBundle:Default:index.html.twig" %}
+
+{% block board %}
+
+{% for product in products%}
+<div class='product_item'>
+    <div class='product'>
+        <span>Nom du produit :</span><span> {{ product.name}}</span>
+        <div class='categories_product'>
+            <span>Category :</span>
+            {% for category in product.categories %}
+            <span>{{ category.name}}</span>
+            {% endfor %}
+        </div>
+        <span>{{ product.id}}</span>
+
+        <li><a href="{{ path('admin_view_product', { 'id': product.id }) }}">show</a></li>
+        <form action="{{ path('admin_delete_product', { 'id': product.id }) }}" method="post">
+            {{ form_widget(deleteForms[product.id]) }}
+            <button type="submit" class="btn btn-small"><span> Supprimer</span></button>
+            </form>
+
+            <div class='derived'>
+                {% for productsDerived in product.productsDerived %}
+                <span>Nom du produit derive:</span> <span>{{ productsDerived.nameDerived}}</span>
+                <span>Prix</span><span>{{ productsDerived.price}}</span>
+                <span>Weight</span><span>{{ productsDerived.weight}}</span>
+                <span>Id</span><span>{{ productsDerived.id}}</span>
+                {% for media in productsDerived.medias %}
+                <img src={{ asset('uploads/') }}{{media.path}}/>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+
+        {% endblock %}

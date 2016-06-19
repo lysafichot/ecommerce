@@ -1,0 +1,19 @@
+<header>
+	<img src="{{ asset('images/logo.png') }}"/>
+	<div id=panier>
+		<div id='username_home'></div>
+		{% if is_granted('ROLE_USER') %}
+		{{ app.user.username }}
+		{% endif %}
+		<a href=""><img src="{{ asset('images/cart.png') }}"/></a>
+		<div id='count'><span>{{app.session.get('total') }}</span></div>
+		<div id=list_panier>
+  {% for product in products_panier %}
+            <p><span>{{ product.derived.nameDerived}}</span> Prix unite: {{ product.derived.price }}<span>Qte: {{ product.count}}</span><span>Prix: {{ product.derived.price * product.count}}</span></p>
+
+            {% endfor %}
+           Prix total {{price}} $
+		</div>
+	</div>
+
+</header>

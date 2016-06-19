@@ -1,0 +1,376 @@
+<?php
+namespace Ecommerce\ProductBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Ecommerce\ProductBundle\Entity\Category;
+
+
+
+/**
+ * @ORM\Entity(repositoryClass="Ecommerce\ProductBundle\Repository\CategoryRepository")
+ * @ORM\Table(name="categories")
+ * @UniqueEntity(fields="name", message="Name is already in use")
+ */
+class Category
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * @ORM\Column(name="idParent", type="integer", length=11, nullable=true)
+     */
+    private $idParent;
+
+    /**
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $preview;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+
+    /**
+    * @ORM\OneToMany(targetEntity="Media", mappedBy="category", cascade={"persist"})
+    */
+    private $medias;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Ecommerce\ProductBundle\Entity\FeatureName", mappedBy="category", cascade={"persist"})
+    * @ORM\JoinTable(name="feature_names")
+    * @ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="cascade")
+    */
+    private $featureNames;
+
+    /**
+    * @ORM\ManyToMany(targetEntity="Ecommerce\ProductBundle\Entity\Product", mappedBy="categories", cascade={"persist"})
+    */
+    private $products_cat;
+
+
+    public function __construct() {
+        $this->createdAt = new \Datetime();
+        $this->updatedAt = new \Datetime();
+        $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->products_cat = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idParent
+     *
+     * @param integer $idParent
+     * @return Category
+     */
+    public function setIdParent($idParent)
+    {
+        $this->idParent = $idParent;
+
+        return $this;
+    }
+
+    /**
+     * Get idParent
+     *
+     * @return integer
+     */
+    public function getIdParent()
+    {
+        return $this->idParent;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Category
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+
+    public function setMedias($medias)
+    {
+        $this->medias = $medias;
+
+        return $this;
+    }
+
+    /**
+     * Get medias
+     *
+     * @return string
+     */
+    public function getMedias()
+    {
+        return $this->medias;
+    }
+
+    /**
+     * Add products
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Product $products
+     * @return Category
+     */
+    public function addProduct(\Ecommerce\ProductBundle\Entity\Product $products)
+    {
+        $this->products[] = $products;
+
+        return $this;
+    }
+
+    /**
+     * Remove products
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Product $products
+     */
+    public function removeProduct(\Ecommerce\ProductBundle\Entity\Product $products)
+    {
+        $this->products->removeElement($products);
+    }
+
+    /**
+     * Get products
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+    public function __toString() {
+        return strval($this->getId());
+    }
+
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Category
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Add medias
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Media $medias
+     * @return Category
+     */
+    public function addMedia(\Ecommerce\ProductBundle\Entity\Media $medias)
+    {
+        $this->medias[] = $medias;
+
+        return $this;
+    }
+
+    /**
+     * Remove medias
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Media $medias
+     */
+    public function removeMedia(\Ecommerce\ProductBundle\Entity\Media $medias)
+    {
+        $this->medias->removeElement($medias);
+    }
+
+    /**
+     * Add featureNames
+     *
+     * @param \Ecommerce\ProductBundle\Entity\FeatureName $featureNames
+     * @return Category
+     */
+    public function addFeatureName(\Ecommerce\ProductBundle\Entity\FeatureName $featureNames)
+    {
+        $this->featureNames[] = $featureNames;
+
+        return $this;
+    }
+
+    /**
+     * Remove featureNames
+     *
+     * @param \Ecommerce\ProductBundle\Entity\FeatureName $featureNames
+     */
+    public function removeFeatureName(\Ecommerce\ProductBundle\Entity\FeatureName $featureNames)
+    {
+        $this->featureNames->removeElement($featureNames);
+    }
+
+    /**
+     * Get featureNames
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFeatureNames()
+    {
+        return $this->featureNames;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $products;
+
+
+
+    /**
+     * Set updateddAt
+     *
+     * @param \DateTime $updateddAt
+     * @return Category
+     */
+    public function setUpdateddAt($updateddAt)
+    {
+        $this->updateddAt = $updateddAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updateddAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdateddAt()
+    {
+        return $this->updateddAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Category
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set preview
+     *
+     * @param integer $preview
+     * @return Category
+     */
+    public function setPreview($preview)
+    {
+        $this->preview = $preview;
+
+        return $this;
+    }
+
+    /**
+     * Get preview
+     *
+     * @return integer
+     */
+    public function getPreview()
+    {
+        return $this->preview;
+    }
+
+    /**
+     * Add products_cat
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Product $productsCat
+     * @return Category
+     */
+    public function addProductsCat(\Ecommerce\ProductBundle\Entity\Product $productsCat)
+    {
+        $this->products_cat[] = $productsCat;
+
+        return $this;
+    }
+
+    /**
+     * Remove products_cat
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Product $productsCat
+     */
+    public function removeProductsCat(\Ecommerce\ProductBundle\Entity\Product $productsCat)
+    {
+        $this->products_cat->removeElement($productsCat);
+    }
+
+    /**
+     * Get products_cat
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProductsCat()
+    {
+        return $this->products_cat;
+    }
+}

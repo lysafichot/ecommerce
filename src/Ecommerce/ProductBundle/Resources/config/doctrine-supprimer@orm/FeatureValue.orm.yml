@@ -1,0 +1,20 @@
+Ecommerce\ProductBundle\Entity\FeatureValue:
+    type: entity
+    table: feature_values
+    repositoryClass: Ecommerce\ProductBundle\Repository\FeatureValueRepository
+    manyToOne:
+        featureName:
+            targetEntity: FeatureName
+            inversedBy: featureValues
+            cascade: ["persist", 'remove']
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        value:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
