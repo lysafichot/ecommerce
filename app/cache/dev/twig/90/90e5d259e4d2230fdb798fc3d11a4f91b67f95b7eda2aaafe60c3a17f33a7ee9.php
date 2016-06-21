@@ -21,20 +21,20 @@ class __TwigTemplate_0e240de8c6f9468939cfa1feb83dfc705520bb5a8c28f7c8191b5c47d6b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_864b9e28ada66b14082db387a09970195138e2db2e3374ed0996f1750939a79e = $this->env->getExtension("native_profiler");
-        $__internal_864b9e28ada66b14082db387a09970195138e2db2e3374ed0996f1750939a79e->enter($__internal_864b9e28ada66b14082db387a09970195138e2db2e3374ed0996f1750939a79e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Admin/Product/all.html.twig"));
+        $__internal_40f3821d091891215ce30a336c6eb5562558d1e91359ff8c5b0b47c04607f254 = $this->env->getExtension("native_profiler");
+        $__internal_40f3821d091891215ce30a336c6eb5562558d1e91359ff8c5b0b47c04607f254->enter($__internal_40f3821d091891215ce30a336c6eb5562558d1e91359ff8c5b0b47c04607f254_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Admin/Product/all.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_864b9e28ada66b14082db387a09970195138e2db2e3374ed0996f1750939a79e->leave($__internal_864b9e28ada66b14082db387a09970195138e2db2e3374ed0996f1750939a79e_prof);
+        $__internal_40f3821d091891215ce30a336c6eb5562558d1e91359ff8c5b0b47c04607f254->leave($__internal_40f3821d091891215ce30a336c6eb5562558d1e91359ff8c5b0b47c04607f254_prof);
 
     }
 
     // line 3
     public function block_board($context, array $blocks = array())
     {
-        $__internal_516fbfe867f10d3ae0f9ff1e13b684a55618592c2bf944770a37bdcfea35c4f7 = $this->env->getExtension("native_profiler");
-        $__internal_516fbfe867f10d3ae0f9ff1e13b684a55618592c2bf944770a37bdcfea35c4f7->enter($__internal_516fbfe867f10d3ae0f9ff1e13b684a55618592c2bf944770a37bdcfea35c4f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "board"));
+        $__internal_c9299eb9de68494e3adce108d75b4ef468eb572ec5848ce1de8c4ee597963d2c = $this->env->getExtension("native_profiler");
+        $__internal_c9299eb9de68494e3adce108d75b4ef468eb572ec5848ce1de8c4ee597963d2c->enter($__internal_c9299eb9de68494e3adce108d75b4ef468eb572ec5848ce1de8c4ee597963d2c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "board"));
 
         // line 4
         echo "
@@ -110,13 +110,12 @@ class __TwigTemplate_0e240de8c6f9468939cfa1feb83dfc705520bb5a8c28f7c8191b5c47d6b
                 // line 28
                 echo twig_escape_filter($this->env, $this->getAttribute($context["productsDerived"], "id", array()), "html", null, true);
                 echo "</span>
-
                 ";
-                // line 30
+                // line 29
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["product"], "medias", array()));
+                $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["productsDerived"], "medias", array()));
                 foreach ($context['_seq'] as $context["_key"] => $context["media"]) {
-                    // line 31
+                    // line 30
                     echo "                <img src=";
                     echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("uploads/"), "html", null, true);
                     echo twig_escape_filter($this->env, $this->getAttribute($context["media"], "path", array()), "html", null, true);
@@ -126,13 +125,13 @@ class __TwigTemplate_0e240de8c6f9468939cfa1feb83dfc705520bb5a8c28f7c8191b5c47d6b
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['media'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 33
+                // line 32
                 echo "                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['productsDerived'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 34
+            // line 33
             echo "            </div>
         </div>
         ";
@@ -140,12 +139,12 @@ class __TwigTemplate_0e240de8c6f9468939cfa1feb83dfc705520bb5a8c28f7c8191b5c47d6b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 36
         echo "
 
         ";
         
-        $__internal_516fbfe867f10d3ae0f9ff1e13b684a55618592c2bf944770a37bdcfea35c4f7->leave($__internal_516fbfe867f10d3ae0f9ff1e13b684a55618592c2bf944770a37bdcfea35c4f7_prof);
+        $__internal_c9299eb9de68494e3adce108d75b4ef468eb572ec5848ce1de8c4ee597963d2c->leave($__internal_c9299eb9de68494e3adce108d75b4ef468eb572ec5848ce1de8c4ee597963d2c_prof);
 
     }
 
@@ -161,7 +160,7 @@ class __TwigTemplate_0e240de8c6f9468939cfa1feb83dfc705520bb5a8c28f7c8191b5c47d6b
 
     public function getDebugInfo()
     {
-        return array (  144 => 37,  136 => 34,  130 => 33,  120 => 31,  116 => 30,  111 => 28,  107 => 27,  103 => 26,  98 => 25,  94 => 24,  86 => 19,  82 => 18,  78 => 17,  73 => 15,  70 => 14,  61 => 12,  57 => 11,  51 => 8,  47 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  143 => 36,  135 => 33,  129 => 32,  119 => 30,  115 => 29,  111 => 28,  107 => 27,  103 => 26,  98 => 25,  94 => 24,  86 => 19,  82 => 18,  78 => 17,  73 => 15,  70 => 14,  61 => 12,  57 => 11,  51 => 8,  47 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends "AdminBundle:Default:index.html.twig" %}*/
@@ -192,8 +191,7 @@ class __TwigTemplate_0e240de8c6f9468939cfa1feb83dfc705520bb5a8c28f7c8191b5c47d6b
 /*                 <span>Prix</span><span>{{ productsDerived.price}}</span>*/
 /*                 <span>Weight</span><span>{{ productsDerived.weight}}</span>*/
 /*                 <span>Id</span><span>{{ productsDerived.id}}</span>*/
-/* */
-/*                 {% for media in product.medias %}*/
+/*                 {% for media in productsDerived.medias %}*/
 /*                 <img src={{ asset('uploads/') }}{{media.path}}/>*/
 /*                 {% endfor %}*/
 /*                 {% endfor %}*/

@@ -4,6 +4,8 @@ namespace Ecommerce\ProductBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Ecommerce\BossController;
+
 use Ecommerce\AdminBundle\Form\ProductType;
 use Ecommerce\AdminBundle\Form\ProductDerivedType;
 use Ecommerce\ProductBundle\Entity\Media;
@@ -16,33 +18,34 @@ use Ecommerce\ProductBundle\Entity\ProductDerived;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ProductsController extends Controller
+class ProductsController extends BossController
 {
-
 	public function addPanierAction($id, $productId) {
 		$em = $this->getDoctrine()->getManager();
 		$session = $this->getRequest()->getSession();
-		/*$session->remove('products');die;*/
 		$products = $session->get('products');
 		if(!$products) {
 			$products = [];
 		}
-
 		$already = 0;
-		foreach ($products as $value) {
-			if($value->derived->getId() == $productId) {
-				$already = 1;
-				$value->count +=1;
-
+		if(!empty($products)) {
+			foreach ($products as $value) {
+				if($value->derived->getId() == $productId) {
+					$already = 1;
+					$value->count +=1;
+				}
 			}
 		}
-		/*		var_dump($products);die;*/
+
 		if($already == 0) {
-			$derived =  $em->getRepository('ProductBundle:ProductDerived')->find($productId);
+			$derived =   $em->getRepository('ProductBundle:ProductDerived')->find($productId);
+			$medias = $em->getRepository('ProductBundle:Media')->findBy(['productDerived' => $derived->getId()]);
+			$derived->setMedias($medias);
 
 			$obj = new \stdClass;
-			$obj->derived =$derived;
+			$obj->derived = $derived;
 			$obj->count= 1;
+
 			array_push($products, $obj);
 
 			$session->set('products',$products);
@@ -50,30 +53,52 @@ class ProductsController extends Controller
 		return $this->redirect($this->generateUrl('products_category', array('id' => $id)), 301);
 
 	}
-	public function viewAction($id, $productId) {
+	public function viewAction($productId) {
 
-		$session = $this->getRequest()->getSession();
-		/*$session->remove('products');die;*/
-		$products_panier = $session->get('products');
-		/*		var_dump($products_panier);die;*/
-		$price = null;
-		foreach ($products_panier as $product) {
+		$em = $this->getDoctrine()->getManager();
+		$product = $em->getRepository('ProductBundle:Product')->find($productId);
 
-			$price += $product->count * $product->derived->getPrice();
-		}
-
-
-		$authenticationUtils = $this->get('security.authentication_utils');
-		$error = $authenticationUtils->getLastAuthenticationError();
-		$lastUsername = $authenticationUtils->getLastUsername();
-
-		return $this->render('ProductBundle:Product:view.html.twig', array(
-		                                                                   'price' => $price,
+		return $this->rend('ProductBundle:Product:view.html.twig', array(
 		                                                                   'product' => $product,
-		                                                                   'products_panier' => $products_panier,
-		                                                                   'last_username' => $lastUsername,
-		                                                                   'error'         => $error,
 		                                                                   ));
 	}
 
+	public function panierAction() {
+
+		return $this->rend('ProductBundle:Panier:view.html.twig', array(
+
+		                                                                  ));
+	}
+
+	public function removePanierAction($id) {
+		$session = $this->getRequest()->getSession();
+		$products = $session->get('products');
+		foreach ($products as $key => $value) {
+			if($value->derived->getId() == $id) {
+				unset($products[$key]);
+
+			}
+		}
+		$session->set('products',$products);
+		return $this->redirectToRoute('panier');
+
+	}
+	public function qtePanierAction($id, $option) {
+		$session = $this->getRequest()->getSession();
+		$products = $session->get('products');
+		foreach ($products as $key => $value) {
+			if($value->derived->getId() == $id){
+				$count = $value->count;
+				if($option == false && $count > 1) {
+					$value->count -= 1;
+				}
+				if($option == true) {
+					$value->count += 1;
+				}
+
+			}
+		}
+		$session->set('products',$products);
+		return $this->redirectToRoute('panier');
+	}
 }

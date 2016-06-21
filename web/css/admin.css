@@ -54,6 +54,12 @@ body { min-height: 100%; margin: 0px;}
 #menu {display: flex; flex-direction: column; width: 10%; background-color:#63AE6A;}
 #board {display: flex; flex-direction: column;width: 90%; position: relative;}
 .contents { display: flex; flex-direction: column; align-self:  center; width: 80%;}
+<<<<<<< HEAD
+.form-add-category {display: flex;margin-top: 5vh; justify-content: space-between;}
+.hidden {
+	display: none;
+}
+=======
 /*.form-add-category {display: flex;margin-top: 5vh; justify-content: space-between;}
 
 
@@ -69,6 +75,7 @@ display: flex; width: 100%; justify-content: space-between;
 
 }
 
+>>>>>>> 6f498169019b9018345772227c1e8e2bb51f8adc
 .product_item img {
 display: flex; width:10%;
 }*/
@@ -84,15 +91,15 @@ display: flex; width:10%;
 .category_item > h4 {
 	text-align: center;
 }
-.medias_category {
-	display: flex;
-	justify-content: left;
-}
 .medias_category span {
 	display: inline-flex;
 	margin: auto;
 	text-align: center;
 	justify-content: center;
+}
+.medias_category a {
+	display: block;
+text-align: center;
 }
 .form_delete {
 	margin: auto;
@@ -112,7 +119,9 @@ display: flex; width:10%;
 	display: inline-block;
 	padding-bottom: 5px;
 }
-
+h4 {
+	cursor: pointer;
+}
 
 
 

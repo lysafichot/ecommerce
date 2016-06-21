@@ -15,8 +15,8 @@ class __TwigTemplate_cebd487b50b050933271456c59cc0c79cb4622b08ede196d6a51549da36
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b223fb6784334584b0dfb4c5fa60688aa341620843688e6da3afc4c396153243 = $this->env->getExtension("native_profiler");
-        $__internal_b223fb6784334584b0dfb4c5fa60688aa341620843688e6da3afc4c396153243->enter($__internal_b223fb6784334584b0dfb4c5fa60688aa341620843688e6da3afc4c396153243_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Admin/Category/category.html.twig"));
+        $__internal_f4369c8883c8e5444d0021d46c47ba7ed00c07d0f5c1a1e1a422f25e64f62653 = $this->env->getExtension("native_profiler");
+        $__internal_f4369c8883c8e5444d0021d46c47ba7ed00c07d0f5c1a1e1a422f25e64f62653->enter($__internal_f4369c8883c8e5444d0021d46c47ba7ed00c07d0f5c1a1e1a422f25e64f62653_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Admin/Category/category.html.twig"));
 
         // line 1
         echo "<div class='category_item'>
@@ -25,19 +25,20 @@ class __TwigTemplate_cebd487b50b050933271456c59cc0c79cb4622b08ede196d6a51549da36
         // line 3
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_delete_category", array("id" => $this->getAttribute((isset($context["category"]) ? $context["category"] : $this->getContext($context, "category")), "id", array()))), "html", null, true);
         echo "\" method=\"post\" }}>
+
 \t\t<h4 class='name_category'> ";
-        // line 4
+        // line 5
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["category"]) ? $context["category"] : $this->getContext($context, "category")), "name", array()), "html", null, true);
         echo " </h4>
 \t\t<input border=0 src=\"/images/delete.svg\" type=image value=submit align=\"middle\"/>
 \t</form>
 \t<div class='medias_category' >
 \t\t";
-        // line 8
+        // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["category"]) ? $context["category"] : $this->getContext($context, "category")), "medias", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["medias"]) {
-            // line 9
+            // line 10
             echo "\t\t<img src=";
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("uploads/"), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute($context["medias"], "path", array()), "html", null, true);
@@ -47,17 +48,17 @@ class __TwigTemplate_cebd487b50b050933271456c59cc0c79cb4622b08ede196d6a51549da36
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['medias'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
+        // line 12
         echo "
 \t\t";
-        // line 12
+        // line 13
         if ($this->getAttribute((isset($context["category"]) ? $context["category"] : null), "children", array(), "any", true, true)) {
-            // line 13
+            // line 14
             echo "\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["category"], "children", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-                // line 14
+                // line 15
                 echo "\t\t      <a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_products_category", array("id" => $this->getAttribute($context["category"], "id", array()))), "html", null, true);
                 echo "\"><span>";
@@ -69,15 +70,15 @@ class __TwigTemplate_cebd487b50b050933271456c59cc0c79cb4622b08ede196d6a51549da36
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 17
+            // line 18
             echo "\t\t";
         }
-        // line 18
+        // line 19
         echo "\t</div>
 </div>
 ";
         
-        $__internal_b223fb6784334584b0dfb4c5fa60688aa341620843688e6da3afc4c396153243->leave($__internal_b223fb6784334584b0dfb4c5fa60688aa341620843688e6da3afc4c396153243_prof);
+        $__internal_f4369c8883c8e5444d0021d46c47ba7ed00c07d0f5c1a1e1a422f25e64f62653->leave($__internal_f4369c8883c8e5444d0021d46c47ba7ed00c07d0f5c1a1e1a422f25e64f62653_prof);
 
     }
 
@@ -93,12 +94,13 @@ class __TwigTemplate_cebd487b50b050933271456c59cc0c79cb4622b08ede196d6a51549da36
 
     public function getDebugInfo()
     {
-        return array (  76 => 18,  73 => 17,  61 => 14,  56 => 13,  54 => 12,  51 => 11,  41 => 9,  37 => 8,  30 => 4,  26 => 3,  22 => 1,);
+        return array (  77 => 19,  74 => 18,  62 => 15,  57 => 14,  55 => 13,  52 => 12,  42 => 10,  38 => 9,  31 => 5,  26 => 3,  22 => 1,);
     }
 }
 /* <div class='category_item'>*/
 /* */
 /* 	<form class="form_delete" action="{{ path('admin_delete_category', {'id' :category.id}) }}" method="post" }}>*/
+/* */
 /* 		<h4 class='name_category'> {{category.name}} </h4>*/
 /* 		<input border=0 src="/images/delete.svg" type=image value=submit align="middle"/>*/
 /* 	</form>*/

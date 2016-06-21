@@ -15,12 +15,14 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request)
     {
+
+        //BOSSCONTROLLER
     	$authenticationUtils = $this->get('security.authentication_utils');
     	$error = $authenticationUtils->getLastAuthenticationError();
     	$lastUsername = $authenticationUtils->getLastUsername();
 
     	return $this->render(
-    	                    'AccountBundle:security:login.html.twig',
+    	                    'AccountBundle:Security:login.html.twig',
     	                     array(
     	                           'last_username' => $lastUsername,
     	                           'error'         => $error,
@@ -55,7 +57,7 @@ class SecurityController extends Controller
             return $this->redirectToRoute('ecommerce_homepage');
         }
 
-        return $this->render('AccountBundle:Auth:registration.html.twig', array(
+        return $this->render('AccountBundle:Security:registration.html.twig', array(
                                                                                 'form' => $form->createView(),
                                                                                 ));
     }

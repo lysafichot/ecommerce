@@ -12,3 +12,7 @@ registration:
 
 logout:
     path:     /logout
+
+account:
+    path:     /account
+    defaults: { _controller: AccountBundle:Accounts:account}

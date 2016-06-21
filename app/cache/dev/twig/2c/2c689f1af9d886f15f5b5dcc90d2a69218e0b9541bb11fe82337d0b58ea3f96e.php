@@ -15,8 +15,8 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_aa7572c5a7ffda140e62ab1603948c0e01392966eca0fa49966885acb426e0df = $this->env->getExtension("native_profiler");
-        $__internal_aa7572c5a7ffda140e62ab1603948c0e01392966eca0fa49966885acb426e0df->enter($__internal_aa7572c5a7ffda140e62ab1603948c0e01392966eca0fa49966885acb426e0df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout/menu.html.twig"));
+        $__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0 = $this->env->getExtension("native_profiler");
+        $__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0->enter($__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout/menu.html.twig"));
 
         // line 1
         echo "<div id='menu'>
@@ -27,45 +27,51 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
         // line 5
         if ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
             // line 6
-            echo "<div class='item'>
-\t\t<a href=\"";
+            echo "\t\t<div class='item'>
+\t\t\t<a href=\"";
             // line 7
             echo $this->env->getExtension('routing')->getPath("logout");
             echo "\">Deconnexion</a>
 \t\t</div>
+\t\t<div class='item'>
+\t\t\t<a href=\"";
+            // line 10
+            echo $this->env->getExtension('routing')->getPath("account");
+            echo "\">Mon compte</a>
+\t\t</div>
 \t\t";
         } else {
-            // line 10
+            // line 13
             echo "\t\t<div class='item'>
 \t\t\t<a href=\"";
-            // line 11
+            // line 14
             echo $this->env->getExtension('routing')->getPath("login");
             echo "\"><img src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("images/log.png"), "html", null, true);
             echo "\"></a>
-\t\t\t<span>Mon compte</span>
+\t\t\t<span>Connexion</span>
 \t\t</div>
 
 
 \t\t<div id=login>
 \t\t\t";
-            // line 17
+            // line 20
             if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-                // line 18
+                // line 21
                 echo "\t\t\t<div>";
                 echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
                 echo "</div>
 \t\t\t";
             }
-            // line 20
+            // line 23
             echo "
 \t\t\t<form action=\"";
-            // line 21
+            // line 24
             echo $this->env->getExtension('routing')->getPath("login");
             echo "\" method=\"post\">
 \t\t\t\t<label for=\"username\">Username:</label>
 \t\t\t\t<input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-            // line 23
+            // line 26
             echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
             echo "\" />
 
@@ -76,22 +82,22 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
 \t\t\t\t<button type=\"submit\">Se connecter</button>
 \t\t\t</form>
 \t\t\t<a id='inscription' href=\"";
-            // line 31
+            // line 34
             echo $this->env->getExtension('routing')->getPath("registration");
             echo "\">S'inscrire</a>
 \t\t</div>
 
 
 
-\t";
+\t\t";
         }
-        // line 37
+        // line 40
         echo "\t</div>
 </div>
 
 ";
         
-        $__internal_aa7572c5a7ffda140e62ab1603948c0e01392966eca0fa49966885acb426e0df->leave($__internal_aa7572c5a7ffda140e62ab1603948c0e01392966eca0fa49966885acb426e0df_prof);
+        $__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0->leave($__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0_prof);
 
     }
 
@@ -107,7 +113,7 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
 
     public function getDebugInfo()
     {
-        return array (  89 => 37,  80 => 31,  69 => 23,  64 => 21,  61 => 20,  55 => 18,  53 => 17,  42 => 11,  39 => 10,  33 => 7,  30 => 6,  28 => 5,  22 => 1,);
+        return array (  95 => 40,  86 => 34,  75 => 26,  70 => 24,  67 => 23,  61 => 21,  59 => 20,  48 => 14,  45 => 13,  39 => 10,  33 => 7,  30 => 6,  28 => 5,  22 => 1,);
     }
 }
 /* <div id='menu'>*/
@@ -115,13 +121,16 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
 /* 	<div class='item_menu' id='connexion'>*/
 /* */
 /* 		{% if is_granted('ROLE_USER') %}*/
-/* <div class='item'>*/
-/* 		<a href="{{ path('logout') }}">Deconnexion</a>*/
+/* 		<div class='item'>*/
+/* 			<a href="{{ path('logout') }}">Deconnexion</a>*/
+/* 		</div>*/
+/* 		<div class='item'>*/
+/* 			<a href="{{ path('account') }}">Mon compte</a>*/
 /* 		</div>*/
 /* 		{% else %}*/
 /* 		<div class='item'>*/
 /* 			<a href="{{ path('login') }}"><img src="{{ asset('images/log.png') }}"></a>*/
-/* 			<span>Mon compte</span>*/
+/* 			<span>Connexion</span>*/
 /* 		</div>*/
 /* */
 /* */
@@ -145,7 +154,7 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
 /* */
 /* */
 /* */
-/* 	{% endif %}*/
+/* 		{% endif %}*/
 /* 	</div>*/
 /* </div>*/
 /* */

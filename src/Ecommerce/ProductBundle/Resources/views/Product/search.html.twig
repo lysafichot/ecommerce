@@ -1,0 +1,60 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+{% block header %} {{ parent() }} {% endblock %}
+<div id='big_container'>
+	<div id='sidebar'></div>
+	<div id='container_products'>
+		<div id='search_login'>
+			{% block menu_auth %} {{ parent() }} {% endblock %}
+		</div>
+		<div id="main_div">
+			<div id='contents'>
+
+				<div  class='arbre'>
+					<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
+					<span>{{postsearch}}</span>
+
+					<a href=""></a>
+				</div>
+				<div id='search_result'>
+					{% for search in searchs %}
+
+					<div class='cart_product'>
+
+						<div class='image_product'>
+							<img src={{ asset('uploads/') }}{{search.productsDerived[0].medias[0].path}}/>
+						</div>
+						<div class='infos_product'>
+							<div class='designation'>
+								{{ search.name }}
+							</div>
+							{% if search.productsDerived|length - 1 == 1 %}
+
+							<p>{{search.productsDerived|length - 1}} produit similaire</p>
+							{% elseif search.productsDerived|length - 1 > 1 %}
+							<p>{{search.productsDerived|length - 1}} produits similaires</p>
+
+							{% endif %}
+							<span>{{search.productsDerived[0].price}} $</span>
+							<a href="{{ path('view_product',{'productId': search.id}) }}">+</a>
+							<button><a href="{{ path('add_panier',  { 'id':search.categories[0],'productId':search.productsDerived[0].id}) }}">Ajouter au panier</a></button>
+
+						</div>
+					</div>
+
+
+					{%endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{%endblock%}

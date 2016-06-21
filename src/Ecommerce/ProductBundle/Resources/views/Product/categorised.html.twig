@@ -19,7 +19,7 @@
 				<div  class='arbre'>
 					<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
 					{% for category in app.session.get('path') %}
-					<a class='' href="{{ path('products_category',  { 'id': category.id}) }}"><span class=''>{{ category.name}}</span></a>
+					<span>| </span><a class='path' href="{{ path('products_category',  { 'id': category.id}) }}"><span class=''>{{ category.name}}</span></a>
 					{%endfor%}
 					{% set catego =app.session.get('path')|last%}
 
@@ -40,8 +40,17 @@
 									<div class='designation'>
 										{{ product.name}}
 									</div>
+
+									{% if product.productsDerived|length - 1 == 1 %}
+
+									<p>{{product.productsDerived|length - 1}} produit similaire</p>
+									{% elseif product.productsDerived|length - 1 > 1 %}
+									<p>{{product.productsDerived|length - 1}} produits similaires</p>
+
+									{% endif %}
+
 									<span>{{product.productsDerived[0].price}} $</span>
-									<a href="{{ path('view_product',{ 'id':catego.id,'productId': product.id}) }}">+</a>
+									<a href="{{ path('view_product',{'productId': product.id}) }}">+</a>
 									<button><a href="{{ path('add_panier',  { 'id':catego.id,'productId': product.productsDerived[0].id}) }}">Ajouter au panier</a></button>
 								</div>
 							</div>

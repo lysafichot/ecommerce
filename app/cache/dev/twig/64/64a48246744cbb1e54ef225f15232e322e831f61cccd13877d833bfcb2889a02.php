@@ -25,46 +25,46 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bb07b5addb79257b55070ff8868a844aeb9655f391b14039a36ce307ee66a14a = $this->env->getExtension("native_profiler");
-        $__internal_bb07b5addb79257b55070ff8868a844aeb9655f391b14039a36ce307ee66a14a->enter($__internal_bb07b5addb79257b55070ff8868a844aeb9655f391b14039a36ce307ee66a14a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ProductBundle:Product:categorised.html.twig"));
+        $__internal_7ee935826a4c9eeb7af536a30025bf5c651e431423ecc1302bb2b6768e83095a = $this->env->getExtension("native_profiler");
+        $__internal_7ee935826a4c9eeb7af536a30025bf5c651e431423ecc1302bb2b6768e83095a->enter($__internal_7ee935826a4c9eeb7af536a30025bf5c651e431423ecc1302bb2b6768e83095a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ProductBundle:Product:categorised.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_bb07b5addb79257b55070ff8868a844aeb9655f391b14039a36ce307ee66a14a->leave($__internal_bb07b5addb79257b55070ff8868a844aeb9655f391b14039a36ce307ee66a14a_prof);
+        $__internal_7ee935826a4c9eeb7af536a30025bf5c651e431423ecc1302bb2b6768e83095a->leave($__internal_7ee935826a4c9eeb7af536a30025bf5c651e431423ecc1302bb2b6768e83095a_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_e189ccd486dcb6f9bbd4af2810fe18c2efc6a55f7eef6ad96929903d9f44d3fa = $this->env->getExtension("native_profiler");
-        $__internal_e189ccd486dcb6f9bbd4af2810fe18c2efc6a55f7eef6ad96929903d9f44d3fa->enter($__internal_e189ccd486dcb6f9bbd4af2810fe18c2efc6a55f7eef6ad96929903d9f44d3fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_a0dcc3b5dfff33f5859c2f3b1d7121b16505d03d943e1acc20293d9bf0a363b2 = $this->env->getExtension("native_profiler");
+        $__internal_a0dcc3b5dfff33f5859c2f3b1d7121b16505d03d943e1acc20293d9bf0a363b2->enter($__internal_a0dcc3b5dfff33f5859c2f3b1d7121b16505d03d943e1acc20293d9bf0a363b2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Accueil ";
         
-        $__internal_e189ccd486dcb6f9bbd4af2810fe18c2efc6a55f7eef6ad96929903d9f44d3fa->leave($__internal_e189ccd486dcb6f9bbd4af2810fe18c2efc6a55f7eef6ad96929903d9f44d3fa_prof);
+        $__internal_a0dcc3b5dfff33f5859c2f3b1d7121b16505d03d943e1acc20293d9bf0a363b2->leave($__internal_a0dcc3b5dfff33f5859c2f3b1d7121b16505d03d943e1acc20293d9bf0a363b2_prof);
 
     }
 
     // line 5
     public function block_head($context, array $blocks = array())
     {
-        $__internal_e016e1d15a9ba22b07b0f00f842d25b7a6682f929fdbc28ac752de996bc052d2 = $this->env->getExtension("native_profiler");
-        $__internal_e016e1d15a9ba22b07b0f00f842d25b7a6682f929fdbc28ac752de996bc052d2->enter($__internal_e016e1d15a9ba22b07b0f00f842d25b7a6682f929fdbc28ac752de996bc052d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "head"));
+        $__internal_12d1ea3f8f9cbdf0c9bc34c9ec9726c78563cd2e910a59ed6af88c3c8ce248f0 = $this->env->getExtension("native_profiler");
+        $__internal_12d1ea3f8f9cbdf0c9bc34c9ec9726c78563cd2e910a59ed6af88c3c8ce248f0->enter($__internal_12d1ea3f8f9cbdf0c9bc34c9ec9726c78563cd2e910a59ed6af88c3c8ce248f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "head"));
 
         echo " ";
         $this->displayParentBlock("head", $context, $blocks);
         echo " ";
         
-        $__internal_e016e1d15a9ba22b07b0f00f842d25b7a6682f929fdbc28ac752de996bc052d2->leave($__internal_e016e1d15a9ba22b07b0f00f842d25b7a6682f929fdbc28ac752de996bc052d2_prof);
+        $__internal_12d1ea3f8f9cbdf0c9bc34c9ec9726c78563cd2e910a59ed6af88c3c8ce248f0->leave($__internal_12d1ea3f8f9cbdf0c9bc34c9ec9726c78563cd2e910a59ed6af88c3c8ce248f0_prof);
 
     }
 
     // line 8
     public function block_body($context, array $blocks = array())
     {
-        $__internal_0a1b696a52502bec281fa7f13cf3ba60dc39e4836dbd05c6735df60d7f23bfa1 = $this->env->getExtension("native_profiler");
-        $__internal_0a1b696a52502bec281fa7f13cf3ba60dc39e4836dbd05c6735df60d7f23bfa1->enter($__internal_0a1b696a52502bec281fa7f13cf3ba60dc39e4836dbd05c6735df60d7f23bfa1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6087bbc7f349014c39a5160df736d913709c871c6c955d2af7c43f748756d846 = $this->env->getExtension("native_profiler");
+        $__internal_6087bbc7f349014c39a5160df736d913709c871c6c955d2af7c43f748756d846->enter($__internal_6087bbc7f349014c39a5160df736d913709c871c6c955d2af7c43f748756d846_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 9
         $this->displayBlock('header', $context, $blocks);
@@ -94,7 +94,7 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "path"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 22
-            echo "\t\t\t\t\t<a class='' href=\"";
+            echo "\t\t\t\t\t<span>| </span><a class='path' href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("products_category", array("id" => $this->getAttribute($context["category"], "id", array()))), "html", null, true);
             echo "\"><span class=''>";
             echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "name", array()), "html", null, true);
@@ -138,16 +138,38 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
             echo twig_escape_filter($this->env, $this->getAttribute($context["product"], "name", array()), "html", null, true);
             echo "
 \t\t\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t\t\t";
+            // line 44
+            if (((twig_length_filter($this->env, $this->getAttribute($context["product"], "productsDerived", array())) - 1) == 1)) {
+                // line 45
+                echo "
+\t\t\t\t\t\t\t\t\t<p>";
+                // line 46
+                echo twig_escape_filter($this->env, (twig_length_filter($this->env, $this->getAttribute($context["product"], "productsDerived", array())) - 1), "html", null, true);
+                echo " produit similaire</p>
+\t\t\t\t\t\t\t\t\t";
+            } elseif (((twig_length_filter($this->env, $this->getAttribute(            // line 47
+$context["product"], "productsDerived", array())) - 1) > 1)) {
+                // line 48
+                echo "\t\t\t\t\t\t\t\t\t<p>";
+                echo twig_escape_filter($this->env, (twig_length_filter($this->env, $this->getAttribute($context["product"], "productsDerived", array())) - 1), "html", null, true);
+                echo " produits similaires</p>
+
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 51
+            echo "
 \t\t\t\t\t\t\t\t\t<span>";
-            // line 43
+            // line 52
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($context["product"], "productsDerived", array()), 0, array(), "array"), "price", array()), "html", null, true);
             echo " \$</span>
 \t\t\t\t\t\t\t\t\t<a href=\"";
-            // line 44
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("view_product", array("id" => $this->getAttribute((isset($context["catego"]) ? $context["catego"] : $this->getContext($context, "catego")), "id", array()), "productId" => $this->getAttribute($context["product"], "id", array()))), "html", null, true);
+            // line 53
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("view_product", array("productId" => $this->getAttribute($context["product"], "id", array()))), "html", null, true);
             echo "\">+</a>
 \t\t\t\t\t\t\t\t\t<button><a href=\"";
-            // line 45
+            // line 54
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("add_panier", array("id" => $this->getAttribute((isset($context["catego"]) ? $context["catego"] : $this->getContext($context, "catego")), "id", array()), "productId" => $this->getAttribute($this->getAttribute($this->getAttribute($context["product"], "productsDerived", array()), 0, array(), "array"), "id", array()))), "html", null, true);
             echo "\">Ajouter au panier</a></button>
 \t\t\t\t\t\t\t\t</div>
@@ -157,7 +179,7 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 49
+        // line 58
         echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -169,35 +191,35 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
 
 ";
         
-        $__internal_0a1b696a52502bec281fa7f13cf3ba60dc39e4836dbd05c6735df60d7f23bfa1->leave($__internal_0a1b696a52502bec281fa7f13cf3ba60dc39e4836dbd05c6735df60d7f23bfa1_prof);
+        $__internal_6087bbc7f349014c39a5160df736d913709c871c6c955d2af7c43f748756d846->leave($__internal_6087bbc7f349014c39a5160df736d913709c871c6c955d2af7c43f748756d846_prof);
 
     }
 
     // line 9
     public function block_header($context, array $blocks = array())
     {
-        $__internal_ba3ffaf61849d0d4a5ba273af53906ad1ce208b2c1063f5ddad4a036c86fc6a4 = $this->env->getExtension("native_profiler");
-        $__internal_ba3ffaf61849d0d4a5ba273af53906ad1ce208b2c1063f5ddad4a036c86fc6a4->enter($__internal_ba3ffaf61849d0d4a5ba273af53906ad1ce208b2c1063f5ddad4a036c86fc6a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
+        $__internal_5a4cc78fb664f9f72915e0c20663282e0e6ca573c2238ac0fa42731d7ed74e50 = $this->env->getExtension("native_profiler");
+        $__internal_5a4cc78fb664f9f72915e0c20663282e0e6ca573c2238ac0fa42731d7ed74e50->enter($__internal_5a4cc78fb664f9f72915e0c20663282e0e6ca573c2238ac0fa42731d7ed74e50_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
 
         echo " ";
         $this->displayParentBlock("header", $context, $blocks);
         echo " ";
         
-        $__internal_ba3ffaf61849d0d4a5ba273af53906ad1ce208b2c1063f5ddad4a036c86fc6a4->leave($__internal_ba3ffaf61849d0d4a5ba273af53906ad1ce208b2c1063f5ddad4a036c86fc6a4_prof);
+        $__internal_5a4cc78fb664f9f72915e0c20663282e0e6ca573c2238ac0fa42731d7ed74e50->leave($__internal_5a4cc78fb664f9f72915e0c20663282e0e6ca573c2238ac0fa42731d7ed74e50_prof);
 
     }
 
     // line 14
     public function block_menu_auth($context, array $blocks = array())
     {
-        $__internal_8d08614dd68043ea10a6387e2ed443665f60df2fded8de0ad4d20ff5df699bf0 = $this->env->getExtension("native_profiler");
-        $__internal_8d08614dd68043ea10a6387e2ed443665f60df2fded8de0ad4d20ff5df699bf0->enter($__internal_8d08614dd68043ea10a6387e2ed443665f60df2fded8de0ad4d20ff5df699bf0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu_auth"));
+        $__internal_8cb412b1d6c7fad1fe564c042f7f07a622deffbd0dfcef701995838af762c9dd = $this->env->getExtension("native_profiler");
+        $__internal_8cb412b1d6c7fad1fe564c042f7f07a622deffbd0dfcef701995838af762c9dd->enter($__internal_8cb412b1d6c7fad1fe564c042f7f07a622deffbd0dfcef701995838af762c9dd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu_auth"));
 
         echo " ";
         $this->displayParentBlock("menu_auth", $context, $blocks);
         echo " ";
         
-        $__internal_8d08614dd68043ea10a6387e2ed443665f60df2fded8de0ad4d20ff5df699bf0->leave($__internal_8d08614dd68043ea10a6387e2ed443665f60df2fded8de0ad4d20ff5df699bf0_prof);
+        $__internal_8cb412b1d6c7fad1fe564c042f7f07a622deffbd0dfcef701995838af762c9dd->leave($__internal_8cb412b1d6c7fad1fe564c042f7f07a622deffbd0dfcef701995838af762c9dd_prof);
 
     }
 
@@ -213,7 +235,7 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
 
     public function getDebugInfo()
     {
-        return array (  191 => 14,  177 => 9,  161 => 49,  151 => 45,  147 => 44,  143 => 43,  138 => 41,  130 => 37,  125 => 34,  121 => 33,  111 => 25,  108 => 24,  97 => 22,  93 => 21,  87 => 20,  80 => 15,  78 => 14,  72 => 10,  70 => 9,  64 => 8,  50 => 5,  38 => 3,  11 => 1,);
+        return array (  213 => 14,  199 => 9,  183 => 58,  173 => 54,  169 => 53,  165 => 52,  162 => 51,  155 => 48,  153 => 47,  149 => 46,  146 => 45,  144 => 44,  138 => 41,  130 => 37,  125 => 34,  121 => 33,  111 => 25,  108 => 24,  97 => 22,  93 => 21,  87 => 20,  80 => 15,  78 => 14,  72 => 10,  70 => 9,  64 => 8,  50 => 5,  38 => 3,  11 => 1,);
     }
 }
 /* {% extends "::base.html.twig" %}*/
@@ -237,7 +259,7 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
 /* 				<div  class='arbre'>*/
 /* 					<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>*/
 /* 					{% for category in app.session.get('path') %}*/
-/* 					<a class='' href="{{ path('products_category',  { 'id': category.id}) }}"><span class=''>{{ category.name}}</span></a>*/
+/* 					<span>| </span><a class='path' href="{{ path('products_category',  { 'id': category.id}) }}"><span class=''>{{ category.name}}</span></a>*/
 /* 					{%endfor%}*/
 /* 					{% set catego =app.session.get('path')|last%}*/
 /* */
@@ -258,8 +280,17 @@ class __TwigTemplate_903f34f9ea4973d4242885fb7151898969b9268a2c93b3dedf6aa778fb8
 /* 									<div class='designation'>*/
 /* 										{{ product.name}}*/
 /* 									</div>*/
+/* */
+/* 									{% if product.productsDerived|length - 1 == 1 %}*/
+/* */
+/* 									<p>{{product.productsDerived|length - 1}} produit similaire</p>*/
+/* 									{% elseif product.productsDerived|length - 1 > 1 %}*/
+/* 									<p>{{product.productsDerived|length - 1}} produits similaires</p>*/
+/* */
+/* 									{% endif %}*/
+/* */
 /* 									<span>{{product.productsDerived[0].price}} $</span>*/
-/* 									<a href="{{ path('view_product',{ 'id':catego.id,'productId': product.id}) }}">+</a>*/
+/* 									<a href="{{ path('view_product',{'productId': product.id}) }}">+</a>*/
 /* 									<button><a href="{{ path('add_panier',  { 'id':catego.id,'productId': product.productsDerived[0].id}) }}">Ajouter au panier</a></button>*/
 /* 								</div>*/
 /* 							</div>*/

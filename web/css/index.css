@@ -1,8 +1,8 @@
 html { height: 100%;}
 body {display: flex; flex-direction: column; align-items: center; min-height: 100%; height: 100%; margin: 0px; /*background-image: url('../images/black_pattern.png');*/}
 header { display:flex; justify-content: space-between; min-height:20%;height: 15%; background:#EFEFF1; width: 100%;
-	border-bottom:1vh solid #CCB387; }
-	header img {width: 20%;}
+	border-bottom:0.5vh solid #CCB387; }
+	header img {width: 18%;}
 	header h1 {width: 40%; float: left;}
 	#auth {
 		float: right;
@@ -99,7 +99,9 @@ header { display:flex; justify-content: space-between; min-height:20%;height: 15
 	position: absolute;
 	min-width: 100%;
 }
-.arbre {background-color:#EFEFF1;}
+.arbre {background-color:#EFEFF1; padding:2vh;}
+.arbre a { margin-left: 2vh; text-decoration: none; color: black; font-variant: small-caps; }
+.arbre span {margin-left: 1vh;}
 #big_container {display: flex; height: 100%; min-height: 100%; width: 100%; justify-content: space-between;}
 
 #container_products {
@@ -112,8 +114,7 @@ header { display:flex; justify-content: space-between; min-height:20%;height: 15
 	#content-cat {display: flex; width: 100%; height: 100%; justify-content: space-between;}
 		#sidebar {display: flex; height: 100%; min-height: 100%;width: 20%; background-image: url('../images/black_pattern.png'); }
 		#products {
-		display: flex; justify-content: space-between; height: 100%; width: 100%;
-		}
+		display: flex; justify-content: space-between; height: 100%; width: 100%; flex-wrap: wrap;}
 		.cart_product { margin-top:1vh; display:flex; flex-direction:column; min-height: 40%; height: 40%; width: 30%; }
 			.image_product {display: flex; height: 80%; width: 100%;
 			overflow:hidden; position: relative;}
@@ -123,10 +124,51 @@ header { display:flex; justify-content: space-between; min-height:20%;height: 15
 
 
 #list_panier {
-	display: none; flex-direction: column; width: 14%;min-height:20%;background-color: red; position: absolute; top:130px; overflow-y: scroll;
+	display: none; flex-direction: column; width: 12%;min-height:20%;background-color: #FFFFFF; position: absolute; top:130px; border-radius: 20px; z-index: 100;
 }
+#list_panier a {text-decoration: none; color: #302D2D; background-color: #CCB387}
+#detail_title, #total_panier{text-align: center; color: #CCB387; font-variant: small-caps; font-size: 3vh; background-color: #302D2D}
+.qte {display: flex; justify-content: space-between;}
+.qte a {text-decoration: none;}
 
+	.designation_cart {font-variant: small-caps;}
+	.product_cart{margin-top: 1vh; border-bottom: 0.1vh solid #CCB387;}
+	.product_cart p{margin:0.2vh!important; }
+.view_product { background-color: #fff!important }
 #panier:hover #list_panier {display: flex;}
+#thepanier .product_cart {width: 60%;}
+#panier_view{display: flex; flex-direction: column;}
+.product_list {display: flex; border-bottom: 0.2vh solid #CCB387;}
+.product_list .product_cart {border: none; }
+.preview_cart {display: flex;height: 50%; width: 30%}
+.preview_cart img {display: flex; height: 50%; width:  50%;}
+#thepanier p {margin: 0!important}
+#info_cart {
+	display: flex;
+}
+#images {display: flex; flex-direction: column; flex:1; justify-content: space-between;}
+
+#view_img {display: flex; height: 70%;width: 100%;}
+	#gallery {display: flex; height: 20%; width: 100%;}
+	.thumb{display: flex; height: 80%; width: 20%;}
+		.thumb img{display: flex; height: 80%; width: 50%;}
+
+#title_product{ text-align: center; margin-top: 2vh; margin-bottom: 2vh; font-size: 3vh; font-variant: small-caps;}
+#cart {display:flex; flex:1; flex-direction: column;}
+#form-search {display:flex; height: 20%; align-self: center}
+#search_result {display: flex;
+    justify-content: space-between;
+        flex-wrap: wrap;
+
+    height: 100%;
+    width: 100%;}
+
+#myaccount {display: flex; width: 100%; height: 100%;}
+
+#gestion {display: flex; flex-direction: column; width: 20%;}
+
+#info_contents {display: flex; flex-direction: column; width: 80%;}
+
 footer { height: 150px; background-color:#EFEFF1; margin-top: 3%; }
 
 /* ---- slider ---- */

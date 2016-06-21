@@ -294,6 +294,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array('_route' => 'logout');
         }
 
+        // account
+        if ($pathinfo === '/account') {
+            return array (  '_controller' => 'Ecommerce\\AccountBundle\\Controller\\AccountsController::accountAction',  '_route' => 'account',);
+        }
+
         if (0 === strpos($pathinfo, '/category')) {
             // products_category
             if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
@@ -305,11 +310,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::addPanierAction',));
             }
 
+        }
+
+        if (0 === strpos($pathinfo, '/p')) {
             // view_product
-            if (preg_match('#^/category/(?P<id>[^/]++)/product/(?P<productId>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/product') && preg_match('#^/product/(?P<productId>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'view_product')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::viewAction',));
             }
 
+            // panier
+            if ($pathinfo === '/panier') {
+                return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::panierAction',  '_route' => 'panier',);
+            }
+
+        }
+
+        // remove_panier
+        if (0 === strpos($pathinfo, '/remove') && preg_match('#^/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'remove_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::removePanierAction',));
+        }
+
+        // quantity_panier
+        if (0 === strpos($pathinfo, '/quantity') && preg_match('#^/quantity/(?P<id>[^/]++)/(?P<option>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'quantity_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::qtePanierAction',));
+        }
+
+        // search
+        if ($pathinfo === '/search') {
+            return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsDerivedController::searchAction',  '_route' => 'search',);
         }
 
         // ecommerce_homepage

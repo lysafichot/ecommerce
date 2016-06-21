@@ -15,8 +15,8 @@ class __TwigTemplate_6a95138bafc0f48a07117d97b100ac491d8197995c892146bb23a9c943a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_22c539d1a459858060e11eda961c3fd6253b356dec2f099eafc4021b18f4a06b = $this->env->getExtension("native_profiler");
-        $__internal_22c539d1a459858060e11eda961c3fd6253b356dec2f099eafc4021b18f4a06b->enter($__internal_22c539d1a459858060e11eda961c3fd6253b356dec2f099eafc4021b18f4a06b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BraincraftedBootstrapBundle::flash.html.twig"));
+        $__internal_4e07becd9084ed70cfbb2ff028d63bada3fc37a4e0efe093927a85694eaf3183 = $this->env->getExtension("native_profiler");
+        $__internal_4e07becd9084ed70cfbb2ff028d63bada3fc37a4e0efe093927a85694eaf3183->enter($__internal_4e07becd9084ed70cfbb2ff028d63bada3fc37a4e0efe093927a85694eaf3183_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BraincraftedBootstrapBundle::flash.html.twig"));
 
         // line 1
         if ( !array_key_exists("translation_domain", $context)) {
@@ -143,7 +143,7 @@ class __TwigTemplate_6a95138bafc0f48a07117d97b100ac491d8197995c892146bb23a9c943a
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_22c539d1a459858060e11eda961c3fd6253b356dec2f099eafc4021b18f4a06b->leave($__internal_22c539d1a459858060e11eda961c3fd6253b356dec2f099eafc4021b18f4a06b_prof);
+        $__internal_4e07becd9084ed70cfbb2ff028d63bada3fc37a4e0efe093927a85694eaf3183->leave($__internal_4e07becd9084ed70cfbb2ff028d63bada3fc37a4e0efe093927a85694eaf3183_prof);
 
     }
 

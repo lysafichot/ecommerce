@@ -3,13 +3,16 @@
 	<div class='item_menu' id='connexion'>
 
 		{% if is_granted('ROLE_USER') %}
-<div class='item'>
-		<a href="{{ path('logout') }}">Deconnexion</a>
+		<div class='item'>
+			<a href="{{ path('logout') }}">Deconnexion</a>
+		</div>
+		<div class='item'>
+			<a href="{{ path('account') }}">Mon compte</a>
 		</div>
 		{% else %}
 		<div class='item'>
 			<a href="{{ path('login') }}"><img src="{{ asset('images/log.png') }}"></a>
-			<span>Mon compte</span>
+			<span>Connexion</span>
 		</div>
 
 
@@ -33,7 +36,7 @@
 
 
 
-	{% endif %}
+		{% endif %}
 	</div>
 </div>
 

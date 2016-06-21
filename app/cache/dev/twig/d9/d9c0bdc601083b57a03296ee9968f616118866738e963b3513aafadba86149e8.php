@@ -15,42 +15,41 @@ class __TwigTemplate_9e416a1fcce74e4b2f54b23123f35241492039416fe71c4cce6bf888255
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_89cc170fbc79b20d5226540c2d5544237856ee2487bf2fa005823543d8e020fc = $this->env->getExtension("native_profiler");
-        $__internal_89cc170fbc79b20d5226540c2d5544237856ee2487bf2fa005823543d8e020fc->enter($__internal_89cc170fbc79b20d5226540c2d5544237856ee2487bf2fa005823543d8e020fc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Product/Product/products.html.twig"));
+        $__internal_7c4382f175ec9447c3490808404085fb256bcf9f0eb3c91b89c46dd74ec27abb = $this->env->getExtension("native_profiler");
+        $__internal_7c4382f175ec9447c3490808404085fb256bcf9f0eb3c91b89c46dd74ec27abb->enter($__internal_7c4382f175ec9447c3490808404085fb256bcf9f0eb3c91b89c46dd74ec27abb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Product/Product/products.html.twig"));
 
         // line 1
         echo "<div class='product_item'>
-    <div class='product'>
-
-        <span>Nom du produit :</span><span> ";
-        // line 4
+\t<div class='product'>
+\t\t<span>Nom du produit :</span><span> ";
+        // line 3
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "name", array()), "html", null, true);
         echo "</span>
-        <div class='categories_product'>
-        <span>Category :</span>
-            ";
-        // line 7
+\t\t<div class='categories_product'>
+\t\t\t<span>Category :</span>
+\t\t\t";
+        // line 6
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "categories", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 8
-            echo "            <span>";
+            // line 7
+            echo "\t\t\t<span>";
             echo twig_escape_filter($this->env, $this->getAttribute($context["category"], "name", array()), "html", null, true);
             echo "</span>
-            ";
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 9
+        echo "\t\t</div>
+\t\t<span>";
         // line 10
-        echo "        </div>
-        <span>";
-        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "id", array()), "html", null, true);
         echo "</span>
 ";
         
-        $__internal_89cc170fbc79b20d5226540c2d5544237856ee2487bf2fa005823543d8e020fc->leave($__internal_89cc170fbc79b20d5226540c2d5544237856ee2487bf2fa005823543d8e020fc_prof);
+        $__internal_7c4382f175ec9447c3490808404085fb256bcf9f0eb3c91b89c46dd74ec27abb->leave($__internal_7c4382f175ec9447c3490808404085fb256bcf9f0eb3c91b89c46dd74ec27abb_prof);
 
     }
 
@@ -66,18 +65,17 @@ class __TwigTemplate_9e416a1fcce74e4b2f54b23123f35241492039416fe71c4cce6bf888255
 
     public function getDebugInfo()
     {
-        return array (  49 => 11,  46 => 10,  37 => 8,  33 => 7,  27 => 4,  22 => 1,);
+        return array (  48 => 10,  45 => 9,  36 => 7,  32 => 6,  26 => 3,  22 => 1,);
     }
 }
 /* <div class='product_item'>*/
-/*     <div class='product'>*/
-/* */
-/*         <span>Nom du produit :</span><span> {{ product.name}}</span>*/
-/*         <div class='categories_product'>*/
-/*         <span>Category :</span>*/
-/*             {% for category in product.categories %}*/
-/*             <span>{{ category.name}}</span>*/
-/*             {% endfor %}*/
-/*         </div>*/
-/*         <span>{{ product.id}}</span>*/
+/* 	<div class='product'>*/
+/* 		<span>Nom du produit :</span><span> {{ product.name}}</span>*/
+/* 		<div class='categories_product'>*/
+/* 			<span>Category :</span>*/
+/* 			{% for category in product.categories %}*/
+/* 			<span>{{ category.name}}</span>*/
+/* 			{% endfor %}*/
+/* 		</div>*/
+/* 		<span>{{ product.id}}</span>*/
 /* */

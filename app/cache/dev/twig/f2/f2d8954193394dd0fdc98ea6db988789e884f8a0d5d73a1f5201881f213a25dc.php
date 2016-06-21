@@ -15,8 +15,8 @@ class __TwigTemplate_9271cf8ce4fc754655b41e1dde2444b3636648eeb09ec77987ab8371566
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a164cb3dd985dd87cec73fb73f277d546640c0f582bf4b9a3158e4a333c7eb11 = $this->env->getExtension("native_profiler");
-        $__internal_a164cb3dd985dd87cec73fb73f277d546640c0f582bf4b9a3158e4a333c7eb11->enter($__internal_a164cb3dd985dd87cec73fb73f277d546640c0f582bf4b9a3158e4a333c7eb11_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BraincraftedBootstrap/Bootstrap/bootstrap.scss.twig"));
+        $__internal_3f10eb4f813d1f573530eeddb889ef03096ecf87527a285c7fd3519266763bef = $this->env->getExtension("native_profiler");
+        $__internal_3f10eb4f813d1f573530eeddb889ef03096ecf87527a285c7fd3519266763bef->enter($__internal_3f10eb4f813d1f573530eeddb889ef03096ecf87527a285c7fd3519266763bef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@BraincraftedBootstrap/Bootstrap/bootstrap.scss.twig"));
 
         // line 1
         echo "// Core variables and mixins
@@ -192,7 +192,7 @@ class __TwigTemplate_9271cf8ce4fc754655b41e1dde2444b3636648eeb09ec77987ab8371566
         echo "/stylesheets/bootstrap/responsive-utilities\";
 ";
         
-        $__internal_a164cb3dd985dd87cec73fb73f277d546640c0f582bf4b9a3158e4a333c7eb11->leave($__internal_a164cb3dd985dd87cec73fb73f277d546640c0f582bf4b9a3158e4a333c7eb11_prof);
+        $__internal_3f10eb4f813d1f573530eeddb889ef03096ecf87527a285c7fd3519266763bef->leave($__internal_3f10eb4f813d1f573530eeddb889ef03096ecf87527a285c7fd3519266763bef_prof);
 
     }
 

@@ -16,10 +16,21 @@ class ProductRepository extends EntityRepository
 	public function findByCategories($id) {
 		$em = $this->getEntityManager()->createQueryBuilder();
 		$em->select(array('p'))
-			->from('ProductBundle:Product', 'p')
-			->join('p.categories', 'c', 'WITH', $em->expr()->in('c.id', $id));
+		->from('ProductBundle:Product', 'p')
+		->join('p.categories', 'c', 'WITH', $em->expr()->in('c.id', $id));
 		$result = $em->getQuery()->execute();
 		return $result;
+	}
+
+	public function findBySearch($like) {
+		return $query = $this->createQueryBuilder('pro')
+		->select('pro')
+		->join('pro.categories', 'c')
+		->where('pro.name LIKE :searchTerm OR pro.description LIKE :searchTerm OR c.name LIKE :searchTerm')
+		->setParameter('searchTerm', '%' .$like. '%' )
+		->getQuery()
+		->execute();
+
 	}
 
 }

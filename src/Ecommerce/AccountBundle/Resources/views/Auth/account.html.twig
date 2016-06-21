@@ -1,0 +1,42 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+{% block header %} {{ parent() }} {% endblock %}
+
+<div id='search_login'>
+	{% block menu_auth %} {{ parent() }} {% endblock %}
+</div>
+<div id="main_div">
+	<div id='contents'>
+
+		<div  class='arbre'>
+			<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
+
+			<a href=""></a>
+		</div>
+		<div id='myaccount'>
+			<div id='gestion'>
+				<a href="{{ path('account') }}">Mon profil</a>
+				<a href="{{ path('account') }}">Mes commandes</a>
+				<a href="{{ path('account') }}">Mes adresses</a>
+
+
+
+
+			</div>
+
+			<div id='info_contents'>
+
+			</div>
+
+
+
+		</div>
+	</div>
+</div>
+{%endblock%}

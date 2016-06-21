@@ -53,59 +53,71 @@ class Accounts implements UserInterface
      */
     private $roles;
 
-    public function getEmail()
-    {
-        return $this->email;
-    }
 
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
+    /**
+    * @ORM\OneToMany(targetEntity="Adresse", mappedBy="account", cascade={"persist"})
+    */
+   private $adresses;
 
-    public function getUsername()
-    {
-        return $this->username;
-    }
 
-    public function setUsername($username)
-    {
-        $this->username = $username;
-    }
+   public function __construct() {
+    $this->adresses = new \Doctrine\Common\Collections\ArrayCollection();
 
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
+}
 
-    public function setPlainPassword($password)
-    {
-        $this->plainPassword = $password;
-    }
- public function getPassword()
-    {
-        return $this->password;
-    }
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-     public function getRoles()
-    {
-        return unserialize($this->roles);
-    }
-    public function setRoles(Array $roles)
-    {
-        $this->roles = serialize($roles);
-    }
- public function eraseCredentials()
-    {
+public function getEmail()
+{
+    return $this->email;
+}
 
-    }
+public function setEmail($email)
+{
+    $this->email = $email;
+}
 
-    public function getSalt()
-    {
-        return null;
-    }
+public function getUsername()
+{
+    return $this->username;
+}
+
+public function setUsername($username)
+{
+    $this->username = $username;
+}
+
+public function getPlainPassword()
+{
+    return $this->plainPassword;
+}
+
+public function setPlainPassword($password)
+{
+    $this->plainPassword = $password;
+}
+public function getPassword()
+{
+    return $this->password;
+}
+public function setPassword($password)
+{
+    $this->password = $password;
+}
+public function getRoles()
+{
+    return unserialize($this->roles);
+}
+public function setRoles(Array $roles)
+{
+    $this->roles = serialize($roles);
+}
+public function eraseCredentials()
+{
+
+}
+
+public function getSalt()
+{
+    return null;
+}
 
 }

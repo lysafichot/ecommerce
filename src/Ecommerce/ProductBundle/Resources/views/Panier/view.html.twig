@@ -1,0 +1,55 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+{% block header %} {{ parent() }} {% endblock %}
+
+<div id='search_login'>
+	{% block menu_auth %} {{ parent() }} {% endblock %}
+</div>
+<div id="main_div">
+	<div id='contents'>
+
+		<div  class='arbre'>
+			<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
+
+			<a href=""></a>
+		</div>
+		<div id='thepanier'>
+			<p id='detail_title'>Detail du panier :</p>
+			<div id='panier_view'>
+			{% if app.session.get('products')|length > 0 %}
+			{% for product in app.session.get('products') %}
+
+				<div class='product_list'>
+					<div class='preview_cart'><img src={{ asset('uploads/') }}{{product.derived.medias[0].path}}/></div>
+					<div class=product_cart>
+						<p><span class='designation_cart'>{{ product.derived.nameDerived}}</span></p>
+						<p class='qte'>
+							<span class='price_cart'> Prix unite: {{ product.derived.price }} $</span>
+							<span class='qte_cart'>Qte: {{ product.count}}<button><a href="{{ path('quantity_panier',  { 'id': product.derived.id, 'option': 0}) }}">-</a></button><button><a href="{{ path('quantity_panier',  { 'id': product.derived.id, 'option': 1}) }}">+</a></button></span>
+							<a href="{{ path('remove_panier',  { 'id': product.derived.id}) }}">x</a>
+						</p>
+						<p><span class='total'_cart'>Prix: {{ product.derived.price * product.count}} $</span></p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<p id='total_panier'>Total :{{app.session.get('price')}} $<p>
+			{%else%}
+			<p>Votre panier est vide</p>
+			{%endif%}
+
+
+
+			</div>
+
+
+
+		</div>
+	</div>
+	{%endblock%}

@@ -23,13 +23,11 @@ class ProductsController extends Controller
 		$medias = new Media();
 		$form   = $this->createForm(ProductType::class, $product);
 		$form->handleRequest($request);
-
 		if ($form->isSubmitted() && $form->isValid()) {
 
 			$product->setName($form['name']->getData());
 			$product->setDescription($form['description']->getData());
 			$product->setSummary($form['summary']->getData());
-
 			$product->setStatus(1);
 			$files = $product->getProductsDerived()->toArray()['derived']->getMedias()->toArray()[0]->files;
 			$media_array = [];
@@ -45,11 +43,8 @@ class ProductsController extends Controller
 			$em->persist($product);
 
 			$em->flush();
-
 			return $this->redirectToRoute('admin_add_product');
-
 		}
-
 		return $this->render('AdminBundle:Product:add.html.twig', array(
 		                                                                'form' => $form->createView(),
 		                                                                ));
@@ -61,18 +56,13 @@ class ProductsController extends Controller
 		$products = $em->getRepository('ProductBundle:Product')->findAll();
 
 		$deleteForms = array();
-
 		foreach($products as $product) {
 			$deriveds = $em->getRepository('ProductBundle:ProductDerived')->findBy(['product' =>$product->getId()]);
 			foreach ($deriveds as $derived) {
 				$medias = $em->getRepository('ProductBundle:Media')->findBy(['productDerived' => $derived->getId()]);
 				$product->medias = $medias;
 				$deleteForms[$product->getId()] = $this->createDeleteForm($product->getId())->createView();
-/*				var_dump($product->getProductsDerived());die;
-*/
 			}
-
-
 		}
 		return $this->render('AdminBundle:Product:all.html.twig', array(
 		                                                                'products' => $products,
@@ -81,20 +71,15 @@ class ProductsController extends Controller
 	}
 	private function createDeleteForm($id)
 	{
-		return $this->createFormBuilder(array('id' => $id))
-		->add('id', 'hidden')
-		->getForm()
-		;
+		return $this->createFormBuilder(array('id' => $id))->add('id', 'hidden')->getForm();
 	}
 	public function viewAction($id)
 	{
 		$em = $this->getDoctrine()->getManager();
-
 		$product = $em->getRepository('ProductBundle:Product')->find($id);
 		if (null === $product) {
 			throw new NotFoundHttpException("Le produit ".$id." est introuvables");
 		}
-
 		return $this->render('AdminBundle:Product:view.html.twig', array(
 		                                                                   'product' => $product,
 		                                                                   ));
@@ -102,12 +87,10 @@ class ProductsController extends Controller
 	public function deleteAction($id)
 	{
 		$em = $this->getDoctrine()->getManager();
-
 		$product = $em->getRepository('ProductBundle:Product')->find($id);
 		if (null === $product) {
 			throw new NotFoundHttpException("Le produit ".$id." est introuvables");
 		}
-
 		$em->remove($product);
 		$em->flush();
 

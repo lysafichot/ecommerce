@@ -5,5 +5,17 @@ add_panier:
     path:     /category/{id}/{productId}
     defaults: { _controller: ProductBundle:Products:addPanier }
 view_product:
-    path:     /category/{id}/product/{productId}
+    path:     /product/{productId}
     defaults: { _controller: ProductBundle:Products:view }
+panier:
+    path:     /panier
+    defaults: { _controller: ProductBundle:Products:panier }
+remove_panier:
+    path: /remove/{id}
+    defaults: { _controller: ProductBundle:Products:removePanier }
+quantity_panier:
+    path: /quantity/{id}/{option}
+    defaults: { _controller: ProductBundle:Products:qtePanier }
+search:
+    path: /search
+    defaults: { _controller: ProductBundle:ProductsDerived:search }

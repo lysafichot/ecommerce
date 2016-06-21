@@ -1,18 +1,42 @@
 <header>
+
 	<img src="{{ asset('images/logo.png') }}"/>
+
+
+	<form  id='form-search' action="{{ path('search') }}" method="post" >
+		<input type="search" name="search">
+		<input type="submit" name="OK">
+	</form>
+
 	<div id=panier>
 		<div id='username_home'></div>
 		{% if is_granted('ROLE_USER') %}
 		{{ app.user.username }}
 		{% endif %}
-		<a href=""><img src="{{ asset('images/cart.png') }}"/></a>
+		<a href="{{ path('panier') }}"><img src="{{ asset('images/cart.png') }}"/></a>
 		<div id='count'><span>{{app.session.get('total') }}</span></div>
 		<div id=list_panier>
-  {% for product in products_panier %}
-            <p><span>{{ product.derived.nameDerived}}</span> Prix unite: {{ product.derived.price }}<span>Qte: {{ product.count}}</span><span>Prix: {{ product.derived.price * product.count}}</span></p>
+			<p id='detail_title'>Panier :</p>
 
-            {% endfor %}
-           Prix total {{price}} $
+
+
+			{% for product in app.session.get('products') %}
+
+			<div class=product_cart>
+
+				<p><span class='designation_cart'>{{ product.derived.nameDerived}}</span></p>
+				<p class='qte'><span class='price_cart'> Prix unite: {{ product.derived.price }} $</span>
+					<span class='qte_cart'>Qte: {{ product.count}}</span>
+				</p>
+
+				<p><span class='total'_cart'>Prix: {{ product.derived.price * product.count}} $</span></p>
+			</div>
+			{% endfor %}
+			<span id='total_panier'>Total : {{app.session.get('price')}} $</span>
+
+
+			<a href="{{ path('panier') }}">Voir le panier</a>
+
 		</div>
 	</div>
 

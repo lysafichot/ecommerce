@@ -15,7 +15,7 @@ class LoadProduct extends AbstractFixture implements OrderedFixtureInterface
 
     $product = new Product;
     $product->setName('ASUS G752VT-GC037T');
-    $product->addCategory($this->getReference('category2'));
+    $product->addCategory($this->getReference('category7'));
 
     $product->setDescription("L'ordinateur portable ASUS G501VW vous apporte immédiatement toute la puissance dont vous avez besoin au quotidien pour exercer vos talents de gamer. Cet ultraportable est marqué par l'esprit des pc ASUS ROG (Republic Of Gamers) avec son design ultra-mince et soigné. Sa configuration est éprouvée pour garantir un confort d'utilisation et une expérience de jeu optimisés. Son écran 15.6 Full HD délivre un affichage précis, des images extrêmement détaillées et surprenantes de réalisme. Cet ultraportable puissant et performant est prêt à vous offrir ce dont vous aurez besoin pour vivre une grande expérience de jeu grâce à ses innovations technologiques.");
     $product->setSummary("Design conçu pour les Gamers. Cet ultraportable ASUS G501VW est spécialement conçu pour les gamers. Il possède de nombreuses caractéristiques innovantes et son châssis en aluminium ultra-mince et léger (2 Kg) assure une grande mobilité. Avec 21 mm d'épaisseur, le ROG G501 est l'un des plus minces dans sa catégorie. Son appartenance à la famille Republic Of Gamers est évidente avec sa coque noire et le célèbre logo ROG placé sur une partie d'aluminium brossé et vous aurez plaisir à le transporter partout où que vous allez. Son design ergonomique est conçu intelligemment jusqu'au large clavier rétroéclairé très réactif qui isole parfaitement chaque touche d'un pavé numérique complet. En outre, les touches ZQSD sont spécialement marquées pour facilité leur utilisation pendant les cessions de jeux. Au cœur de cet ultraportable. Le ASUS G501VW assure des performances de pointe éprouvées pour un PC portable. Il est armé jusqu'aux dents avec un processeur Intel® Core™ i7 sur une architecture Skylake avec 4 cœurs. Ce processeur apporte une valeur sûre aux besoins spécifiques des gamers et vous place au centre de l'action. De plus, le processeur Core™ i7 optimise les économies d'énergie sans compromis sur les performances. La carte graphique NVIDIA® GeForce® GTX 960M vous assure des rendus époustouflants où vos jeux s'animent pour vous faire vivre une expérience de jeu inégalée. Cet ordinateur portable est doté d'un disque dur de 1 To pour stocker toutes vos données numériques et d'un SSD de 128 Go pour exécuter plus rapidement le système d'exploitation Windows 10 Home, vos applications et vos jeux. Il dispose d'une mémoire élevée DDR4 de 8 Go pour accéder rapidement à toutes les données de ce pc. Parfaitement ventilé. La technologie améliorée Hyper Cool du ROG G501VW, développé par Asus, vous garantit un refroidissement silencieux et intelligent. Cet ultraportable gamer embarque deux ventilateurs indépendants et un dissipateur de chaleur en cuivre pour une gestion thermique efficace. Cette innovation technologique assur des performances stables, mêmes dans des conditions extrêmes. Le ROG G501VW entre dans la catégorie des portables gamers les plus silencieux du marché malgré son système de refroidissement ultra performant. Il vous assure de rester au frais durant la bataille ! ");
@@ -24,7 +24,7 @@ class LoadProduct extends AbstractFixture implements OrderedFixtureInterface
 
     $product2 = new product;
     $product2->setName( 'ASUS ZenBook Pro UX501JW-CN484T');
-    $product2->addCategory($this->getReference('category2'));
+    $product2->addCategory($this->getReference('category7'));
 
     $product2->setDescription( "La tradition ZENBOOK continue avec cette nouvelle génération. Utilisant un processeur Intel core de dernière génération, ce ZENBOOK UX501JW se pare en plus d’une robe faite d’aluminium. Plus fin et plus léger que ses prédécesseurs, il redéfini encore le concept de finesse à un nouveau niveau. D’une élégance inégalée, ce ZENBOOK UX501JW possède un écran Full HD et une carte graphique NVIDIA dédiée. Couplé à Windows 10, cela en fait l’outil parfait de divertissement, de mobilité mais aussi de travail. Sa connectivité et sa finesse en font un outil polyvalent extrêmement mobile. Enfin, son autonomie de 6 heures* procure une liberté sans faille à son utilisateur.");
     $product2->setSummary("Derrière le nom de code Zenbook UX501JW-CN484T, Asus a conçu un ordinateur polyvalent, compact et rapide. Mais au premier regard, c'est d'abord son look qui marque les esprits. Ultra-fin et très léger (2,13 cm d'épaisseur max. pour 2,06 kg seulement), il est également très moderne avec son capot type 'aluminium brossé'. Les yeux s'attardent ensuite sur son écran Full HD de 15.6 au traitement anti-reflets très pratique pour une utilisation en extérieur. Le roi du multimédia. A l'aise pour le travail, ce Zenbook UX501JW-CN484T d'Asus l'est encore plus avec le divertissement numérique. Son écran à LED rétroéclairé y est pour beaucoup ainsi que sa carte graphique NVIDIA GeForce GTX 960M pour des visuels extraordinaires.
@@ -46,7 +46,7 @@ class LoadProduct extends AbstractFixture implements OrderedFixtureInterface
 
 
     $product4 = new product;
-    $product4->addCategory($this->getReference('category2'));
+    $product4->addCategory($this->getReference('category4'));
 
     $product4->setName("SAMSUNG Galaxy S6 Edge");
     $product4->setDescription( "Samsung presente le Galaxy S6 Edge ! Le smartphone qui repousse les limites de vitesse, de puissance et de performances, tout en offrant un design ultra soigné et incurvé !");
@@ -63,7 +63,7 @@ class LoadProduct extends AbstractFixture implements OrderedFixtureInterface
 
     $product5 = new product;
     $product5->setName( 'NIKON D3300 18-55 DX VR');
-    $product5->addCategory($this->getReference('category4'));
+    $product5->addCategory($this->getReference('category6'));
 
     $product5->setDescription( "Le réflex NIKON D3300 est un appareil photo muni d'un zoom de qualité pour des clichés d'une exceptionnelle justesse.");
     $product5->setSummary("Profitez d'un kit avec zoom de grande qualité, idéal pour la photographie classique incluant l'appareil photo D3300 et le zoom ultra-compact 3x AF-S DX NIKKOR 18-55mm f/3.5-5.6G VR. L'objectif fourni  avec cet appareil photo reflex est doté du système de réduction de vibration qui vous permettra de réduire les flous de bougé et d'un mécanisme d'objectif rétractable pour une portabilité encore plus importante.

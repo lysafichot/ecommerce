@@ -4,6 +4,6 @@ parameters:
 #    parameter_name: value
 
 services:
-    ecommerce.categories:
-        class: Ecommerce\AdminBundle\Services\Categories
+    ecommerce.services:
+        class: Ecommerce\AdminBundle\Services\Services
         arguments: [ @doctrine.orm.entity_manager ]
