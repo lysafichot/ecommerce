@@ -16,3 +16,7 @@ logout:
 account:
     path:     /account
     defaults: { _controller: AccountBundle:Accounts:account}
+
+update_adresse:
+   path:     /update_adresse
+   defaults: { _controller: AccountBundle:Accounts:updateAdresse}

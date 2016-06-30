@@ -15,8 +15,8 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0 = $this->env->getExtension("native_profiler");
-        $__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0->enter($__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout/menu.html.twig"));
+        $__internal_9c686a4bf2f76f8c0666c0c3a1a110ce6bc6f634a0af55cc627faf0e37360e15 = $this->env->getExtension("native_profiler");
+        $__internal_9c686a4bf2f76f8c0666c0c3a1a110ce6bc6f634a0af55cc627faf0e37360e15->enter($__internal_9c686a4bf2f76f8c0666c0c3a1a110ce6bc6f634a0af55cc627faf0e37360e15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "layout/menu.html.twig"));
 
         // line 1
         echo "<div id='menu'>
@@ -97,7 +97,7 @@ class __TwigTemplate_6366488304ecc600094871ae9e89cbc9cdc26221692b87081617186b1c8
 
 ";
         
-        $__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0->leave($__internal_1456e0d1f3e0968cbc4a67e89a77a873d34930d382dcc5efeeb12e4214ba6fa0_prof);
+        $__internal_9c686a4bf2f76f8c0666c0c3a1a110ce6bc6f634a0af55cc627faf0e37360e15->leave($__internal_9c686a4bf2f76f8c0666c0c3a1a110ce6bc6f634a0af55cc627faf0e37360e15_prof);
 
     }
 

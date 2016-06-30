@@ -15,8 +15,8 @@ class __TwigTemplate_917784220e8c55603e0f00198040abe1100038811ee15c62ae53c15d0da
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3fae98a5f167bd3c04fbfd5cfa19f99681d590982232de4d827c3587f677d949 = $this->env->getExtension("native_profiler");
-        $__internal_3fae98a5f167bd3c04fbfd5cfa19f99681d590982232de4d827c3587f677d949->enter($__internal_3fae98a5f167bd3c04fbfd5cfa19f99681d590982232de4d827c3587f677d949_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BraincraftedBootstrapBundle:Bootstrap:bootstrap.scss.twig"));
+        $__internal_f1630b6c96b03d2efe4eb5fae8c1ccdf4ddd648b40c9ce445f3e441ba4071d8d = $this->env->getExtension("native_profiler");
+        $__internal_f1630b6c96b03d2efe4eb5fae8c1ccdf4ddd648b40c9ce445f3e441ba4071d8d->enter($__internal_f1630b6c96b03d2efe4eb5fae8c1ccdf4ddd648b40c9ce445f3e441ba4071d8d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BraincraftedBootstrapBundle:Bootstrap:bootstrap.scss.twig"));
 
         // line 1
         echo "// Core variables and mixins
@@ -192,7 +192,7 @@ class __TwigTemplate_917784220e8c55603e0f00198040abe1100038811ee15c62ae53c15d0da
         echo "/stylesheets/bootstrap/responsive-utilities\";
 ";
         
-        $__internal_3fae98a5f167bd3c04fbfd5cfa19f99681d590982232de4d827c3587f677d949->leave($__internal_3fae98a5f167bd3c04fbfd5cfa19f99681d590982232de4d827c3587f677d949_prof);
+        $__internal_f1630b6c96b03d2efe4eb5fae8c1ccdf4ddd648b40c9ce445f3e441ba4071d8d->leave($__internal_f1630b6c96b03d2efe4eb5fae8c1ccdf4ddd648b40c9ce445f3e441ba4071d8d_prof);
 
     }
 

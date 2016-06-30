@@ -12,13 +12,5 @@ use Doctrine\ORM\EntityRepository;
  */
 class AccountsRepository extends EntityRepository
 {
-	public function findInfosUser() {
-		$em = $this->getEntityManager()->createQueryBuilder();
-		$em->select(array('u'))
-			->from('AccountBundle:Account', 'u')
-		// 	->join('u.adresses', 'a', 'WITH', $em->expr()->in('c.id', $id));
-		// $result = $em->getQuery()->execute();
-		return $result;
 
-	}
 }

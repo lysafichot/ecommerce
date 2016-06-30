@@ -6,12 +6,8 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class BossController extends Controller {
 
-	public function __construct() {
 
-
-	}
 	public function rend($view, $params = []) {
-
 
 		$session = $this->getRequest()->getSession();
 		$products_panier = $session->get('products');

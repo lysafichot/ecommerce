@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class AdresseRepository extends EntityRepository
 {
+
+	public function findAdresses($type, $id) {
+		return $query = $this->createQueryBuilder('a')
+		->select('a')
+		->join('a.account', 'c')
+		->where('a.type = :type')
+		->setParameter('type', $type )
+		->andWhere('c.id = :id')
+		->setParameter('id', $id )
+
+		->getQuery()
+		->execute();
+
+
+	}
 }

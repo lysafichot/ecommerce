@@ -19,3 +19,6 @@ quantity_panier:
 search:
     path: /search
     defaults: { _controller: ProductBundle:ProductsDerived:search }
+payement:
+    path: /payement
+    defaults: {_controller: ProductBundle:Payement:index}

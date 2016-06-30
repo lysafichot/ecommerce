@@ -32,10 +32,145 @@
 
 			<div id='info_contents'>
 
+				<div id='adresse_livraison'>
+					{{ form_start(formInfo, {'attr': {'class': 'form-add-infos'}}) }}
+
+
+
+
+					<p> Information personnelles : </p>
+					<p><span> Nom : </span>
+						{% if account.lastname %}
+						{{ account.lastname}}
+						<button>Edit</button>
+						{{ form_widget(formInfo.lastname, {'value': account.lastname, 'label' : "lastname", 'attr': {'class': 'field_civilite'}}) }}
+						{% else %}
+						{{ form_widget(formInfo.lastname, {'label' : "Lastname", 'attr': {'class': 'field_lastname'}}) }}
+						{% endif %}
+					</p>
+					<p><span>Prenom :</span>
+						{% if account.firstname %}
+						{{ account.firstname}}
+						<button>Edit</button>
+						{{ form_widget(formInfo.firstname, {'value': account.firstname, 'label' : "firstname", 'attr': {'class': 'field_firstname'}}) }}
+						{% else %}
+						{{ form_widget(formInfo.firstname, {'label' : "Firstname", 'attr': {'class': 'field_firstname'}}) }}
+						{% endif %}
+					</p>
+					<p><span>Civiltee :</span>
+						{% if account.civilite %}
+						{{ account.civilite}}
+						<button>Edit</button>
+						{{ form_widget(formInfo.civilite, {'value': account.civilite, 'label' : "civilite", 'attr': {'class': 'field_civilite'}}) }}
+						{% else %}
+						{{ form_widget(formInfo.civilite, {'label' : "Civilite", 'attr': {'class': 'field_civilite'}}) }}
+						{% endif %}
+					</p>
+
+					<p><span>Date de naissance :</span>
+						{% if account.birthday %}
+						{{ account.birthday}}
+						<button>Edit</button>
+						{{ form_widget(formInfo.birthday, {'value': account.birthday, 'label' : "birthday", 'attr': {'class': 'field_civilite'}}) }}
+						{% else %}
+						{{ form_widget(formInfo.birthday, {'label' : "birthday", 'attr': {'class': 'field_birthday'}}) }}
+						{% endif %}
+					</p>
+
+
+					<button type="submit">Ajouter</button>
+
+					{{ form_end(formInfo) }}
+
+					<p>Adresse de livraison</p>
+
+					{% for adresseLiv in adressesLiv %}
+					<div class ='adresse'>
+						<div>
+							<form action="{{ path('update_adresse') }}" method="post">
+								<input type="hidden" name="id" value="{{ adresseLiv.id }}" />
+
+								<span>{{ adresseLiv.numero }}</span>
+								<input type="text" id="numero" name="numero" value="{{ adresseLiv.numero }}" />
+
+								<span>{{ adresseLiv.name }}</span>
+								<input type="text" id="name" name="name" value="{{  adresseLiv.name }}" />
+
+								<span>{{ adresseLiv.codePostal }}</span>
+								<input type="text" id="codePostal" name="codePostal" value="{{  adresseLiv.codePostal }}" />
+
+								<span>{{ adresseLiv.city }}</span>
+								<input type="text" id="city" name="city" value="{{  adresseLiv.city }}" />
+
+								<input type="checkbox" id="city" name="selected" value="{{  adresseLiv.selected }}" />
+
+								<button type="submit">Modier</button>
+							</form>
+						</div>
+
+					</div>
+					<div id = 'edit'>
+
+
+					</div>
+					{%endfor%}
+
+					{{ form_start(formLiv, {'attr': {'class': 'form-add-adresses'}}) }}
+					{{ form_row(formLiv.numero, {'label' : "Numero", 'attr': {'class': 'field_numero'}}) }}
+
+					{{ form_row(formLiv.name, {'label' : "Ajouter une adresse", 'attr': {'class': 'field_name'}}) }}
+					{{ form_row(formLiv.type, {'label' : "", 'attr': {'class': 'field_type'}, 'value' : 'Livraison'}) }}
+					{{ form_row(formLiv.city, {'label' : "", 'attr': {'class': 'field_city'}}) }}
+					{{ form_row(formLiv.codePostal, {'label' : "", 'attr': {'class': 'field_codePostal'}}) }}
+					{{ form_row(formLiv.selected, {'label' : "Par default", 'attr': {'class': 'field_selected'}}) }}
+
+					<button type="submit">Ajouter</button>
+					{{ form_end(formLiv) }}
+
+				</div>
+
+				<div id='adresse_facturation'>
+					<p>Adresse de facturation</p>
+
+					{% for adresseFac in adressesFac %}
+					<div class ='adresse'>
+
+					<form action="{{ path('update_adresse') }}" method="post">
+								<input type="hidden" name="id" value="{{ adresseFac.id }}" />
+
+								<span>{{ adresseFac.numero }}</span>
+								<input type="text" id="numero" name="numero" value="{{ adresseFac.numero }}" />
+
+								<span>{{ adresseFac.name }}</span>
+								<input type="text" id="name" name="name" value="{{  adresseFac.name }}" />
+
+								<span>{{ adresseFac.codePostal }}</span>
+								<input type="text" id="codePostal" name="codePostal" value="{{  adresseFac.codePostal }}" />
+
+								<span>{{ adresseFac.city }}</span>
+								<input type="text" id="city" name="city" value="{{  adresseFac.city }}" />
+
+								<input type="checkbox" id="city" name="selected" value="{{  adresseFac.selected }}" />
+
+								<button type="submit">Modier</button>
+							</form>
+
+					</div>
+					{%endfor%}
+
+					{{ form_start(formFac, {'attr': {'class': 'form-add-adresses'}}) }}
+					{{ form_row(formFac.numero, {'label' : "Numero", 'attr': {'class': 'field_numero'}}) }}
+
+					{{ form_row(formFac.name, {'label' : "Ajouter une adresse", 'attr': {'class': 'field_name'}}) }}
+					{{ form_row(formFac.type, {'label' : "", 'attr': {'class': 'field_type'}, 'value' : 'Facturation'}) }}
+					{{ form_row(formFac.city, {'label' : "", 'attr': {'class': 'field_city'}}) }}
+					{{ form_row(formFac.codePostal, {'label' : "", 'attr': {'class': 'field_codePostal'}}) }}
+					{{ form_row(formFac.selected, {'label' : "Par default", 'attr': {'class': 'field_selected'}}) }}
+
+					<button type="submit">Ajouter</button>
+					{{ form_end(formFac) }}
+				</div>
 			</div>
-
-
-
 		</div>
 	</div>
 </div>

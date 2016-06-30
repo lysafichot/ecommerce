@@ -22,8 +22,8 @@
 		<div id='thepanier'>
 			<p id='detail_title'>Detail du panier :</p>
 			<div id='panier_view'>
-			{% if app.session.get('products')|length > 0 %}
-			{% for product in app.session.get('products') %}
+				{% if app.session.get('products')|length > 0 %}
+				{% for product in app.session.get('products') %}
 
 				<div class='product_list'>
 					<div class='preview_cart'><img src={{ asset('uploads/') }}{{product.derived.medias[0].path}}/></div>
@@ -40,16 +40,15 @@
 				{% endfor %}
 			</div>
 			<p id='total_panier'>Total :{{app.session.get('price')}} $<p>
-			{%else%}
-			<p>Votre panier est vide</p>
-			{%endif%}
-
-
+				<button><a href="{{path('payement')}}">Commander</a> </button>
+				{%else%}
+				<p>Votre panier est vide</p>
+				{%endif%}
 
 			</div>
 
-
-
 		</div>
+
 	</div>
-	{%endblock%}
+</div>
+{%endblock%}

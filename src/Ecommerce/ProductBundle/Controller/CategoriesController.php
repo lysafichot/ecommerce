@@ -21,6 +21,8 @@ class CategoriesController extends BossController
 
 	public function allproductsAction($id) {
 
+		$session = $this->getRequest()->getSession();
+
 		$em = $this->getDoctrine()->getManager();
 		$products = $em->getRepository('ProductBundle:Product')->findByCategories($id);
 		$category =  $em->getRepository('ProductBundle:Category')->find($id);

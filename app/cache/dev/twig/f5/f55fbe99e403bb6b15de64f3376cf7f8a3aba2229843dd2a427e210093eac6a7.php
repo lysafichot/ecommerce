@@ -15,8 +15,8 @@ class __TwigTemplate_5738b076fef560bf36e39b35322df757d66799a153f68168435366ab350
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fd96d7d0960fb1361e74c0f2415a0c6317fb15fbf55449e3284ca377d7accfdd = $this->env->getExtension("native_profiler");
-        $__internal_fd96d7d0960fb1361e74c0f2415a0c6317fb15fbf55449e3284ca377d7accfdd->enter($__internal_fd96d7d0960fb1361e74c0f2415a0c6317fb15fbf55449e3284ca377d7accfdd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":layout:header.html.twig"));
+        $__internal_e60640bd195e17fbf56d6c0812e60bc5f116f30d0bd5a08190d45444571d1229 = $this->env->getExtension("native_profiler");
+        $__internal_e60640bd195e17fbf56d6c0812e60bc5f116f30d0bd5a08190d45444571d1229->enter($__internal_e60640bd195e17fbf56d6c0812e60bc5f116f30d0bd5a08190d45444571d1229_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":layout:header.html.twig"));
 
         // line 1
         echo "<header>
@@ -96,7 +96,7 @@ class __TwigTemplate_5738b076fef560bf36e39b35322df757d66799a153f68168435366ab350
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 35
         echo "\t\t\t<span id='total_panier'>Total : ";
-        echo twig_escape_filter($this->env, (isset($context["price"]) ? $context["price"] : $this->getContext($context, "price")), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "price"), "method"), "html", null, true);
         echo " \$</span>
 
 
@@ -110,7 +110,7 @@ class __TwigTemplate_5738b076fef560bf36e39b35322df757d66799a153f68168435366ab350
 
 </header>";
         
-        $__internal_fd96d7d0960fb1361e74c0f2415a0c6317fb15fbf55449e3284ca377d7accfdd->leave($__internal_fd96d7d0960fb1361e74c0f2415a0c6317fb15fbf55449e3284ca377d7accfdd_prof);
+        $__internal_e60640bd195e17fbf56d6c0812e60bc5f116f30d0bd5a08190d45444571d1229->leave($__internal_e60640bd195e17fbf56d6c0812e60bc5f116f30d0bd5a08190d45444571d1229_prof);
 
     }
 
@@ -163,7 +163,7 @@ class __TwigTemplate_5738b076fef560bf36e39b35322df757d66799a153f68168435366ab350
 /* 				<p><span class='total'_cart'>Prix: {{ product.derived.price * product.count}} $</span></p>*/
 /* 			</div>*/
 /* 			{% endfor %}*/
-/* 			<span id='total_panier'>Total : {{price}} $</span>*/
+/* 			<span id='total_panier'>Total : {{app.session.get('price')}} $</span>*/
 /* */
 /* */
 /* 			<a href="{{ path('panier') }}">Voir le panier</a>*/

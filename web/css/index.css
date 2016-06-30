@@ -13,7 +13,7 @@ header { display:flex; justify-content: space-between; min-height:20%;height: 15
 	#panier #count {display:flex; justify-content:center;}
 
 	#panier #count span{display:flex; justify-content:center;border-radius: 50%; background-color: #CCB387; width: 10%; color: #EFEFF1 ;}
-
+	.hidden {display: none!important;}
 #search_login { display: flex;height: 10%; min-height:10%; background-image: url('../images/black_pattern.png'); color: #EFEFF1; width:70%; margin-top: 10px;
 	justify-content: space-between; }
 
@@ -170,6 +170,8 @@ header { display:flex; justify-content: space-between; min-height:20%;height: 15
 #info_contents {display: flex; flex-direction: column; width: 80%;}
 
 footer { height: 150px; background-color:#EFEFF1; margin-top: 3%; }
+
+.hidden {display: none!important;}
 
 /* ---- slider ---- */
 

@@ -15,8 +15,8 @@ class __TwigTemplate_686b3239a385ac288342dd6d2f61e085a1d1c7461294b9ea70dc1f8e795
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8a20f80bfebbecf92ff8af0c8427529e530b3c5197443c940169b02ab547a6e6 = $this->env->getExtension("native_profiler");
-        $__internal_8a20f80bfebbecf92ff8af0c8427529e530b3c5197443c940169b02ab547a6e6->enter($__internal_8a20f80bfebbecf92ff8af0c8427529e530b3c5197443c940169b02ab547a6e6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BraincraftedBootstrapBundle:Pagination:bootstrap.html.twig"));
+        $__internal_e8fcc27466d0bf7b477a901e5d22c1da99107788147d75c18143c50cb44a14fc = $this->env->getExtension("native_profiler");
+        $__internal_e8fcc27466d0bf7b477a901e5d22c1da99107788147d75c18143c50cb44a14fc->enter($__internal_e8fcc27466d0bf7b477a901e5d22c1da99107788147d75c18143c50cb44a14fc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BraincraftedBootstrapBundle:Pagination:bootstrap.html.twig"));
 
         // line 1
         $context["class"] = ((array_key_exists("class", $context)) ? (_twig_default_filter((isset($context["class"]) ? $context["class"] : $this->getContext($context, "class")), "")) : (""));
@@ -232,7 +232,7 @@ array_key_exists("last_label", $context)) {
             }
         }
         
-        $__internal_8a20f80bfebbecf92ff8af0c8427529e530b3c5197443c940169b02ab547a6e6->leave($__internal_8a20f80bfebbecf92ff8af0c8427529e530b3c5197443c940169b02ab547a6e6_prof);
+        $__internal_e8fcc27466d0bf7b477a901e5d22c1da99107788147d75c18143c50cb44a14fc->leave($__internal_e8fcc27466d0bf7b477a901e5d22c1da99107788147d75c18143c50cb44a14fc_prof);
 
     }
 

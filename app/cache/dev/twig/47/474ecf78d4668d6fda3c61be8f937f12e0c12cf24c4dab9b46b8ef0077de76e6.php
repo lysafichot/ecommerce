@@ -15,8 +15,8 @@ class __TwigTemplate_6346f577327de2908941b6c98595e6043a297def87afed146092fda7d46
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_af149c2547e6dcbded2662d84c491bc554c3c69ee60ebbf3454fedcbb5f6207a = $this->env->getExtension("native_profiler");
-        $__internal_af149c2547e6dcbded2662d84c491bc554c3c69ee60ebbf3454fedcbb5f6207a->enter($__internal_af149c2547e6dcbded2662d84c491bc554c3c69ee60ebbf3454fedcbb5f6207a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Account/Security/registration.html.twig"));
+        $__internal_fee4084a6df74852f0c6aa8cf9670f56c4f1b12b2d26d1a8d9f2e9a07ca706ac = $this->env->getExtension("native_profiler");
+        $__internal_fee4084a6df74852f0c6aa8cf9670f56c4f1b12b2d26d1a8d9f2e9a07ca706ac->enter($__internal_fee4084a6df74852f0c6aa8cf9670f56c4f1b12b2d26d1a8d9f2e9a07ca706ac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Account/Security/registration.html.twig"));
 
         // line 1
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-register")));
@@ -43,7 +43,7 @@ class __TwigTemplate_6346f577327de2908941b6c98595e6043a297def87afed146092fda7d46
         // line 8
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         
-        $__internal_af149c2547e6dcbded2662d84c491bc554c3c69ee60ebbf3454fedcbb5f6207a->leave($__internal_af149c2547e6dcbded2662d84c491bc554c3c69ee60ebbf3454fedcbb5f6207a_prof);
+        $__internal_fee4084a6df74852f0c6aa8cf9670f56c4f1b12b2d26d1a8d9f2e9a07ca706ac->leave($__internal_fee4084a6df74852f0c6aa8cf9670f56c4f1b12b2d26d1a8d9f2e9a07ca706ac_prof);
 
     }
 

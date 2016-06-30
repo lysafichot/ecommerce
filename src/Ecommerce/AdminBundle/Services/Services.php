@@ -1,6 +1,7 @@
 <?php
 namespace Ecommerce\AdminBundle\Services;
 use Ecommerce\ProductBundle\Entity\Category;
+use Ecommerce\AccountBundle\Entity\Adresse;
 
 use Ecommerce\ProductBundle\Entity\Product;
 use Ecommerce\ProductBundle\Entity\ProductDerived;
@@ -52,8 +53,6 @@ class Services
 		return $products;
 
 	}
-
-
 	public function panier($products_panier, $session) {
 
 		$total = 0;
@@ -64,9 +63,12 @@ class Services
 				$total += $product->count;
 				$price += $product->count * $product->derived->getPrice();
 			}
+		} else {
+			$products_panier = [];
 		}
 		$session->set('total',$total);
 		$session->set('price',$price);
 		$session->set('products',$products_panier);
 	}
+
 }

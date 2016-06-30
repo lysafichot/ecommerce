@@ -36,14 +36,29 @@ class Accounts implements UserInterface
     private $username;
 
     /**
-     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lastname;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $firstname;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $civilite;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $birthday;
+
+    /**
      * @Assert\Length(max=4096)
      */
     private $plainPassword;
 
     /**
-     * The below length depends on the "algorithm" you use for encoding
-     * the password, but this works well with bcrypt.
      *
      * @ORM\Column(type="string", length=64)
      */
@@ -57,67 +72,203 @@ class Accounts implements UserInterface
     /**
     * @ORM\OneToMany(targetEntity="Adresse", mappedBy="account", cascade={"persist"})
     */
-   private $adresses;
+    private $adresses;
 
 
-   public function __construct() {
-    $this->adresses = new \Doctrine\Common\Collections\ArrayCollection();
+    public function __construct($id = null) {
 
-}
+        $this->adresses = new \Doctrine\Common\Collections\ArrayCollection();
 
-public function getEmail()
-{
-    return $this->email;
-}
+    }
 
-public function setEmail($email)
-{
-    $this->email = $email;
-}
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
-public function getUsername()
-{
-    return $this->username;
-}
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
 
-public function setUsername($username)
-{
-    $this->username = $username;
-}
+    public function getUsername()
+    {
+        return $this->username;
+    }
 
-public function getPlainPassword()
-{
-    return $this->plainPassword;
-}
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
 
-public function setPlainPassword($password)
-{
-    $this->plainPassword = $password;
-}
-public function getPassword()
-{
-    return $this->password;
-}
-public function setPassword($password)
-{
-    $this->password = $password;
-}
-public function getRoles()
-{
-    return unserialize($this->roles);
-}
-public function setRoles(Array $roles)
-{
-    $this->roles = serialize($roles);
-}
-public function eraseCredentials()
-{
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
 
-}
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
+    public function getPassword()
+    {
+        return $this->password;
+    }
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+    public function getRoles()
+    {
+        return unserialize($this->roles);
+    }
+    public function setRoles(Array $roles)
+    {
+        $this->roles = serialize($roles);
+    }
+    public function eraseCredentials()
+    {
 
-public function getSalt()
-{
-    return null;
-}
+    }
 
+    public function getSalt()
+    {
+        return null;
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add adresses
+     *
+     * @param \Ecommerce\AccountBundle\Entity\Adresse $adresses
+     * @return Accounts
+     */
+    public function addAdress(\Ecommerce\AccountBundle\Entity\Adresse $adresses)
+    {
+        $this->adresses[] = $adresses;
+
+        return $this;
+    }
+
+    /**
+     * Remove adresses
+     *
+     * @param \Ecommerce\AccountBundle\Entity\Adresse $adresses
+     */
+    public function removeAdress(\Ecommerce\AccountBundle\Entity\Adresse $adresses)
+    {
+        $this->adresses->removeElement($adresses);
+    }
+
+    /**
+     * Get adresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAdresses()
+    {
+        return $this->adresses;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     * @return Accounts
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     * @return Accounts
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set civilite
+     *
+     * @param string $civilite
+     * @return Accounts
+     */
+    public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    /**
+     * Get civilite
+     *
+     * @return string
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param string $birthday
+     * @return Accounts
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
 }

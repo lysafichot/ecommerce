@@ -24,23 +24,23 @@ class __TwigTemplate_d548838c336d8726715e3265d8a34f5d136a0ef9cc763292b9e4a55685d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_52644e91592f220fee433efd9438acc28521bd67a3c657b3d91db9c0a8d5f225 = $this->env->getExtension("native_profiler");
-        $__internal_52644e91592f220fee433efd9438acc28521bd67a3c657b3d91db9c0a8d5f225->enter($__internal_52644e91592f220fee433efd9438acc28521bd67a3c657b3d91db9c0a8d5f225_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Collector/translation.html.twig"));
+        $__internal_1f158016a14c09263d5abd34e0f6bc3c8e674c63689f4999ce69cf0def1f4b6a = $this->env->getExtension("native_profiler");
+        $__internal_1f158016a14c09263d5abd34e0f6bc3c8e674c63689f4999ce69cf0def1f4b6a->enter($__internal_1f158016a14c09263d5abd34e0f6bc3c8e674c63689f4999ce69cf0def1f4b6a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Collector/translation.html.twig"));
 
         // line 3
         $context["helper"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_52644e91592f220fee433efd9438acc28521bd67a3c657b3d91db9c0a8d5f225->leave($__internal_52644e91592f220fee433efd9438acc28521bd67a3c657b3d91db9c0a8d5f225_prof);
+        $__internal_1f158016a14c09263d5abd34e0f6bc3c8e674c63689f4999ce69cf0def1f4b6a->leave($__internal_1f158016a14c09263d5abd34e0f6bc3c8e674c63689f4999ce69cf0def1f4b6a_prof);
 
     }
 
     // line 5
     public function block_toolbar($context, array $blocks = array())
     {
-        $__internal_24d6a6d69323e910e616b0b1f4abca860481179bd89bd7134e35a7771ebef29e = $this->env->getExtension("native_profiler");
-        $__internal_24d6a6d69323e910e616b0b1f4abca860481179bd89bd7134e35a7771ebef29e->enter($__internal_24d6a6d69323e910e616b0b1f4abca860481179bd89bd7134e35a7771ebef29e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
+        $__internal_6a8210afa073b1fb0c450539252f2e00ae0a3999974deebac40b4b38d92f7567 = $this->env->getExtension("native_profiler");
+        $__internal_6a8210afa073b1fb0c450539252f2e00ae0a3999974deebac40b4b38d92f7567->enter($__internal_6a8210afa073b1fb0c450539252f2e00ae0a3999974deebac40b4b38d92f7567_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
 
         // line 6
         echo "    ";
@@ -114,15 +114,15 @@ class __TwigTemplate_d548838c336d8726715e3265d8a34f5d136a0ef9cc763292b9e4a55685d
     ";
         }
         
-        $__internal_24d6a6d69323e910e616b0b1f4abca860481179bd89bd7134e35a7771ebef29e->leave($__internal_24d6a6d69323e910e616b0b1f4abca860481179bd89bd7134e35a7771ebef29e_prof);
+        $__internal_6a8210afa073b1fb0c450539252f2e00ae0a3999974deebac40b4b38d92f7567->leave($__internal_6a8210afa073b1fb0c450539252f2e00ae0a3999974deebac40b4b38d92f7567_prof);
 
     }
 
     // line 39
     public function block_menu($context, array $blocks = array())
     {
-        $__internal_df973044022fccef458f4c5e75c9820789bddc66af4c2edaf6f1713a0f6cbe79 = $this->env->getExtension("native_profiler");
-        $__internal_df973044022fccef458f4c5e75c9820789bddc66af4c2edaf6f1713a0f6cbe79->enter($__internal_df973044022fccef458f4c5e75c9820789bddc66af4c2edaf6f1713a0f6cbe79_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+        $__internal_0761b53bda90be985737fd5aa9523f6c4dc15ca009488a4c5f1291085e1b48a4 = $this->env->getExtension("native_profiler");
+        $__internal_0761b53bda90be985737fd5aa9523f6c4dc15ca009488a4c5f1291085e1b48a4->enter($__internal_0761b53bda90be985737fd5aa9523f6c4dc15ca009488a4c5f1291085e1b48a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
 
         // line 40
         echo "    <span class=\"label label-status-";
@@ -154,15 +154,15 @@ class __TwigTemplate_d548838c336d8726715e3265d8a34f5d136a0ef9cc763292b9e4a55685d
         echo "    </span>
 ";
         
-        $__internal_df973044022fccef458f4c5e75c9820789bddc66af4c2edaf6f1713a0f6cbe79->leave($__internal_df973044022fccef458f4c5e75c9820789bddc66af4c2edaf6f1713a0f6cbe79_prof);
+        $__internal_0761b53bda90be985737fd5aa9523f6c4dc15ca009488a4c5f1291085e1b48a4->leave($__internal_0761b53bda90be985737fd5aa9523f6c4dc15ca009488a4c5f1291085e1b48a4_prof);
 
     }
 
     // line 52
     public function block_panel($context, array $blocks = array())
     {
-        $__internal_986932750af185205f881517ad53d662430e30fc8cecb84d4bb2fd2e1c529910 = $this->env->getExtension("native_profiler");
-        $__internal_986932750af185205f881517ad53d662430e30fc8cecb84d4bb2fd2e1c529910->enter($__internal_986932750af185205f881517ad53d662430e30fc8cecb84d4bb2fd2e1c529910_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
+        $__internal_c2a7557cb865746011b7324639ca3811d35b08b88e37b47fc819e77f8c77ec30 = $this->env->getExtension("native_profiler");
+        $__internal_c2a7557cb865746011b7324639ca3811d35b08b88e37b47fc819e77f8c77ec30->enter($__internal_c2a7557cb865746011b7324639ca3811d35b08b88e37b47fc819e77f8c77ec30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
 
         // line 53
         echo "    ";
@@ -181,15 +181,15 @@ class __TwigTemplate_d548838c336d8726715e3265d8a34f5d136a0ef9cc763292b9e4a55685d
     ";
         }
         
-        $__internal_986932750af185205f881517ad53d662430e30fc8cecb84d4bb2fd2e1c529910->leave($__internal_986932750af185205f881517ad53d662430e30fc8cecb84d4bb2fd2e1c529910_prof);
+        $__internal_c2a7557cb865746011b7324639ca3811d35b08b88e37b47fc819e77f8c77ec30->leave($__internal_c2a7557cb865746011b7324639ca3811d35b08b88e37b47fc819e77f8c77ec30_prof);
 
     }
 
     // line 63
     public function block_panelContent($context, array $blocks = array())
     {
-        $__internal_b0e861ef4d94243d864f782583739b5fe4cf97253235d2f742d9bb61f1d1ad6a = $this->env->getExtension("native_profiler");
-        $__internal_b0e861ef4d94243d864f782583739b5fe4cf97253235d2f742d9bb61f1d1ad6a->enter($__internal_b0e861ef4d94243d864f782583739b5fe4cf97253235d2f742d9bb61f1d1ad6a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panelContent"));
+        $__internal_0b13657df642a7520c20de46a837ddb21b4b23640b756e226204ab797b7df596 = $this->env->getExtension("native_profiler");
+        $__internal_0b13657df642a7520c20de46a837ddb21b4b23640b756e226204ab797b7df596->enter($__internal_0b13657df642a7520c20de46a837ddb21b4b23640b756e226204ab797b7df596_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panelContent"));
 
         // line 64
         echo "    <h2>Translation Metrics</h2>
@@ -356,7 +356,7 @@ class __TwigTemplate_d548838c336d8726715e3265d8a34f5d136a0ef9cc763292b9e4a55685d
     </div>
 ";
         
-        $__internal_b0e861ef4d94243d864f782583739b5fe4cf97253235d2f742d9bb61f1d1ad6a->leave($__internal_b0e861ef4d94243d864f782583739b5fe4cf97253235d2f742d9bb61f1d1ad6a_prof);
+        $__internal_0b13657df642a7520c20de46a837ddb21b4b23640b756e226204ab797b7df596->leave($__internal_0b13657df642a7520c20de46a837ddb21b4b23640b756e226204ab797b7df596_prof);
 
     }
 
@@ -372,8 +372,8 @@ class __TwigTemplate_d548838c336d8726715e3265d8a34f5d136a0ef9cc763292b9e4a55685d
 
         ob_start();
         try {
-            $__internal_763e2f64d9e99e299b837ec2f41c0e7b52334aaa74fb2c555ae2273577aedfa3 = $this->env->getExtension("native_profiler");
-            $__internal_763e2f64d9e99e299b837ec2f41c0e7b52334aaa74fb2c555ae2273577aedfa3->enter($__internal_763e2f64d9e99e299b837ec2f41c0e7b52334aaa74fb2c555ae2273577aedfa3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "render_table"));
+            $__internal_375999c378c19497ac0ae3df3efe5f2a937ba8334204fa1c166b33ea70bdeb13 = $this->env->getExtension("native_profiler");
+            $__internal_375999c378c19497ac0ae3df3efe5f2a937ba8334204fa1c166b33ea70bdeb13->enter($__internal_375999c378c19497ac0ae3df3efe5f2a937ba8334204fa1c166b33ea70bdeb13_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "render_table"));
 
             // line 158
             echo "    <table>
@@ -516,7 +516,7 @@ class __TwigTemplate_d548838c336d8726715e3265d8a34f5d136a0ef9cc763292b9e4a55685d
     </table>
 ";
             
-            $__internal_763e2f64d9e99e299b837ec2f41c0e7b52334aaa74fb2c555ae2273577aedfa3->leave($__internal_763e2f64d9e99e299b837ec2f41c0e7b52334aaa74fb2c555ae2273577aedfa3_prof);
+            $__internal_375999c378c19497ac0ae3df3efe5f2a937ba8334204fa1c166b33ea70bdeb13->leave($__internal_375999c378c19497ac0ae3df3efe5f2a937ba8334204fa1c166b33ea70bdeb13_prof);
 
         } catch (Exception $e) {
             ob_end_clean();

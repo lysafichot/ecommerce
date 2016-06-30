@@ -22,7 +22,7 @@ class CategoriesController extends Controller
      	 */
 	public function addAction(Request $request)
 	{
-		$serviceCategory = $this->get('ecommerce.categories');
+		$serviceCategory = $this->get('ecommerce.services');
 		$categories= $serviceCategory->rangeCategories();
 		$category = new Category();
 		$medias = new Media();

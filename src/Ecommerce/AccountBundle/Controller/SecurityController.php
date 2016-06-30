@@ -1,5 +1,6 @@
 <?php
 namespace Ecommerce\AccountBundle\Controller;
+use Ecommerce\BossController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -8,7 +9,7 @@ use Ecommerce\AccountBundle\Form\RegisterType;
 use Ecommerce\AccountBundle\Entity\Accounts;
 
 
-class SecurityController extends Controller
+class SecurityController extends BossController
 {
     /**
      * @Route("/login", name="login")
@@ -21,7 +22,7 @@ class SecurityController extends Controller
     	$error = $authenticationUtils->getLastAuthenticationError();
     	$lastUsername = $authenticationUtils->getLastUsername();
 
-    	return $this->render(
+    	return $this->rend(
     	                    'AccountBundle:Security:login.html.twig',
     	                     array(
     	                           'last_username' => $lastUsername,
@@ -50,6 +51,7 @@ class SecurityController extends Controller
             $user->setEmail($form['email']->getData());
             $user->setRoles(['ROLE_USER']);
 
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
@@ -57,7 +59,7 @@ class SecurityController extends Controller
             return $this->redirectToRoute('ecommerce_homepage');
         }
 
-        return $this->render('AccountBundle:Security:registration.html.twig', array(
+        return $this->rend('AccountBundle:Security:registration.html.twig', array(
                                                                                 'form' => $form->createView(),
                                                                                 ));
     }

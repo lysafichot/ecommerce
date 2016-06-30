@@ -1,8 +1,42 @@
-{{ form_start(form, {'attr': {'class': 'form-register'}}) }}
-    {{ form_row(form.username) }}
-{{ form_row(form.email) }}
-     {{ form_row(form.plainPassword.first) }}
-    {{ form_row(form.plainPassword.second) }}
+{% extends "::base.html.twig" %}
 
-    <button type="submit">Register!</button>
-{{ form_end(form) }}
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+{% block header %} {{ parent() }} {% endblock %}
+
+<div id='search_login'>
+	{% block menu_auth %} {{ parent() }} {% endblock %}
+</div>
+<div id="main_div">
+	<div id='contents'>
+
+		<div  class='arbre'>
+			<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
+
+			<a href=""></a>
+		</div>
+		<div id ='registration'>
+				{{ form_start(form, {'attr': {'class': 'form-register'}}) }}
+			<div id='registre'>
+				{{ form_row(form.username) }}
+				{{ form_row(form.email) }}
+				{{ form_row(form.plainPassword.first) }}
+				{{ form_row(form.plainPassword.second) }}
+
+			</div>
+
+			<div class='hidden'>
+
+			</div>
+			<button type="submit">Register!</button>
+			{{ form_end(form) }}
+		</div>
+
+
+	</div>
+</div>
+{%endblock%}

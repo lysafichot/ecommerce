@@ -299,6 +299,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Ecommerce\\AccountBundle\\Controller\\AccountsController::accountAction',  '_route' => 'account',);
         }
 
+        // update_adresse
+        if ($pathinfo === '/update_adresse') {
+            return array (  '_controller' => 'Ecommerce\\AccountBundle\\Controller\\AccountsController::updateAdresseAction',  '_route' => 'update_adresse',);
+        }
+
         if (0 === strpos($pathinfo, '/category')) {
             // products_category
             if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
@@ -338,6 +343,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // search
         if ($pathinfo === '/search') {
             return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsDerivedController::searchAction',  '_route' => 'search',);
+        }
+
+        // payement
+        if ($pathinfo === '/payement') {
+            return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\PayementController::indexAction',  '_route' => 'payement',);
         }
 
         // ecommerce_homepage
