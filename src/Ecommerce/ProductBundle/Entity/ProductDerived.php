@@ -9,7 +9,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass="Ecommerce\ProductBundle\Repository\ProductDerivedRepository")
  * @ORM\Table(name="products_derived")
- * @UniqueEntity(fields="name_derived", message="Name is already in use")
+ * @UniqueEntity(fields="nameDerived", message="Name is already in use")
  */
 class ProductDerived
 {
@@ -20,7 +20,7 @@ class ProductDerived
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+      private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -53,7 +53,7 @@ class ProductDerived
     private $updatedAt;
 
     /**
-    * @ORM\ManyToOne(targetEntity="Ecommerce\ProductBundle\Entity\Product", inversedBy="productsDerived", cascade={"persist", "remove"})
+    * @ORM\ManyToOne(targetEntity="Ecommerce\ProductBundle\Entity\Product", inversedBy="productsDerived", cascade={"persist"})
     * @ORM\JoinTable(name="products_derived")
     * @ORM\JoinColumn(name="product_id", referencedColumnName="id", onDelete="cascade")
     */
@@ -72,7 +72,12 @@ class ProductDerived
     private $featureValues;
 
 
-
+    /**
+    * @ORM\OneToMany(targetEntity="Ecommerce\ProductBundle\Entity\Panier", mappedBy="productsDerived")
+    * @ORM\JoinTable(name="paniers")
+    * @ORM\JoinColumn(name="panier_id", referencedColumnName="id", onDelete="cascade", nullable=false)
+    */
+    private $panier;
 
     public function __construct()
     {
@@ -280,7 +285,7 @@ class ProductDerived
      * @param \Ecommerce\ProductBundle\Entity\Product $product
      * @return ProductDerived
      */
-    public function setProduct(\Ecommerce\ProductBundle\Entity\Product $product = null)
+    public function setProduct(\Ecommerce\ProductBundle\Entity\Product $product)
     {
         $this->product = $product;
 
@@ -328,5 +333,42 @@ class ProductDerived
     public function getFeatureValues()
     {
         return $this->featureValues;
+    }
+
+    /**
+     * Add panier
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Panier $panier
+     * @return ProductDerived
+     */
+    public function addPanier(\Ecommerce\ProductBundle\Entity\Panier $panier)
+    {
+        $this->panier[] = $panier;
+
+        return $this;
+    }
+
+    /**
+     * Remove panier
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Panier $panier
+     */
+    public function removePanier(\Ecommerce\ProductBundle\Entity\Panier $panier)
+    {
+        $this->panier->removeElement($panier);
+    }
+
+    /**
+     * Get panier
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPanier()
+    {
+        return $this->panier;
+    }
+      public function __toString()
+    {
+        return strval($this->getId());
     }
 }

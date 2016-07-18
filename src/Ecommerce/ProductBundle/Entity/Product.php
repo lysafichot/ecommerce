@@ -81,7 +81,12 @@ class Product
 
         return $this;
     }
+  public function setProductsDerived($productDerived = null)
+    {
+        $this->productsDerived = $productDerived;
 
+        return $this;
+    }
     public function removeProductsDerived(ProductDerived $productDerived)
     {
         $this->productsDerived ->removeElement($productDerived);
@@ -213,9 +218,6 @@ class Product
     {
         return $this->status;
     }
-    public function __toString() {
-        return strval($this->getId());
-    }
 
     /**
      * Set createdAt
@@ -261,5 +263,9 @@ class Product
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    public function __toString() {
+        return strval($this->getId());
     }
 }

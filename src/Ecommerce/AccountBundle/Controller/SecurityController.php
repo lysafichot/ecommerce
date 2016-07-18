@@ -36,8 +36,8 @@ class SecurityController extends BossController
     public function registrationAction(Request $request)
     {
 
-        $user = new Accounts();
-        $form   = $this->createForm(RegisterType::class, $user);
+        $account = new Accounts();
+        $form   = $this->createForm(RegisterType::class, $account);
 
         $form->handleRequest($request);
 
@@ -45,15 +45,16 @@ class SecurityController extends BossController
 
             $plainPassword = $form['plainPassword']->getData();
             $encoder = $this->container->get('security.password_encoder');
-            $encoded = $encoder->encodePassword($user, $plainPassword);
-            $user->setPassword($encoded);
-            $user->setUsername($form['username']->getData());
-            $user->setEmail($form['email']->getData());
-            $user->setRoles(['ROLE_USER']);
+            $encoded = $encoder->encodePassword($account, $plainPassword);
+            $account->setPassword($encoded);
+            $account->setUsername($form['username']->getData());
+            $account->setEmail($form['email']->getData());
+            $account->setRoles(['ROLE_USER']);
+
 
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
+            $em->persist($account);
             $em->flush();
 
             return $this->redirectToRoute('ecommerce_homepage');

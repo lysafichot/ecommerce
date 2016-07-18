@@ -87,6 +87,10 @@ class Adresse
     */
     private $account;
 
+    /**
+    * @ORM\OneToMany(targetEntity="Ecommerce\ProductBundle\Entity\Commande", mappedBy="adresse", cascade={"persist"})
+    */
+    private $commandes;
 
     public function __construct() {
      $this->createdAt = new \Datetime();
@@ -297,6 +301,7 @@ class Adresse
         $this->setNumero($form['numero']->getData());
         $this->setCity($form['city']->getData());
         $this->setCodePostal($form['codePostal']->getData());
+        $this->setSelected($form['selected']->getData());
 
         return $this;
     }
@@ -310,17 +315,50 @@ class Adresse
     public function setSelected($selected)
     {
         $this->selected = $selected;
-    
+
         return $this;
     }
 
     /**
      * Get selected
      *
-     * @return integer 
+     * @return integer
      */
     public function getSelected()
     {
         return $this->selected;
+    }
+
+    /**
+     * Add commandes
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Commande $commandes
+     * @return Adresse
+     */
+    public function addCommande(\Ecommerce\ProductBundle\Entity\Commande $commandes)
+    {
+        $this->commandes[] = $commandes;
+
+        return $this;
+    }
+
+    /**
+     * Remove commandes
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Commande $commandes
+     */
+    public function removeCommande(\Ecommerce\ProductBundle\Entity\Commande $commandes)
+    {
+        $this->commandes->removeElement($commandes);
+    }
+
+    /**
+     * Get commandes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommandes()
+    {
+        return $this->commandes;
     }
 }

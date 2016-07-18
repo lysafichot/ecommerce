@@ -17,7 +17,7 @@ class LoadProductDerived extends AbstractFixture implements OrderedFixtureInterf
     $productDerived->setNameDerived( 'ASUS G752VT-GC037T');
     $productDerived->setPrice(999.88);
     $productDerived->setWeight(0.700);
-    $productDerived->setProduct($this->getReference('product'));
+    $productDerived->setProduct($this->getReference('product1'));
 
     $productDerived->setStatus(1);
 

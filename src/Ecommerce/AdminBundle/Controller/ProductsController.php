@@ -73,16 +73,44 @@ class ProductsController extends Controller
 	{
 		return $this->createFormBuilder(array('id' => $id))->add('id', 'hidden')->getForm();
 	}
-	public function viewAction($id)
+	public function viewAction($id, Request $request)
 	{
 		$em = $this->getDoctrine()->getManager();
+		$medias = new Media();
+
 		$product = $em->getRepository('ProductBundle:Product')->find($id);
+		$productDerived = new ProductDerived();
+		$form   = $this->createForm(ProductDerivedType::class, $productDerived);
+		$form->handleRequest($request);
+		if ($form->isSubmitted()) {
+			$productDerived->setNameDerived($form['name_derived']->getData());
+			$productDerived->setPrice($form['price']->getData());
+			$productDerived->setWeight($form['weight']->getData());
+			$productDerived->setStatus($form['status']->getData());
+			$productDerived->setProduct($product);
+	$files = $productDerived->getMedias()->toArray()['files']->files;
+			$media_array = [];
+			foreach($files as $file) {
+				$media = $medias->save($file);
+				$medias->setProductDerived($productDerived);
+				$media_array[] = $media;
+			}
+			$productDerived->setMedias($media_array);
+			$em->persist($productDerived);
+
+			$em->flush();
+
+		}
+		$derived = $em->getRepository('ProductBundle:ProductDerived')->findByProduct($id);
+		$product->setProductsDerived($derived);
 		if (null === $product) {
 			throw new NotFoundHttpException("Le produit ".$id." est introuvables");
 		}
 		return $this->render('AdminBundle:Product:view.html.twig', array(
-		                                                                   'product' => $product,
-		                                                                   ));
+		                                                                 'product' => $product,
+		                                                                 'form' => $form->createView(),
+
+		                                                                 ));
 	}
 	public function deleteAction($id)
 	{

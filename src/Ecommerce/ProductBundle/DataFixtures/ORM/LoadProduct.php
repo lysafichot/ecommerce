@@ -91,7 +91,7 @@ $manager->persist($product5);
 $manager->flush();
 
 
-$this->addReference('product', $product);
+$this->addReference('product1', $product);
 $this->addReference('product2', $product2);
 $this->addReference('product3', $product3);
 $this->addReference('product4', $product4);

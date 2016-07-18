@@ -3,8 +3,31 @@
 {% block board %}
 
 <div id='admin_view_product'>
-   {% include("ProductBundle:Product:products.html.twig" ) %}
-   {{product.productsDerived[0].nameDerived}}
+	{% include("ProductBundle:Product:products.html.twig" ) %}
+	{{product.productsDerived[0].nameDerived}}
 </div>
+
+
+
+<p>Produits derivees</p>
+{% for derived in product.productsDerived%}
+<p>{{derived.nameDerived}}</p>
+<div>{{derived.price}} $</div>
+<span>___________</span>
+{%endfor%}
+
+
+{{ form_start(form, {'attr': {'class': 'add-derived'}}) }}
+
+{{ form_row(form.name_derived, {'label' : "Nom du produit derives", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.price, {'label' : "Prix du produit", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.weight, {'label' : "Weight", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.status, {'label' : "Status", 'attr': {'class': 'field_product'}}) }}
+{{ form_row(form.medias.vars.prototype.files) }}
+{{ form_widget(form) }}
+
+
+<button type="submit">Ajouter</button>
+{{ form_end(form) }}
 
 {% endblock %}

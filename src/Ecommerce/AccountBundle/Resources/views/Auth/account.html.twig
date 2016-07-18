@@ -22,7 +22,7 @@
 		<div id='myaccount'>
 			<div id='gestion'>
 				<a href="{{ path('account') }}">Mon profil</a>
-				<a href="{{ path('account') }}">Mes commandes</a>
+				<a href="{{ path('get_commande') }}">Mes commandes</a>
 				<a href="{{ path('account') }}">Mes adresses</a>
 
 
@@ -40,38 +40,38 @@
 
 					<p> Information personnelles : </p>
 					<p><span> Nom : </span>
-						{% if account.lastname %}
-						{{ account.lastname}}
+						{% if account.user and account.user.lastname %}
+						{{ account.user.lastname}}
 						<button>Edit</button>
-						{{ form_widget(formInfo.lastname, {'value': account.lastname, 'label' : "lastname", 'attr': {'class': 'field_civilite'}}) }}
+						{{ form_widget(formInfo.lastname, {'value': account.user.lastname, 'label' : "lastname", 'attr': {'class': 'field_civilite'}}) }}
 						{% else %}
 						{{ form_widget(formInfo.lastname, {'label' : "Lastname", 'attr': {'class': 'field_lastname'}}) }}
 						{% endif %}
 					</p>
 					<p><span>Prenom :</span>
-						{% if account.firstname %}
-						{{ account.firstname}}
+						{% if account.user and account.user.firstname %}
+						{{ account.user.firstname}}
 						<button>Edit</button>
-						{{ form_widget(formInfo.firstname, {'value': account.firstname, 'label' : "firstname", 'attr': {'class': 'field_firstname'}}) }}
+						{{ form_widget(formInfo.firstname, {'value': account.user.firstname, 'label' : "firstname", 'attr': {'class': 'field_firstname'}}) }}
 						{% else %}
 						{{ form_widget(formInfo.firstname, {'label' : "Firstname", 'attr': {'class': 'field_firstname'}}) }}
 						{% endif %}
 					</p>
 					<p><span>Civiltee :</span>
-						{% if account.civilite %}
-						{{ account.civilite}}
+						{% if account.user and account.user.civilite %}
+						{{ account.user.civilite}}
 						<button>Edit</button>
-						{{ form_widget(formInfo.civilite, {'value': account.civilite, 'label' : "civilite", 'attr': {'class': 'field_civilite'}}) }}
+						{{ form_widget(formInfo.civilite, {'value': account.user.civilite, 'label' : "civilite", 'attr': {'class': 'field_civilite'}}) }}
 						{% else %}
 						{{ form_widget(formInfo.civilite, {'label' : "Civilite", 'attr': {'class': 'field_civilite'}}) }}
 						{% endif %}
 					</p>
 
 					<p><span>Date de naissance :</span>
-						{% if account.birthday %}
-						{{ account.birthday}}
+						{% if account.user and account.user.birthday|date('Y-m-d')  %}
+						{{ account.user.birthday|date('Y-m-d') }}
 						<button>Edit</button>
-						{{ form_widget(formInfo.birthday, {'value': account.birthday, 'label' : "birthday", 'attr': {'class': 'field_civilite'}}) }}
+						{{ form_widget(formInfo.birthday, {'value': account.user.birthday|date('Y-m-d') , 'label' : "birthday", 'attr': {'class': 'field_civilite'}}) }}
 						{% else %}
 						{{ form_widget(formInfo.birthday, {'label' : "birthday", 'attr': {'class': 'field_birthday'}}) }}
 						{% endif %}
@@ -102,8 +102,13 @@
 								<span>{{ adresseLiv.city }}</span>
 								<input type="text" id="city" name="city" value="{{  adresseLiv.city }}" />
 
-								<input type="checkbox" id="city" name="selected" value="{{  adresseLiv.selected }}" />
 
+								{% if adresseLiv.selected == 1%}
+								<input type="checkbox" id="city" name="selected"   checked="1" />
+								{% else %}
+								<input type="checkbox" id="city" name="selected" />
+
+{%endif%}
 								<button type="submit">Modier</button>
 							</form>
 						</div>
@@ -150,7 +155,7 @@
 								<span>{{ adresseFac.city }}</span>
 								<input type="text" id="city" name="city" value="{{  adresseFac.city }}" />
 
-								<input type="checkbox" id="city" name="selected" value="{{  adresseFac.selected }}" />
+								<input type="checkbox" id="city" name="selected" checked="{{  adresseFac.selected }}" />
 
 								<button type="submit">Modier</button>
 							</form>

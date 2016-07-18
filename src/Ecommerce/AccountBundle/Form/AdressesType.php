@@ -27,6 +27,7 @@ class AdressesType extends AbstractType
             ->add('type', HiddenType::class)
             ->add('selected', CheckboxType::class, array(
     'label'    => 'Adresses par default',
+
     'required' => false,
 ));
 

@@ -27,9 +27,18 @@ class ProductsDerivedController extends BossController
 		$searchs = $repository->findBySearch($postData);
 
 		return $this->rend('ProductBundle:Product:search.html.twig', array(
-								     'postsearch' => $postData,
-		                                                                     'searchs' => $searchs,
-		                                                                     ));
+		                                                                   'postsearch' => $postData,
+		                                                                   'searchs' => $searchs,
+		                                                                   ));
+	}
+	public function viewAction($productId) {
+
+		$em = $this->getDoctrine()->getManager();
+		$product = $em->getRepository('ProductBundle:Product')->find($productId);
+		return $this->rend('ProductBundle:Product:view.html.twig', array(
+		                                                                 'product' => $product,
+
+		                                                                 ));
 	}
 
 

@@ -200,3 +200,76 @@ footer { height: 150px; background-color:#EFEFF1; margin-top: 3%; }
 	#points { display: block; position: absolute; z-index: 999; top: 560px; width: 402px; height: 42px; background: #000; opacity: 0.7; text-align: center;}
 	.point { display: inline-block; vertical-align: top; width: 20px; height: 20px; border-radius: 50%; margin: 11px 5px; background: #eee; cursor: pointer;}
 		.BulletActivated { background: #f33;}*/
+
+#displayList > ul {
+	list-style: none;
+	float: left;
+	display: block;
+	width: 100%;
+	padding-left: 0px;
+	margin: auto;
+}
+#displayList {
+	float: left;
+	width: 100%;
+}
+#displayList > ul > li {
+	display: block;
+	background-color: #FFFFFF;
+	box-shadow: 1px 1px 1px 1px #000000;
+}
+#container {
+	width: 90%;
+}
+#displayList > ul > li > a {
+	color: #000000;
+	text-transform: none;
+	text-decoration: none;
+	height: 40px;
+	line-height: 40px !important;
+	width: 100%;
+	display: inline-block;
+}
+.sousmenu {
+	width: 500px;
+	height: 400px;
+	display: none;
+	background-color: #fff;
+
+}
+#div1 {
+	background-color: #fff;
+
+}
+#div4 {
+	background-color: #000039;
+
+}
+#div2 {
+	background-color: #850000;
+
+}
+#div3 {
+	background-color: #004700;
+
+}
+
+#allDiv {
+	float: left;
+}
+#allDiv {
+	position: absolute;
+	z-index: 999;
+}
+#displayList > ul > li > a::after {
+	background-image: url('../images/arrow_right.svg');
+	content: "";
+	height: 35px;
+	width: 35px;
+	float: right;
+	margin-top: 2px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}

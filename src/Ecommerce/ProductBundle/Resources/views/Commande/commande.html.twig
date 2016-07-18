@@ -1,0 +1,51 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+{% block header %} {{ parent() }} {% endblock %}
+
+<div id='search_login'>
+	{% block menu_auth %} {{ parent() }} {% endblock %}
+</div>
+<div id="main_div">
+	<div id='contents'>
+
+		<div  class='arbre'>
+			<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
+
+			<a href=""></a>
+		</div>
+		<div>
+			<p>Commande</p>
+			{% set total = 0 %}
+
+			{% for commande in commandes %}
+			<p>{{ commande.id }}</p>
+			<span>{{commande.createdAt|date('Y-m-d')}}</span>
+			<p><span>{{commande.adresse.numero}}</span><span>{{commande.adresse.name}}</span></p>
+			<p>{{ commande.adresse.codePostal}}</p>
+			<p>{{ commande.adresse.city }}</p>
+			{% for product in commande.paniers %}
+
+			<p>{{ product.id}}</p>
+			<p>{{ product.productsDerived.nameDerived}}</p>
+			<p>{{ product.productsDerived.weight}} kg</p>
+			<p>{{ product.productsDerived.price}} $</p>
+			<p>{{ product.quantity}}</p>
+			<p> {{ product.quantity * product.productsDerived.price}} $</p>
+			<p>{{ product.pack}} emballage</p>
+			{% set total = total + product.quantity * product.productsDerived.price %}
+
+
+			{% endfor%}
+
+			{% endfor%}
+			Total de la commande :{{total}}
+		</div>
+	</div>
+</div>
+{%endblock%}

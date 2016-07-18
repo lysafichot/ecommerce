@@ -24,9 +24,132 @@
 			<div id='paypal'></div>
 			<div id='card'></div>
 
+			{% if app.user == null %}
+
+			{% if error %}
+			<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
+			<form action="{{ path('login') }}" method="post">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="_password" />
 
 
+				<button type="submit">login</button>
+			</form>
+
+			<a href="{{ path('registration')}}">S'inscrire</a>
+
+
+
+
+
+
+
+
+			{%else%}
+
+			{{ form_start(formInfo, {'attr': {'class': 'form-add-infos'}}) }}
+
+			<p> Information personnelles : </p>
+			<p><span> Nom : </span>
+
+				{% if account and account.user and account.user.lastname %}
+				{{ account.user.lastname}}
+				{{ form_widget(formInfo.lastname, {'label' : "Lastname", 'attr': {'class': 'hidden'}}) }}
+
+				{% else %}
+				{{ form_widget(formInfo.lastname, {'label' : "Lastname", 'attr': {'class': 'field_lastname'}}) }}
+				{% endif %}
+			</p>
+			<p><span>Prenom :</span>
+				{% if account and account.user and account.user.firstname %}
+				{{ account.user.firstname}}
+				{{ form_widget(formInfo.firstname, {'label' : "Firstname", 'attr': {'class': 'hidden'}}) }}
+
+				{% else %}
+				{{ form_widget(formInfo.firstname, {'label' : "Firstname", 'attr': {'class': 'field_firstname'}}) }}
+				{% endif %}
+			</p>
+			<p><span>Civiltee :</span>
+				{% if account and account.user and account.user.civilite %}
+				{{ account.user.civilite}}
+				{{ form_widget(formInfo.civilite, {'label' : "Civilite", 'attr': {'class': 'hidden'}}) }}
+
+				{% else %}
+				{{ form_widget(formInfo.civilite, {'label' : "Civilite", 'attr': {'class': 'field_civilite'}}) }}
+				{% endif %}
+			</p>
+			<p><span>Birthday :</span>
+
+				{% if account and account.user and account.user.birthday %}
+				{{ account.user.birthday|date('Y-m-d') }}
+				{{ form_widget(formInfo.birthday, {'label' : "", 'attr': {'class': 'hidden'}}) }}</p>
+
+				{% else %}
+
+				{{ form_widget(formInfo.birthday, {'label' : "", 'attr': {'class': 'field_birthday'}}) }}</p>
+				{% endif %}
+
+
+				{% if account  == null or account.user == null or account.user and account.user.lastname == null or account.user and account.user.firstname == null or account.user and account.user.civilite == null %}
+
+				<button type="submit">Ajouter</button>
+				{%endif%}
+
+				{{ form_end(formInfo) }}
+
+				{%if adresses|length > 0%}
+				<form action="{{ path('confirmation') }}" method="post">
+					{% for adresse in adresses %}
+					<div>
+
+						<p><span>{{adresse.numero}}  </span><span>{{adresse.name}}</span></p>
+						<p><span>{{adresse.codePostal }}  </span><span>{{adresse.city}}</span></p>
+
+						<input type="hidden" id="" name="adresse_id" value="{{ adresse.id }}" />
+
+
+						{% if adresse.selected == 1 %}
+						<input type="checkbox" name="selected"  value='{{ adresse.id }}' checked="1" />
+						{% else %}
+						<input type="checkbox" value='{{ adresse.id }}'' name="selected" />
+
+						{%endif%}
+
+					</div>
+					{% endfor %}
+					<button type="submit">Confirmer</button>
+					<div id='payer'>
+
+					</div>
+				</form>
+
+
+
+				{%else%}
+
+				{{ form_start(formAdr, {'attr': {'class': 'form-add-adresses'}}) }}
+				{{ form_row(formAdr.numero, {'label' : "Numero", 'attr': {'class': 'field_numero'}}) }}
+
+				{{ form_row(formAdr.name, {'label' : "Ajouter une adresse", 'attr': {'class': 'field_name'}}) }}
+				{{ form_row(formAdr.type, {'label' : "", 'attr': {'class': 'field_type'}, 'value' : 'Livraison'}) }}
+				{{ form_row(formAdr.city, {'label' : "", 'attr': {'class': 'field_city'}}) }}
+				{{ form_row(formAdr.codePostal, {'label' : "", 'attr': {'class': 'field_codePostal'}}) }}
+				{{ form_widget(formAdr.selected, {'label' : "Par default", 'attr': {'class': 'hidden'}}) }}
+
+
+				<button type="submit">Confirmer</button>
+				{{ form_end(formAdr) }}
+				{%endif%}
+
+				{% endif %}
+
+
+			</div>
 		</div>
 	</div>
-</div>
-{%endblock%}
+	{%endblock%}

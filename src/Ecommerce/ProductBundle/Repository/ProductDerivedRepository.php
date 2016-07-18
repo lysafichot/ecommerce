@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductDerivedRepository extends EntityRepository
 {
+
+	public function findByProduct($id) {
+		return $query = $this->createQueryBuilder('der')
+		->select('der')
+		->where('der.product = :id')
+
+		->setParameter('id',$id )
+		->getQuery()
+		->execute();
+	}
 }

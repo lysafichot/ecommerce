@@ -24,6 +24,7 @@
 
 			<a href=""></a>
 		</div>
+		{% set one = product.productsDerived[0].id%}
 
 		<span id='title_product'>{{product.name}}</span>
 		<div id='info_cart'>
@@ -48,7 +49,28 @@
 			<p>{{product.summary}}</p>
 		</div>
 
+		<div id='productDerived' >
 
+
+
+			{% for derived in product.productsDerived%}
+
+			{% if derived.id != one %}
+			<div class='derived'>
+				{% for media in derived.medias %}
+				<div class='thumb'>
+					<img src={{ asset('uploads/') }}{{media.path}}/>
+				</div>
+				{%endfor%}
+				<p>{{derived.nameDerived}}</p>
+				<div>{{derived.price}} $</div>
+
+
+			</div>
+			{%endif%}
+			{%endfor%}
+
+		</div>
 	</div>
 </div>
 {%endblock%}

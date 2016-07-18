@@ -1,0 +1,220 @@
+<?php
+
+namespace Ecommerce\ProductBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Panier
+ *
+ * @ORM\Table(name="paniers")
+ * @ORM\Entity(repositoryClass="Ecommerce\ProductBundle\Repository\PanierRepository")
+ */
+class Panier
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Ecommerce\ProductBundle\Entity\ProductDerived", inversedBy="panier", cascade={"persist"})
+    * @ORM\JoinTable(name="paniers")
+    * @ORM\JoinColumn(name="productDerived_id", referencedColumnName="id", onDelete="cascade")
+    */
+    private $productsDerived;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantity", type="integer")
+     */
+    private $quantity;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="pack", type="integer")
+     */
+    private $pack;
+
+     /**
+     * @ORM\Column(type="datetime")
+     */
+     private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+  /**
+    * @ORM\ManyToOne(targetEntity="Ecommerce\ProductBundle\Entity\Commande", inversedBy="paniers", cascade={"persist"})
+    * @ORM\JoinTable(name="paniers")
+    * @ORM\JoinColumn(name="commande_id", referencedColumnName="id", onDelete="cascade")
+    */
+   private $commande;
+
+   public function __construct()
+   {
+    $this->createdAt = new \Datetime();
+    $this->updatedAt = new \Datetime();
+    $this->productsDerived = new \Doctrine\Common\Collections\ArrayCollection();
+
+}
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set quantity
+     *
+     * @param integer $quantity
+     * @return Panier
+     */
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+    
+        return $this;
+    }
+
+    /**
+     * Get quantity
+     *
+     * @return integer 
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * Set pack
+     *
+     * @param integer $pack
+     * @return Panier
+     */
+    public function setPack($pack)
+    {
+        $this->pack = $pack;
+    
+        return $this;
+    }
+
+    /**
+     * Get pack
+     *
+     * @return integer 
+     */
+    public function getPack()
+    {
+        return $this->pack;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Panier
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Panier
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set productsDerived
+     *
+     * @param \Ecommerce\ProductBundle\Entity\ProductDerived $productsDerived
+     * @return Panier
+     */
+    public function setProductsDerived(\Ecommerce\ProductBundle\Entity\ProductDerived $productsDerived = null)
+    {
+        $this->productsDerived = $productsDerived;
+    
+        return $this;
+    }
+
+    /**
+     * Get productsDerived
+     *
+     * @return \Ecommerce\ProductBundle\Entity\ProductDerived 
+     */
+    public function getProductsDerived()
+    {
+        return $this->productsDerived;
+    }
+
+    /**
+     * Set commande
+     *
+     * @param \Ecommerce\ProductBundle\Entity\Commande $commande
+     * @return Panier
+     */
+    public function setCommande(\Ecommerce\ProductBundle\Entity\Commande $commande = null)
+    {
+        $this->commande = $commande;
+    
+        return $this;
+    }
+
+    /**
+     * Get commande
+     *
+     * @return \Ecommerce\ProductBundle\Entity\Commande 
+     */
+    public function getCommande()
+    {
+        return $this->commande;
+    }
+}

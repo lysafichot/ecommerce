@@ -35,23 +35,6 @@ class Accounts implements UserInterface
      */
     private $username;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $lastname;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $firstname;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $civilite;
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $birthday;
 
     /**
      * @Assert\Length(max=4096)
@@ -68,14 +51,18 @@ class Accounts implements UserInterface
      */
     private $roles;
 
-
     /**
     * @ORM\OneToMany(targetEntity="Adresse", mappedBy="account", cascade={"persist"})
     */
     private $adresses;
 
+      /**
+   * @ORM\OneToOne(targetEntity="User", cascade={"persist", "merge", "remove"})
+   * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+   */
+      private $user;
 
-    public function __construct($id = null) {
+      public function __construct($id = null) {
 
         $this->adresses = new \Doctrine\Common\Collections\ArrayCollection();
 
@@ -180,95 +167,28 @@ class Accounts implements UserInterface
         return $this->adresses;
     }
 
+
+
     /**
-     * Set lastname
+     * Set user
      *
-     * @param string $lastname
+     * @param \Ecommerce\AccountBundle\Entity\User $user
      * @return Accounts
      */
-    public function setLastname($lastname)
+    public function setUser(\Ecommerce\AccountBundle\Entity\User $user = null)
     {
-        $this->lastname = $lastname;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get lastname
+     * Get user
      *
-     * @return string
+     * @return \Ecommerce\AccountBundle\Entity\User
      */
-    public function getLastname()
+    public function getUser()
     {
-        return $this->lastname;
-    }
-
-    /**
-     * Set firstname
-     *
-     * @param string $firstname
-     * @return Accounts
-     */
-    public function setFirstname($firstname)
-    {
-        $this->firstname = $firstname;
-
-        return $this;
-    }
-
-    /**
-     * Get firstname
-     *
-     * @return string
-     */
-    public function getFirstname()
-    {
-        return $this->firstname;
-    }
-
-    /**
-     * Set civilite
-     *
-     * @param string $civilite
-     * @return Accounts
-     */
-    public function setCivilite($civilite)
-    {
-        $this->civilite = $civilite;
-
-        return $this;
-    }
-
-    /**
-     * Get civilite
-     *
-     * @return string
-     */
-    public function getCivilite()
-    {
-        return $this->civilite;
-    }
-
-    /**
-     * Set birthday
-     *
-     * @param string $birthday
-     * @return Accounts
-     */
-    public function setBirthday($birthday)
-    {
-        $this->birthday = $birthday;
-
-        return $this;
-    }
-
-    /**
-     * Get birthday
-     *
-     * @return string
-     */
-    public function getBirthday()
-    {
-        return $this->birthday;
+        return $this->user;
     }
 }

@@ -3,22 +3,33 @@ products_category:
     defaults: { _controller: ProductBundle:Categories:allproducts }
 add_panier:
     path:     /category/{id}/{productId}
-    defaults: { _controller: ProductBundle:Products:addPanier }
+    defaults: { _controller: ProductBundle:Panier:addPanier }
 view_product:
     path:     /product/{productId}
-    defaults: { _controller: ProductBundle:Products:view }
+    defaults: { _controller: ProductBundle:ProductsDerived:view }
 panier:
     path:     /panier
-    defaults: { _controller: ProductBundle:Products:panier }
+    defaults: { _controller: ProductBundle:Panier:panier }
 remove_panier:
     path: /remove/{id}
-    defaults: { _controller: ProductBundle:Products:removePanier }
+    defaults: { _controller: ProductBundle:Panier:removePanier }
 quantity_panier:
     path: /quantity/{id}/{option}
-    defaults: { _controller: ProductBundle:Products:qtePanier }
+    defaults: { _controller: ProductBundle:Panier:qtePanier }
 search:
     path: /search
     defaults: { _controller: ProductBundle:ProductsDerived:search }
 payement:
     path: /payement
-    defaults: {_controller: ProductBundle:Payement:index}
+    defaults: {_controller: ProductBundle:Commande:index}
+transaction:
+    path: /transaction
+    defaults: {_controller: ProductBundle:Commande:transaction}
+get_commande:
+    path: /commandes
+    defaults: {_controller: ProductBundle:Commande:getCommande}
+
+confirmation:
+    path: /confirmation
+    defaults: {_controller: ProductBundle:Commande:confirmation}
+

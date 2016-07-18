@@ -71,4 +71,6 @@ class Services
 		$session->set('products',$products_panier);
 	}
 
+
+
 }

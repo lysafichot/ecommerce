@@ -7,6 +7,7 @@ use Ecommerce\AccountBundle\Form\UserType;
 use Ecommerce\AccountBundle\Form\AdressesType;
 use Ecommerce\AccountBundle\Entity\Adresse;
 use Ecommerce\AccountBundle\Entity\Accounts;
+use Ecommerce\AccountBundle\Entity\User;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -24,11 +25,19 @@ class AccountsController extends BossController
 		$em = $this->getDoctrine()->getManager();
 		$user = $this->get('security.context')->getToken()->getUser();
 		$account = $em->getRepository('AccountBundle:Accounts')->find($user->getId());
-		$adresse = new Adresse();
+		$userInfo = $em->getRepository('AccountBundle:User')->findBy(['account' => $user->getId()]);
+		if($userInfo) {
+			$userInfo = $userInfo[0];
+			$account->setUser($userInfo);
 
+		} else {
+			$userInfo = new User();
+
+		}
+		$adresse = new Adresse();
 		$formFac   = $this->createForm(AdressesType::class, $adresse);
 		$formLiv   = $this->createForm(AdressesType::class, $adresse);
-		$formInfo   = $this->createForm(UserType::class, $account);
+		$formInfo   = $this->createForm(UserType::class, $userInfo);
 		$formFac->handleRequest($request);
 		$formLiv->handleRequest($request);
 		$formInfo->handleRequest($request);
@@ -39,13 +48,15 @@ class AccountsController extends BossController
 		$adressesLiv = $em->getRepository('AccountBundle:Adresse')->findAdresses('Livraison', $user->getId());
 
 		if ($formInfo->isSubmitted()) {
+			$userInfo->setLastname($formInfo['lastname']->getData());
+			$userInfo->setFirstname($formInfo['firstname']->getData());
+			$userInfo->setBirthday($formInfo['birthday']->getData());
+			$userInfo->setCivilite($formInfo['civilite']->getData());
+			$userInfo->setAccount($user);
+			$em->persist($userInfo);
+			$em->flush();
 
-			$account->setLastname($formInfo['lastname']->getData());
-			$account->setFirstname($formInfo['firstname']->getData());
-
-			$account->setBirthday($formInfo['birthday']->getData()->format('Y-m-d'));
-			$account->setCivilite($formInfo['civilite']->getData());
-
+			$account->setUser($userInfo);
 			$em->persist($account);
 			$em->flush();
 
@@ -92,12 +103,17 @@ class AccountsController extends BossController
 		$user = $this->get('security.context')->getToken()->getUser();
 		$adresse = $em->getRepository('AccountBundle:Adresse')->findBy(['account' => $user, 'id' => $id]);
 		if(isset($adresse[0])) {
-var_dump($adresse->getSelected());
 			$adresse[0]->setNumero($request->get('numero'));
 			$adresse[0]->setName($request->get('name'));
 			$adresse[0]->setCodePostal($request->get('codePostal'));
 			$adresse[0]->setCity($request->get('city'));
-			$adresse[0]->setSelected($request->get('selected'));
+			if($request->get('selected') =='on') { //service pour remove les autres
+			$adresse[0]->setSelected(1);
+
+			} else {
+			$adresse[0]->setSelected(0);
+
+			}
 
 
 			$em->persist($adresse[0]);

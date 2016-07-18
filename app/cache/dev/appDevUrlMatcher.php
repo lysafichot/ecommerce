@@ -312,7 +312,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // add_panier
             if (preg_match('#^/category/(?P<id>[^/]++)/(?P<productId>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::addPanierAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\PanierController::addPanierAction',));
             }
 
         }
@@ -320,24 +320,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         if (0 === strpos($pathinfo, '/p')) {
             // view_product
             if (0 === strpos($pathinfo, '/product') && preg_match('#^/product/(?P<productId>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'view_product')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::viewAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'view_product')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsDerivedController::viewAction',));
             }
 
             // panier
             if ($pathinfo === '/panier') {
-                return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::panierAction',  '_route' => 'panier',);
+                return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\PanierController::panierAction',  '_route' => 'panier',);
             }
 
         }
 
         // remove_panier
         if (0 === strpos($pathinfo, '/remove') && preg_match('#^/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'remove_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::removePanierAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'remove_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\PanierController::removePanierAction',));
         }
 
         // quantity_panier
         if (0 === strpos($pathinfo, '/quantity') && preg_match('#^/quantity/(?P<id>[^/]++)/(?P<option>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'quantity_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\ProductsController::qtePanierAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'quantity_panier')), array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\PanierController::qtePanierAction',));
         }
 
         // search
@@ -347,7 +347,25 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // payement
         if ($pathinfo === '/payement') {
-            return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\PayementController::indexAction',  '_route' => 'payement',);
+            return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\CommandeController::indexAction',  '_route' => 'payement',);
+        }
+
+        // transaction
+        if ($pathinfo === '/transaction') {
+            return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\CommandeController::transactionAction',  '_route' => 'transaction',);
+        }
+
+        if (0 === strpos($pathinfo, '/co')) {
+            // get_commande
+            if ($pathinfo === '/commandes') {
+                return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\CommandeController::getCommandeAction',  '_route' => 'get_commande',);
+            }
+
+            // confirmation
+            if ($pathinfo === '/confirmation') {
+                return array (  '_controller' => 'Ecommerce\\ProductBundle\\Controller\\CommandeController::confirmationAction',  '_route' => 'confirmation',);
+            }
+
         }
 
         // ecommerce_homepage

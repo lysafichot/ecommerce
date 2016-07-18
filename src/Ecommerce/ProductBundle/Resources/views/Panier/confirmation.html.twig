@@ -1,0 +1,46 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Accueil {% endblock %}
+
+{% block head %} {{ parent() }} {% endblock %}
+
+
+{% block body %}
+{% block header %} {{ parent() }} {% endblock %}
+
+<div id='search_login'>
+	{% block menu_auth %} {{ parent() }} {% endblock %}
+</div>
+<div id="main_div">
+	<div id='contents'>
+
+		<div  class='arbre'>
+			<a href="{{ path('ecommerce_homepage')}}"><img  src="{{ asset('images/home.png') }}"/></a>
+
+			<a href=""></a>
+		</div>
+		<div id='transaction'>
+
+
+<p>{{user[0].civilite}}</p>
+<p>{{user[0].firstname}}</p>
+<p>{{user[0].lastname}}</p>
+
+
+<p><span>{{adresse.numero}} </span>
+<span>{{adresse.name}}</span></p>
+<p>{{adresse.codePostal}}</p>
+<p>{{adresse.city}}</p>
+<p>{{adresse.type}}</p>
+
+
+			<form action="{{ path('transaction') }}" method="post">
+<input type="hidden" id="" name="adresse_id" value="{{ adresse.id }}" />
+
+				<button type="submit">Payer</button>
+
+</form>
+		</div>
+	</div>
+</div>
+{%endblock%}

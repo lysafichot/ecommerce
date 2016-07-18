@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: 'C:\wamp\www\Projet_WEB_Avance_E-commerce\app/config/routing_dev.yml'
+    resource: /home/fichot_l/Bureau/lol/Projet_WEB_Avance_E-commerce/app/config/routing_dev.yml
