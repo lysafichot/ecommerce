@@ -72,19 +72,13 @@ class ProductDerived
     private $featureValues;
 
 
-    /**
-    * @ORM\OneToMany(targetEntity="Ecommerce\ProductBundle\Entity\Panier", mappedBy="productsDerived")
-    * @ORM\JoinTable(name="paniers")
-    * @ORM\JoinColumn(name="panier_id", referencedColumnName="id", onDelete="cascade", nullable=false)
-    */
-    private $panier;
 
     public function __construct()
     {
         $this->createdAt = new \Datetime();
         $this->updatedAt = new \Datetime();
         $this->medias = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->featureNames = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->featureValues = new \Doctrine\Common\Collections\ArrayCollection();
 
     }
 

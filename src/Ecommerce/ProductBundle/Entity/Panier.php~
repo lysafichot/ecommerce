@@ -23,7 +23,7 @@ class Panier
 
 
     /**
-    * @ORM\ManyToOne(targetEntity="Ecommerce\ProductBundle\Entity\ProductDerived", inversedBy="panier", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="Ecommerce\ProductBundle\Entity\ProductDerived", inversedBy="panier")
     * @ORM\JoinTable(name="paniers")
     * @ORM\JoinColumn(name="productDerived_id", referencedColumnName="id", onDelete="cascade")
     */
@@ -73,7 +73,7 @@ class Panier
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -89,14 +89,14 @@ class Panier
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
-    
+
         return $this;
     }
 
     /**
      * Get quantity
      *
-     * @return integer 
+     * @return integer
      */
     public function getQuantity()
     {
@@ -112,14 +112,14 @@ class Panier
     public function setPack($pack)
     {
         $this->pack = $pack;
-    
+
         return $this;
     }
 
     /**
      * Get pack
      *
-     * @return integer 
+     * @return integer
      */
     public function getPack()
     {
@@ -135,14 +135,14 @@ class Panier
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
-    
+
         return $this;
     }
 
     /**
      * Get createdAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -158,14 +158,14 @@ class Panier
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
-    
+
         return $this;
     }
 
     /**
      * Get updatedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -181,14 +181,14 @@ class Panier
     public function setProductsDerived(\Ecommerce\ProductBundle\Entity\ProductDerived $productsDerived = null)
     {
         $this->productsDerived = $productsDerived;
-    
+
         return $this;
     }
 
     /**
      * Get productsDerived
      *
-     * @return \Ecommerce\ProductBundle\Entity\ProductDerived 
+     * @return \Ecommerce\ProductBundle\Entity\ProductDerived
      */
     public function getProductsDerived()
     {
@@ -204,14 +204,14 @@ class Panier
     public function setCommande(\Ecommerce\ProductBundle\Entity\Commande $commande = null)
     {
         $this->commande = $commande;
-    
+
         return $this;
     }
 
     /**
      * Get commande
      *
-     * @return \Ecommerce\ProductBundle\Entity\Commande 
+     * @return \Ecommerce\ProductBundle\Entity\Commande
      */
     public function getCommande()
     {

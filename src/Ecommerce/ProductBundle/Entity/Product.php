@@ -59,7 +59,7 @@ class Product
     private $categories;
 
     /**
-    * @ORM\OneToMany(targetEntity="Ecommerce\ProductBundle\Entity\ProductDerived", mappedBy="product", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="Ecommerce\ProductBundle\Entity\ProductDerived", mappedBy="product")
     */
     private $productsDerived;
 

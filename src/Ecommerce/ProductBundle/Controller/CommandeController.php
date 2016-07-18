@@ -152,11 +152,13 @@ class CommandeController extends BossController
 				$panier = new Panier();
 				// inject
 				$product = $em->getRepository('ProductBundle:Product')->find($value->derived->getProduct()->getId());
-				$derived = $value->derived->setProduct($product);
+				$value->derived->setProduct($product);
+
 				$panier->setQuantity($value->count);
 				$panier->setPack(false);
 				$panier->setCommande($commande);
-				$panier->setProductsDerived($value->derived);
+				$panier->setProductDerivedId($value->derived->getId());
+
 
 				$em->persist($panier);
 				$em->flush();
@@ -177,11 +179,10 @@ class CommandeController extends BossController
 
 		$commandes = $em->getRepository('ProductBundle:Commande')->findByUser($user->getId());
 		foreach ($commandes as $key => $value) {
-			$product = $em->getRepository('ProductBundle:Panier')->findByDerived($value->getId());
-			$value->setPanier($product);
+
 		}
 
-		/*		var_dump($commandes);die;*/
+		var_dump($commandes);die;
 
 		return $this->rend('ProductBundle:Commande:commande.html.twig', array('commandes' => $commandes,
 
